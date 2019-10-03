@@ -1,0 +1,68 @@
+<!-- source: https://zorinos.com/start/ all credit goes to the guys at Zorin OS-->
+<html xmlns="../../../www.w3.org/1999/xhtml/index.html">
+	
+<!-- Mirrored from www.logonoff.co/projects/startpage/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2017 11:37:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+		<link href='cssf155.css?family=Roboto:100&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" type="image/png" href="https://ferenos.weebly.com/uploads/2/0/2/6/20267985/new-logo-svg_2.png"/>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+		<title id="title">Feren OS Start Page Settings</title>
+		<link rel="stylesheet" href="style-page.css" type="text/css">
+		<script type="text/javascript" src="scripts/settings.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+		<script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+		  "palette": {
+		    "popup": {
+		      "background": "#000000c1",
+		      "text": "#ffffff"
+		    },
+		    "button": {
+		      "background": "#ffffff",
+		      "text": "#006aff"
+		    }
+		  },
+		  "theme": "classic",
+		  "position": "bottom-right",
+		  "content": {
+		    "message": "This website uses cookies to save your Start Page Settings offline.",
+		    "dismiss": "OK",
+		    "link": "More info",
+		    "href": "https://feren-os.github.io/start-page/cookies"
+		  }
+		})});
+		</script>
+	</head>
+	<body>
+		<h2>Settings</h2>
+		<h3>Background Image:</h3>
+		Choose a background image for the Start Page, to be stored as a Cookie locally: <i>(only URLs are currently supported)</i>
+        </div><p>
+        <input id="bgurltextbox" class="textbox" type="text" placeholder="../start-page/resources/bg.jpg"/></p>
+        <script type="text/javascript">
+            getbg();
+        </script>
+        <h3>⠀</h3>
+        <h3>Hide elements of Start Page:</h3>
+		Choose what elements of the Start Page you'd like to have hidden:
+        </div><div class="extraspacing"><p>
+        <input id="hidetilestoggle" type="checkbox"> All tiles</p>
+        <input id="hideblogtoggle" type="checkbox"> Feren OS Blog and Twitter preview</p>
+        <input id="hidecreditstoggle" type="checkbox"> Credits</p>
+        <script type="text/javascript">
+            gettickboxesstates();
+        </script>
+        </div>
+	</body>
+	<footer>
+        <div class="footer" align="right">
+            <button class="btn-blue" type="submit" onclick="savesettings()">Save and Return</button>
+        </div>
+    </footer>
+
+<!-- Mirrored from www.logonoff.co/projects/startpage/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2017 11:38:26 GMT -->
+</html>
