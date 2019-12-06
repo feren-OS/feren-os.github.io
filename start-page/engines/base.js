@@ -2,16 +2,17 @@
 var apiUrl = "";
 
 
-/*	START PAGE
+/*	DUCKDUCKGO	
 	----------------------------------------------------- */
 
-eng.startpage = {
-	pageTitle: "StartPage",
-	logo: "startpage.png",
+eng.duckduckgo = {
+	pageTitle: "DuckDuckGo",
+	logo: "duckduckgo.png",
 	places: {
-		'Web'    : ["https://www.startpage.com/do/search?q=%query%&hl=en",		apiUrl+"?eng=google&timestamp=%time%&q=%query%"]
+		'Search DuckDuckGo' : ["https://www.ddg.co/?q=%query%", true]
 	}
 };
+
 
 /*	GOOGLE
 	----------------------------------------------------- */
@@ -38,14 +39,15 @@ eng.twitter = {
 	}
 };
 
-/*	DUCKDUCKGO	
+
+/*	START PAGE
 	----------------------------------------------------- */
 
-eng.duckduckgo = {
-	pageTitle: "DuckDuckGo",
-	logo: "duckduckgo.png",
+eng.startpage = {
+	pageTitle: "StartPage",
+	logo: "startpage.png",
 	places: {
-		'Search DuckDuckGo' : ["https://www.ddg.co/?q=%query%", true]
+		'Web'    : ["https://www.startpage.com/do/search?q=%query%&hl=en",		apiUrl+"?eng=google&timestamp=%time%&q=%query%"]
 	}
 };
 

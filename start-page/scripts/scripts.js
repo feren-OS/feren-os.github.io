@@ -61,7 +61,7 @@ $(function()
 	
 	// Set up first engine
 
-    	current.engine = (getCookie("lastengine") || "startpage");
+    	current.engine = (getCookie("lastengine") || "duckduckgo");
 	build(current.engine, false);
 });
 
@@ -143,7 +143,7 @@ function indexCreate()
 	idxHeight = (row+1)*(idxLogoSmall[1]+idxMargin)-idxMargin;
 	idxHeight = Math.max(idxHeight, idxLogoFull[1]);
 
-    var engine = (getCookie("lastengine") || "startpage");
+    var engine = (getCookie("lastengine") || "duckduckgo");
     current.engine = engine;
 	
 	$("#engines a").click(function(){ build($(this).attr("ref"), true); });
