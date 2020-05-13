@@ -38,4 +38,60 @@ function savesettings() {
     window.location.href = "https://feren-os.github.io/start-page";
 }
 
+// Make sure all tiles are set
+var i; 
+for (i=1; i < 9; i++) {
+    if (getCookie('tile' + i + 'settings') == 'undefined') {
+        setDefaultTileURLS()
+    }
+}
 
+var tileDefaultURLS = [
+    "",
+    "https://ferenos.weebly.com",
+    "https://vivaldi.net/",
+    "https://ferenos.weebly.com/discord",
+    "https://twitter.com/Feren_OS",
+    "https://omgubuntu.co.uk/",
+    "https://facebook.com/",
+    "https://twitter.com/",
+    "https://chrome.google.com/webstore"
+]
+
+function resetTileSettings() {
+    var tile = document.getElementById('tileNum').innerHTML;
+    setCookie("tile" + tile + "settings", tileDefaultURLS[tile]);
+    document.getElementById('tilewebsitetextbox').value=getCookie("tile" + tile + "settings")
+}
+
+function setDefaultTileURLS() {
+    setCookie("tile1settings",  tileDefaultURLS[1])
+    setCookie("tile2settings",  tileDefaultURLS[2])
+    setCookie("tile3settings",  tileDefaultURLS[3])
+    setCookie("tile4settings",  tileDefaultURLS[4])
+    setCookie("tile5settings",  tileDefaultURLS[5])
+    setCookie("tile6settings",  tileDefaultURLS[6])
+    setCookie("tile7settings",  tileDefaultURLS[7])
+    setCookie("tile8settings",  tileDefaultURLS[8])
+}
+
+function openTileSettings(tile) {
+    document.getElementById('tileNum').innerHTML = tile;
+    document.getElementById('tilewebsitetextbox').value=getCookie("tile" + tile + "settings");
+    document.getElementById('tilewebsitetextbox').placeholder=tileDefaultURLS[tile];
+    
+    if ( document.getElementById('tilewebsitetextbox').value == 'undefined' || document.getElementById('tilewebsitetextbox').value == '') {
+        setDefaultTileURLS();
+        document.getElementById('tilewebsitetextbox').value=getCookie("tile" + tile + "settings");
+    }
+    document.getElementById('tileSettings').style.display = 'inline-block';
+    document.getElementById('overlay').style.display = 'block';
+}
+
+function saveTileSettings() {
+    document.getElementById("tileSettings").style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+    var tile = document.getElementById('tileNum').innerHTML;
+    setCookie("tile" + tile + "settings", document.getElementById("tilewebsitetextbox").value);
+    initTiles();
+}

@@ -104,7 +104,10 @@ function setSettings()
     }
     if (hidecredits == "true") {
         $('.disclaimers').hide();
-    }
+		}
+		
+		
+		
 }
 
 
