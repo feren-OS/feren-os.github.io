@@ -15,12 +15,18 @@ var DefaultTileImages = [
     "",
     "resources/sd_feren-os.png",
     "resources/sd_vivaldi_community.gif",
-    "resources/sd_discord.png",
-    "resources/sd_feren_twitter.png",
+    "resources/sd_discord_feren.png",
+    "resources/sd_twitter_feren.png",
     "resources/sd_omgubuntu.png",
     "resources/sd_facebook.png",
     "resources/sd_twitter.png",
-    "resources/sd_chrome_extensions.png"
+    "resources/sd_chrome_extensions.png",
+    "resources/sd_feren.png",
+    "resources/sd_vivaldi.png",
+    "resources/sd_generic.png",
+    "resources/sd_unsplash.png",
+    "resources/sd_wikipedia.png",
+    "resources/sd_discord.png"
 ]
 
 function setCookie(name, value)
@@ -112,9 +118,13 @@ function savesettings() {
 //     if (document.getElementById("bgurltextbox").value = null) {
 //         document.getElementById("bgurltextbox").value="/resources/bg.jpg";
 //     }
-    setCookie("userbg", document.getElementById("bgurltextbox").value)
-    setCookie("hidetiles", document.getElementById("hidetilestoggle").checked)
-    setCookie("hideblog", document.getElementById("hideblogtoggle").checked)
-    setCookie("hidecredits", document.getElementById("hidecreditstoggle").checked)
+    setCookie("userbg", document.getElementById("bgurltextbox").value);
+    setCookie("hidetiles", document.getElementById("hidetilestoggle").checked);
+    setCookie("hideblog", document.getElementById("hideblogtoggle").checked);
+    setCookie("hidecredits", document.getElementById("hidecreditstoggle").checked);
     window.location.href = "https://feren-os.github.io/start-page";
+}
+
+function selectTileImage(tileimage) {
+    document.getElementById("currenttileimagetextbox").value = DefaultTileImages[tileimage];
 }

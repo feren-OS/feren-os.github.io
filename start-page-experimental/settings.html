@@ -48,7 +48,7 @@
 		<h3>Background Image:</h3>
 		Choose a background image for the Start Page: <i>(only URLs are currently supported)</i>
         <p>
-        <div class="flextainer"><input id="bgurltextbox" class="textbox" type="text" placeholder="../start-page/resources/bg.jpg"/></div></p>
+        <input id="bgurltextbox" class="textbox" type="text" placeholder="../start-page/resources/bg.jpg"/></p>
         <script type="text/javascript">
             getbg();
         </script>
@@ -112,13 +112,85 @@
         <script>loadTiles(); gettickboxesstates();</script>
         
         <div class="tilesettingspopup" id="tilesettingspopup">
-            <h3>Tile <span id="currenttilenumber">1</span>:</h3>
-            <div class="flextainer">Where will clicking this tile take you?  
-            <input id="currenttileurltextbox" class="textbox" type="text"/></div><p/>
-            <div class="flextainer">What image should be shown on this tile?  
-            <input id="currenttileimagetextbox" class="textbox" type="text"/></div><p/>
+            <h4>Tile <span id="currenttilenumber">1</span>:</h4>
+            <p>Where will clicking this tile take you?</p>
+            <input id="currenttileurltextbox" class="textbox" type="text"/><p/>
+            <p>What image should be shown on this tile? <i>(only URLs are currently supported)</i></p>
+            <input id="currenttileimagetextbox" class="textbox" type="text"/><p/>
+            <br>
             Alternatively, pick one of these preset images for your tile:
-            
+            <div class="shortcutsiconscontainer">
+                <div class="smol-grid-item" onclick="selectTileImage(9)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/ferenicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(1)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/ferenosicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(10)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/vivaldiicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(2)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/vivaldicommunityicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(8)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/vivaldiextensionsicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(3)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/discordferenicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(4)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/twitterferenicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(14)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/discordicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(7)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/twittericon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(6)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/facebookicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(5)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/omgubuntuicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(12)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/unsplashicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(13)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/wikipediaicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(11)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/genericsiteicon.png" border="0">
+                    </span>
+                </div>
+            </div>
             <br>
                 <button class="destructive-btn" float="left" type="submit" onclick="clearTileSettings()">Reset to Default</button>
                 <button class="btn-right" type="submit" onclick="saveTileSettings()">Save and Close</button>
