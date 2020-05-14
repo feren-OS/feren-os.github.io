@@ -73,7 +73,7 @@ function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
         document.getElementById('tile' + i + 'image').src = (getCookie('tile' + i + 'currentimage') || DefaultTileImages[i]);
-        // Check if we're in the Settings page before trying to set tile links
+        // Check if we're not in the Settings page before trying to set tile links
         if (Boolean(location.href.search('settings') == -1) == true) {
             document.getElementById('tile' + i + 'url').href = (getCookie('tile' + i + 'currenturl') || DefaultTileURLs[i]);
         }
@@ -108,15 +108,15 @@ function saveTileSettings() {
         document.getElementById("currenttileurltextbox").value = ("https://" + document.getElementById("currenttileurltextbox").value)
     }
     
-    setCookie("tile" + tile + "currenturl", document.getElementById("currenttileurltextbox").value);
-    setCookie("tile" + tile + "currentimage", document.getElementById("currenttileimagetextbox").value);
+    setCookie(("tile" + tile + "currenturl"), document.getElementById("currenttileurltextbox").value);
+    setCookie(("tile" + tile + "currentimage"), document.getElementById("currenttileimagetextbox").value);
     closeTileSettings();
 }
 
 function clearTileSettings() {
     var tile = document.getElementById('currenttilenumber').innerHTML;
-    setCookie("tile" + tile + "currenturl", "");
-    setCookie("tile" + tile + "currentimage", "");
+    setCookie(("tile" + tile + "currenturl"), "");
+    setCookie(("tile" + tile + "currentimage"), "");
     closeTileSettings();
 }
 
