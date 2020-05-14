@@ -59,9 +59,6 @@
         <input id="hidetilestoggle" type="checkbox" onclick="hidetickboxspecifics()"> All tiles</p>
         <input id="hideblogtoggle" type="checkbox" onclick="hidetickboxspecifics()"> Feren OS Blog and Twitter preview</p>
         <input id="hidecreditstoggle" type="checkbox" onclick="hidetickboxspecifics()"> Credits</p>
-        <script type="text/javascript">
-            gettickboxesstates();
-        </script>
         </div>
         <div id="tilestoggleon">
             <h3>⠀</h3>
@@ -112,7 +109,7 @@
             <h3>⠀</h3>
         </div></div>
         
-        <script>loadTiles();</script>
+        <script>loadTiles(); gettickboxesstates();</script>
         
         <div class="tilesettingspopup" id="tilesettingspopup" align="center">
             <h3>Tile <span id="currenttilenumber">1</span>:</h3>
