@@ -1,0 +1,313 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+@-webkit-keyframes slide {
+	0% {-webkit-transform: translateY(80px); opacity: 0;}
+	100% {-webkit-transform: translateY(0px); opacity: 1;}
+}
+
+@-moz-keyframes slide {
+	0% {-moz-transform: translateY(80px); opacity: 0;}
+	100% {-moz-transform: translateY(0px); opacity: 1;}
+}
+
+@-ms-keyframes slide {
+	0% {-ms-transform: translateY(80px); opacity: 0;}
+	100% {-ms-transform: translateY(0px); opacity: 1;}
+}
+
+@-o-keyframes slide {
+	0% {-o-transform: translateY(80px); opacity: 0;}
+	100% {-o-transform: translateY(0px); opacity: 1;}
+}
+
+@keyframes slide {
+	0% {transform: translateY(80px); opacity: 0;}
+	100% {transform: translateY(0px); opacity: 1;}
+}
+
+placeholder {
+	color: rgba(0,0,0, 0.5);
+}
+
+::-webkit-input-placeholder {
+	color: rgba(0,0,0,0.5);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: rgba(0,0,0,0.5);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: rgba(0,0,0,0.5);
+}
+
+:-ms-input-placeholder {
+	color: rgba(0,0,0, 0.5);
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	-webkit-user-select: none;
+	font-size: 16px;
+	background-color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+body, html {
+    height: 100%;
+}
+
+.bulletpoints {
+    font-size: 14px;
+}
+
+.extraspacing {
+    line-height: 20pt;
+}
+
+#containersearch {
+	position: absolute;
+	left: 0px;
+	top: 93px;
+	width: 100%;
+	height: 144px;
+}
+
+h2 {
+    margin-top: 15px;
+    font-size: 42px;
+	font-family: 'Lato Light', 'Open Sans Light', 'Segoe UI', 'Helvetica Neue', 'Roboto', sans-serif;
+    color: black;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.shortcutscontainer {
+	margin-top: 290px;
+    margin-left: 110px;
+    margin-right: 110px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.sd-item {
+  box-shadow: 0 0 rgba(0, 0, 0, 0.1), 0 0 3px 3px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+
+}
+
+input[type="text"] {
+    width: 80%;
+    margin-top: 5px;
+    font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.blog-item {
+  margin-top: 20px;
+  margin-left: 110px;
+  margin-right: 110px;
+  box-shadow: 0 0 rgba(0, 0, 0, 0.1), 0 0 3px 3px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 5px;
+}
+
+.disclaimers {
+  margin-top: 20px;
+  margin-left: 110px;
+  margin-right: 110px;
+  margin-bottom: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.4);
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url("resources/kyle-hinkson-498968-unsplash.jpg");
+
+    /* Set a specific height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*	ENGINE INDEX
+	----------------------------------------------------- */
+
+#engines {
+	width: 700px;
+	height: 80px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -350px;
+	margin-bottom: 10%;
+	-webkit-animation:slide 0.75s ease;
+	moz-animation:slide 0.75s ease;
+	ms-animation:slide 0.75s ease;
+	o-animation:slide 0.75s ease;
+	animation:slide 0.75s ease;
+}
+
+#engines a {
+	display: block;
+	width: 225px;
+	height: 80px;
+	cursor: pointer;
+	opacity: 0.0;
+	position: absolute;
+}
+
+#engines a img {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+
+
+/* 	SEARCH BOX
+	----------------------------------------------------- */
+
+#input input {
+	font-size: 140px;
+	font-family: 'Open Sans Light', sans-serif;
+	font-weight: 100;
+	text-align: center;
+	background: none;
+	width: 100%;
+	outline: 0;
+	color: rgba(255,255,255,1);
+	border: 0px;
+}
+
+#lang {
+	position: absolute;
+	right: 49px;
+	top: 39px;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 3px 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#lang:hover {
+	background: #ffffff;
+	color: white;
+}
+
+#lang:active {
+	background: #ffffff;
+}
+
+#method {
+	display: none;
+}
+
+
+
+/* 	SEARCH SUGGESTIONS
+	----------------------------------------------------- */
+
+#sugs {
+	display: none;
+	position: absolute;
+	background: rgba(255,255,255,0.8);
+	border: 1px solid #212121;
+	border-top: 0;
+	left: 41px;
+	top: 68px;
+	right: 41px;
+	list-style: none;
+	padding: 3px 0;
+	font-size: 11px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+}
+
+#sugs li a {
+	display: block;
+	padding: 3px 8px;
+	color: #212121;
+}
+
+#sugs li.active a {
+	background: #212121;
+	color: white;
+}
+
+#sugs li a:active {
+	background: #212121;
+}
+
+
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  color: black;
+  padding-bottom: 0px;
+  background-color: white;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
+  text-align: right;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-blue {
+  border: 0;
+  background: none;
+  background-color: #006aff;
+  color: white;
+  padding: .5em 2em;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn-alt {
+  border: 0;
+  background: none;
+  background-color: #fafafa;
+  color: #006aff;
+  padding: .5em 2em;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
