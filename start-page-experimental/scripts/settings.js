@@ -86,13 +86,11 @@ function openTileSettings(tile) {
     
     document.getElementById('tilesettingspopup').style.display = 'inline-block';
     document.getElementById('overlay').style.display = 'block';
-    ('body').addClass('stop-scrolling');
 }
 
 function closeTileSettings() {
     document.getElementById("tilesettingspopup").style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
-    ('body').removeClass('stop-scrolling');
     loadTiles();
 }
 
