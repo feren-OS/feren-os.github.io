@@ -107,12 +107,8 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
-        if (getCookie("tile" + i + "currentimage") !== undefined) {
-            if (getCookie("tile" + i + "currentimage").startsWith("text:") == false) {
-                document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
-            } else {
-                document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentname").substr(5))
-            }
+        if (getCookie("tile" + i + "usestext") == true) {
+            document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentimage").substr(5))
         } else {
             document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
         }
@@ -163,6 +159,11 @@ function saveTileSettings() {
     setCookie(("tile" + tile + "currentname"), document.getElementById("currenttilenametextbox").value);
     setCookie(("tile" + tile + "currenturl"), document.getElementById("currenttileurltextbox").value);
     setCookie(("tile" + tile + "currentimage"), document.getElementById("currenttileimagetextbox").value);
+    if (document.getElementById("currenttileimagetextbox").value.startsWith("text:") == true) {
+        setCookie(("tile" + tile + "usestext"), true);
+    } else {
+        setCookie(("tile" + tile + "usestext"), "");
+    }
     closeTileSettings();
 }
 
