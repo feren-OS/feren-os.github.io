@@ -107,6 +107,7 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
+        console.log("Test 1");
         if (getCookie("tile" + i + "usestext") == true) {
             alert("Testing feature");
             document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
