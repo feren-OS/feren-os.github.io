@@ -44,11 +44,11 @@ function getbg() {
 
 function hidetickboxspecifics() {
     // Only if we're in Settings
-    if (Boolean(location.href.search('settings') == -1) == true) {
-        if (Boolean(document.getElementById("hidetilestoggle").checked) == true) {
-            $('.tilestoggleon').hide();
+    if (Boolean(location.href.search('settings') == -1) == false) {
+        if (document.getElementById("hidetilestoggle").checked == true) {
+            document.getElementById("tilestoggleon").style.display = "none";
         } else {
-            $('.tilestoggleon').show();
+            document.getElementById("tilestoggleon").style.display = "block";
         }
     }
 }
