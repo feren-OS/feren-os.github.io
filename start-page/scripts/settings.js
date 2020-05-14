@@ -107,13 +107,13 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
-        try {
+        if (getCookie("tile" + i + "currentimage") !== undefined) {
             if (getCookie("tile" + i + "currentimage").startsWith("text:") == false) {
                 document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
             } else {
                 document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentname").substr(5))
             }
-        } catch(err) {
+        } else {
             document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
         }
         
