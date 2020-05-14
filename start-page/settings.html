@@ -7,10 +7,10 @@
 		<link href='cssf155.css?family=Roboto:100&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" type="image/png" href="https://ferenos.weebly.com/uploads/2/0/2/6/20267985/new-logo-svg_2.png"/>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-		<title id="title">Feren OS Start Page Settings</title>
+		<title id="title">Start Page Settings</title>
 		<link rel="stylesheet" href="style-page.css" type="text/css">
 		<script type="text/javascript" src="scripts/settings.js"></script>
-		<script type="text/javascript" src="scripts/tiles.js"> </script>
+		
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 		<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 		<script>
@@ -38,81 +38,166 @@
 		</script>
 	</head>
 	<body>
-		<div class="overlay" id="overlay"></div>
-		<div class="app">
-		<h2>Settings</h2>
+        <div class="overlay" id="overlay"></div>
+        <div class="topbar">
+            <p class="topbar-left">Start Page Settings</p>
+            <a class="button" onclick="savesettings()">Save and Return</a>
+        </div>
+        <div class="main">
+        <h5> </h5>
 		<h3>Background Image:</h3>
-		Choose a background image for the Start Page, to be stored as a Cookie locally: <i>(only URLs are currently supported)</i>
+		Choose a background image for the Start Page: <i>(only URLs are currently supported)</i>
         <p>
         <input id="bgurltextbox" class="textbox" type="text" placeholder="../start-page/resources/bg.jpg"/></p>
         <script type="text/javascript">
             getbg();
         </script>
-				<h3>⠀</h3>
-				<h3>Modify Tiles</h3>
-				Select a tile to modify it's contents:
-				<div class="shortcutscontainer">
-          <div class="grid-item" id="cell1" onclick="openTileSettings(1)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_feren-os.png" alt="Go to Feren OS Website" border="0" id="cell1image">
-		    </a>
-          </span></div>
-          <div class="grid-item" id="cell2" onclick="openTileSettings(2)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_vivaldi_community.gif" alt="Go to Vivaldi Browser's Community" border="0" id="cell2image">
-		    </a>
-          </span></div>
-          <div class="grid-item" id="cell3" onclick="openTileSettings(3)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_discord.png" alt="Join the Feren OS Discord" border="0" id="cell3image">
-		    </a>
-          </span></div>
-          <div class="grid-item" id="cell4" onclick="openTileSettings(4)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_feren_twitter.png" alt="Go to the Feren OS Google+ Community" border="0" id="cell4image">
-		    </a>
-          </span></div>
-          <div class="grid-item" id="cell5" onclick="openTileSettings(5)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_omgubuntu.png" alt="Go to OMG! Ubuntu for news about Feren OS's base, and cool tips and tricks that (most of the time) work with Feren OS." border="0" id="cell5image">
-		    </a>
-          </span></div>
-          <div class="grid-item" id="cell6" onclick="openTileSettings(6)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_facebook.png" alt="Go to Facebook" border="0" id="cell6image">
-		    </a>
-          </span></div>
-          <div class="grid-item" id="cell7" onclick="openTileSettings(7)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_twitter.png" alt="Go to Twitter" border="0" id="cell7image">
-		    </a>
-          </span></div>
-          <div class="grid-item" id="cell8" onclick="openTileSettings(8)"><span class="grid-item-contents">
-		        <img class="sd-item" src="resources/sd_chrome_extensions.png" alt="Go to Vivaldi's StartMe Page" border="0" id="cell8image">
-		    </a>
-          </span></div>
-				</div>
+        <h3>⠀</h3>
         <h3>Hide elements of Start Page:</h3>
 		Choose what elements of the Start Page you'd like to have hidden:
         <div class="extraspacing"><p>
-        <input id="hidetilestoggle" type="checkbox"> All tiles</p>
-        <input id="hideblogtoggle" type="checkbox"> Feren OS Blog and Twitter preview</p>
-        <input id="hidecreditstoggle" type="checkbox"> Credits</p>
-        <script type="text/javascript">
-            gettickboxesstates();
-        </script>
-				</div>
-				<div class="tileSettings" id="tileSettings">
-					<h4>Settings for Tile <span id="tileNum">1</span></h4>
-					Tile Website: <i>Make sure to add http:// or https:// in front of the URL</i>
-					<input id="tilewebsitetextbox" class="textbox" type="text" placeholder="https://feren-os.weebly.com"/></p>
-					<br>
-					<div style="text-align: center;"><button align="right" class="btn-blue" type="submit" onclick="resetTileSettings()">Reset to Default</button><button align="right" class="btn-blue" type="submit" onclick="saveTileSettings()">Save and Close</button></div>
-					
-				</div>
-			</div>
-			<script>
-				initTiles();
-			</script>
-	</body>
-	<footer>
-        <div class="footer" align="right">
-            <button class="btn-blue" type="submit" onclick="savesettings()">Save and Return</button>
+        <input id="hidetilestoggle" type="checkbox" onclick="hidetickboxspecifics()"> All tiles</p>
+        <input id="hideblogtoggle" type="checkbox" onclick="hidetickboxspecifics()"> Feren OS Blog and Twitter preview</p>
+        <input id="hidecreditstoggle" type="checkbox" onclick="hidetickboxspecifics()"> Credits</p>
         </div>
-    </footer>
+        <div id="tilestoggleon">
+            <h3>⠀</h3>
+            <h3>Start Page tiles:</h3>
+            Manage the tiles by clicking on them to change their settings:
+            <div class="shortcutscontainer">
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(1)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_feren-os.png" border="0" id="tile1image">
+                    </span>
+                </div>
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(2)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_vivaldi_community.gif" border="0" id="tile2image">
+                    </span>
+                </div>
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(3)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_discord_feren.png" border="0" id="tile3image">
+                    </span>
+                </div>
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(4)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_twitter_feren.png" border="0" id="tile4image">
+                    </span>
+                </div>
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(5)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_omgubuntu.png" border="0" id="tile5image">
+                    </span>
+                </div>
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(6)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_facebook.png" border="0" id="tile6image">
+                    </span>
+                </div>
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(7)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_twitter.png" border="0" id="tile7image">
+                    </span>
+                </div>
+                <div class="grid-item" id="tilestandard" onclick="openTileSettings(8)">
+                    <span class="grid-item-contents">
+                    <img class="sd-item" src="resources/sd_chrome_extensions.png" border="0" id="tile8image">
+                    </span>
+                </div>
+            </div>
+            <h3>⠀</h3>
+        </div></div>
+        
+        <script>loadTiles(); gettickboxesstates();</script>
+        
+        <div class="tilesettingspopup" id="tilesettingspopup">
+            <h4>Tile <span id="currenttilenumber">1</span>:</h4>
+            <p>Where will this tile take you to?</p>
+            <input id="currenttileurltextbox" class="textbox" type="text"/><p/>
+            <br>
+            <p>What image should be shown on this tile? <i>(only URLs are currently supported)</i></p>
+            <input id="currenttileimagetextbox" class="textbox" type="text"/><p/>
+            <br>
+            Alternatively, pick one of these preset images for your tile:
+            <div class="shortcutsiconscontainer">
+                <div class="smol-grid-item" onclick="selectTileImage(9)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/ferenicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(1)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/ferenosicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(10)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/vivaldiicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(2)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/vivaldicommunityicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(8)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/vivaldiextensionsicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(3)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/discordferenicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(4)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/twitterferenicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(14)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/discordicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(7)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/twittericon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(6)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/facebookicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(5)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="https://149366088.v2.pressablecdn.com/wp-content/themes/omgubuntu-theme-20_04_0/images/favicons/favicon-96x96.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(12)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/unsplashicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(13)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/wikipediaicon.png" border="0">
+                    </span>
+                </div>
+                <div class="smol-grid-item" onclick="selectTileImage(11)">
+                    <span class="grid-item-contents">
+                    <img class="smol-sd-item" src="resources/genericsiteicon.png" border="0">
+                    </span>
+                </div>
+            </div>
+            <br>
+                <button class="destructive-btn" float="left" type="submit" onclick="clearTileSettings()">Reset</button>
+                <button class="suggested-btn-right" type="submit" onclick="saveTileSettings()">Save</button>
+            </div>
+        </div>
+	</body>
 
 <!-- Mirrored from www.logonoff.co/projects/startpage/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2017 11:38:26 GMT -->
 </html>
