@@ -134,3 +134,26 @@ function savesettings() {
 function selectTileImage(tileimage) {
     document.getElementById("currenttileimagetextbox").value = DefaultTileImages[tileimage];
 }
+
+// Custom Tile Image Handler
+/**
+ * Generates an image and returns a DATA: URI
+ * @param {*} height  Height of Image
+ * @param {*} width  Width of Image
+ * @param {*} background  Hex Code for Background of Image
+ * @param {*} textColor Hex Code for Text Color
+ * @param {*} text  Text to Show in Image
+ * @returns Data URI
+ */
+function generateImage(height, width, background, textColor, text) {
+    var tCtx = document.getElementById('customTileImage').getContext('2d');
+    tCtx.canvas.width = width;
+    tCtx.canvas.height = height;
+    tCtx.fillStyle = background;
+    tCtx.fillRect(0, 0, tCtx.canvas.width, tCtx.canvas.height);
+    tCtx.fillStyle = textColor;
+    tCtx.textAlign = 'center';
+    tCtx.font = '32px Arial'
+    tCtx.fillText(text, width / 2, height / 2);
+    return tCtx.canvas.toDataURL();
+}
