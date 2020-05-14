@@ -108,10 +108,8 @@ function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
         if (getCookie("tile" + i + "usestext") == "true") {
-            console.log("Tile " + i + " is true")
             document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
         } else {
-            console.log("Tile " + i + " is false")
             document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
         }
         
