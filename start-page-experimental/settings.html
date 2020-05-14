@@ -113,8 +113,9 @@
         
         <div class="tilesettingspopup" id="tilesettingspopup">
             <h4>Tile <span id="currenttilenumber">1</span>:</h4>
-            <p>Where will clicking this tile take you?</p>
+            <p>Where will this tile take you to?</p>
             <input id="currenttileurltextbox" class="textbox" type="text"/><p/>
+            <br>
             <p>What image should be shown on this tile? <i>(only URLs are currently supported)</i></p>
             <input id="currenttileimagetextbox" class="textbox" type="text"/><p/>
             <br>
@@ -192,8 +193,8 @@
                 </div>
             </div>
             <br>
-                <button class="destructive-btn" float="left" type="submit" onclick="clearTileSettings()">Reset to Default</button>
-                <button class="btn-right" type="submit" onclick="saveTileSettings()">Save and Close</button>
+                <button class="destructive-btn" float="left" type="submit" onclick="clearTileSettings()">Reset</button>
+                <button class="suggested-btn-right" type="submit" onclick="saveTileSettings()">Save</button>
             </div>
         </div>
 	</body>

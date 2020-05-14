@@ -128,7 +128,7 @@ h4 {
 
 .grid-item {
   display: flex;
-  flex: 1px;
+  flex: 4px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 30px;
@@ -142,13 +142,14 @@ h4 {
     flex-wrap: wrap;
     /*flex-direction: row;*/
     width: 84%;
-    padding: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
 }
 
 .smol-grid-item {
   display: flex;
-  flex: 1px;
-  padding-top: 10px;
+  flex: 4px;
+  padding-top: 8px;
   padding-bottom: 10px;
   text-align: center;
 }
@@ -351,17 +352,19 @@ input[type="text"] {
   text-align: center;
   padding: 10px 20px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12pt;
 }
 
 .topbar a.button {
   float: right;
   color: white;
-  background: linear-gradient(to bottom, #0f72fd, #0069fc);
+  background: linear-gradient(to bottom, #169B39, #159837);
   text-align: center;
   padding: 10px 20px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12pt;
+  border: 1px solid #12802E;
+  margin: -1px 0;
 }
 
 /* Main content */
@@ -381,7 +384,6 @@ input[type="text"] {
   padding: .5em 2em;
   text-decoration: none;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .btn-alt {
@@ -392,7 +394,6 @@ input[type="text"] {
   padding: .5em 2em;
   text-decoration: none;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .btn {
@@ -402,21 +403,20 @@ input[type="text"] {
   color: black;
   min-height: 24px;
   min-width: 16px;
-  padding: 4px 8px;
+  padding: 7px 20px;
   text-decoration: none;
   font-size: 10pt;
-  font-family: 'Open Sans', sans-serif;
 }
 
-.btn-right {
+.suggested-btn-right {
   float: right;
-  border: 1px solid rgba(0, 0, 0, 0.19);
+  border: 1px solid #12802E;
   border-radius: 4px;
-  background: linear-gradient(to bottom, #ededed, #e7e7e7);
-  color: black;
+  background: linear-gradient(to bottom, #169B39, #159837);
+  color: white;
   min-height: 24px;
   min-width: 16px;
-  padding: 4px 8px;
+  padding: 7px 20px;
   text-decoration: none;
   font-size: 10pt;
   font-family: 'Open Sans', sans-serif;
@@ -429,7 +429,7 @@ input[type="text"] {
   color: white;
   min-height: 24px;
   min-width: 16px;
-  padding: 4px 8px;
+  padding: 7px 20px;
   text-decoration: none;
   font-size: 10pt;
   font-family: 'Open Sans', sans-serif;
@@ -446,7 +446,7 @@ input[type="text"] {
     width: 50%;
     transform: translate(-50%, -50%);
     padding: 40px;
-    background-color: #ffffff;
+	background-color: #f1f1f1;
     z-index: 9000001;
     display: none;
     border-radius: 4px;

@@ -102,6 +102,12 @@ function closeTileSettings() {
 
 function saveTileSettings() {
     var tile = document.getElementById('currenttilenumber').innerHTML;
+    
+    // Make sure the URL starts with https:// or http:// before we save it to the tile
+    if ((document.getElementById("currenttileurltextbox").value.startsWith("https://") == false) && (document.getElementById("currenttileurltextbox").value.startsWith("http://") == false)) {
+        document.getElementById("currenttileurltextbox").value = ("https://" + document.getElementById("currenttileurltextbox").value)
+    }
+    
     setCookie("tile" + tile + "currenturl", document.getElementById("currenttileurltextbox").value);
     setCookie("tile" + tile + "currentimage", document.getElementById("currenttileimagetextbox").value);
     closeTileSettings();
