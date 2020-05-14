@@ -328,3 +328,33 @@ input[type="text"] {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
 }
+
+/* 	TILE SETTINGS
+	----------------------------------------------------- */
+
+.tilesettingspopup {
+    position: fixed;
+    width: 70vw;
+    max-width: 800px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: ffffff;
+    z-index: 5000001;
+    max-height: calc(100% - 18px);
+    overflow-y: auto;
+		padding-left: 50px;
+		display: none;
+}
+
+.overlay {
+	margin: -20px;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 5000000;
+	overflow-y: auto;
+	display: none;
+}

@@ -86,26 +86,25 @@ function openTileSettings(tile) {
     
     document.getElementById('tilesettingspopup').style.display = 'inline-block';
     document.getElementById('overlay').style.display = 'block';
-    $('body').addClass('stop-scrolling');
+    ('body').addClass('stop-scrolling');
 }
 
 function closeTileSettings() {
-    document.getElementById("tileSettings").style.display = 'none';
+    document.getElementById("tilesettingspopup").style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
-    $('body').removeClass('stop-scrolling');
+    ('body').removeClass('stop-scrolling');
     loadTiles();
 }
 
 function saveTileSettings() {
-    var tile = document.getElementById('tileNum').innerHTML;
+    var tile = document.getElementById('currenttilenumber').innerHTML;
     setCookie("tile" + tile + "currenturl", document.getElementById("currenttileurltextbox").value);
     setCookie("tile" + tile + "currentimage", document.getElementById("currenttileimagetextbox").value);
     closeTileSettings();
 }
 
 function clearTileSettings() {
-    var tile = document.getElementById('tileNum').innerHTML;
-    document.getElementById('tilewebsitetextbox').value = "";
+    var tile = document.getElementById('currenttilenumber').innerHTML;
     setCookie("tile" + tile + "currenturl", "");
     setCookie("tile" + tile + "currentimage", "");
     closeTileSettings();
