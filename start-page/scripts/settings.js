@@ -107,10 +107,14 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
-        if (getCookie("tile" + i + "currentimage").startsWith("text:") == false) {
+        try {
+            if (getCookie("tile" + i + "currentimage").startsWith("text:") == false) {
+                document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
+            } else {
+                document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentname").substr(4))
+            }
+        } catch(err) {
             document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
-        } else {
-            document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentname").substr(4))
         }
         
         // Check if we"re not in the Settings page before trying to set tile links
