@@ -172,6 +172,7 @@ function clearTileSettings() {
     setCookie(("tile" + tile + "currentname"), "");
     setCookie(("tile" + tile + "currenturl"), "");
     setCookie(("tile" + tile + "currentimage"), "");
+    setCookie(("tile" + tile + "usestext"), "");
     closeTileSettings();
 }
 
