@@ -99,7 +99,7 @@ function generateImage(text) {
     tCtx.fillRect(0, 0, tCtx.canvas.width, tCtx.canvas.height);
     tCtx.fillStyle = "white";
     tCtx.textAlign = "center";
-    tCtx.font = "22px Lato Light"
+    tCtx.font = "21px Lato Light"
     tCtx.fillText(text, (tCtx.canvas.width / 2), (tCtx.canvas.height / 2) + 8);
     return tCtx.canvas.toDataURL();
 }
