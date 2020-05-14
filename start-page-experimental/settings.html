@@ -48,7 +48,7 @@
 		<h3>Background Image:</h3>
 		Choose a background image for the Start Page: <i>(only URLs are currently supported)</i>
         <p>
-        <input id="bgurltextbox" class="textbox" type="text" placeholder="../start-page/resources/bg.jpg"/></p>
+        <div class="flextainer"><input id="bgurltextbox" class="textbox" type="text" placeholder="../start-page/resources/bg.jpg"/></div></p>
         <script type="text/javascript">
             getbg();
         </script>
@@ -113,14 +113,15 @@
         
         <div class="tilesettingspopup" id="tilesettingspopup">
             <h3>Tile <span id="currenttilenumber">1</span>:</h3>
-            Tile target:
-            <input id="currenttileurltextbox" class="textbox" type="text"/><p/>
-            Tile image:
-            <input id="currenttileimagetextbox" class="textbox" type="text"/><p/>
+            <div class="flextainer">Where will clicking this tile take you?  
+            <input id="currenttileurltextbox" class="textbox" type="text"/></div><p/>
+            <div class="flextainer">What image should be shown on this tile?  
+            <input id="currenttileimagetextbox" class="textbox" type="text"/></div><p/>
+            Alternatively, pick one of these preset images for your tile:
+            
             <br>
-            <div align="center">
-                <button align="right" type="submit" onclick="clearTileSettings()">Reset to Default</button>
-                <button align="right" type="submit" onclick="saveTileSettings()">Save and Close</button>
+                <button class="destructive-btn" float="left" type="submit" onclick="clearTileSettings()">Reset to Default</button>
+                <button class="btn-right" type="submit" onclick="saveTileSettings()">Save and Close</button>
             </div>
         </div>
 	</body>
