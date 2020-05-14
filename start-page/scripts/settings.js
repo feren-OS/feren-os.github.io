@@ -107,7 +107,6 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
-        console.log("Test 1");
         if (getCookie("tile" + i + "usestext") == true) {
             console.log("Tile " + i + "is true")
             document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
@@ -115,6 +114,7 @@ function loadTiles() {
             console.log("Tile " + i + "is false")
             document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
         }
+        console.log("Test 1");
         
         // Check if we"re not in the Settings page before trying to set tile links
         if (Boolean(location.href.search("settings") == -1) == true) {
