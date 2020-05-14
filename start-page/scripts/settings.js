@@ -107,14 +107,13 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     for (i=1; i < 9; i++) {
-        if (getCookie("tile" + i + "usestext") == true) {
-            console.log("Tile " + i + "is true")
+        if (getCookie("tile" + i + "usestext") == "true") {
+            console.log("Tile " + i + " is true")
             document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
         } else {
-            console.log("Tile " + i + "is false")
+            console.log("Tile " + i + " is false")
             document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
         }
-        console.log("Test 1");
         
         // Check if we"re not in the Settings page before trying to set tile links
         if (Boolean(location.href.search("settings") == -1) == true) {
@@ -163,7 +162,7 @@ function saveTileSettings() {
     setCookie(("tile" + tile + "currenturl"), document.getElementById("currenttileurltextbox").value);
     setCookie(("tile" + tile + "currentimage"), document.getElementById("currenttileimagetextbox").value);
     if (document.getElementById("currenttileimagetextbox").value.startsWith("text:") == true) {
-        setCookie(("tile" + tile + "usestext"), true);
+        setCookie(("tile" + tile + "usestext"), "true");
     } else {
         setCookie(("tile" + tile + "usestext"), "");
     }
