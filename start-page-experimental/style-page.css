@@ -340,12 +340,12 @@ input[type="text"] {
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background-color: ffffff;
-    z-index: 5000001;
+    background-color: #ffffff;
+    z-index: 9000001;
     max-height: calc(100% - 18px);
     overflow-y: auto;
-		padding-left: 50px;
-		display: none;
+    padding-left: 50px;
+    display: none;
 }
 
 .overlay {
@@ -354,7 +354,7 @@ input[type="text"] {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
-	z-index: 5000000;
+	z-index: 9000000;
 	overflow-y: auto;
 	display: none;
 }
