@@ -111,7 +111,7 @@ function loadTiles() {
             if (getCookie("tile" + i + "currentimage").startsWith("text:") == false) {
                 document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
             } else {
-                document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentname").substr(4))
+                document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentname").substr(5))
             }
         } catch(err) {
             document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
