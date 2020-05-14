@@ -11,6 +11,17 @@ var DefaultTileURLs = [
     "https://twitter.com/",
     "https://chrome.google.com/webstore"
 ]
+var DefaultTileNames = [
+    "",
+    "Feren OS Website",
+    "Vivaldi Community",
+    "Feren Community Discord",
+    "Feren OS on Twitter",
+    "OMG! Ubuntu",
+    "Facebook",
+    "Twitter",
+    "Get More Extensions"
+]
 var DefaultTileImages = [
     "",
     "resources/sd_feren-os.png",
@@ -84,11 +95,14 @@ function openTileSettings(tile) {
     //currenttilenumber is used in the settings popout dialog
     document.getElementById('currenttilenumber').innerHTML = tile;
     
+    document.getElementById('currenttilenametextbox').value = (getCookie('tile' + tile + 'currentname') || DefaultTileNames[tile]);
+    document.getElementById('currenttilenametextbox').placeholder = DefaultTileNames[tile];
+    
     document.getElementById('currenttileurltextbox').value = (getCookie('tile' + tile + 'currenturl') || DefaultTileURLs[tile]);
-    document.getElementById('currenttileurltextbox').placeholder = (getCookie('tile' + tile + 'currenturl') || DefaultTileURLs[tile]);
+    document.getElementById('currenttileurltextbox').placeholder = DefaultTileURLs[tile];
     
     document.getElementById('currenttileimagetextbox').value = (getCookie('tile' + tile + 'currentimage') || DefaultTileImages[tile]);
-    document.getElementById('currenttileimagetextbox').placeholder = (getCookie('tile' + tile + 'currentimage') || DefaultTileImages[tile]);
+    document.getElementById('currenttileimagetextbox').placeholder = DefaultTileImages[tile];
     
     document.getElementById('tilesettingspopup').style.display = 'inline-block';
     document.getElementById('overlay').style.display = 'block';
@@ -108,6 +122,12 @@ function saveTileSettings() {
         document.getElementById("currenttileurltextbox").value = ("https://" + document.getElementById("currenttileurltextbox").value)
     }
     
+    // Make sure the image URL is also valid before we save it to the tile
+    if ((document.getElementById("currenttileimagetextbox").value.startsWith("https://") == false) && (document.getElementById("currenttileimagetextbox").value.startsWith("http://") == false) && (document.getElementById("currenttileimagetextbox").value.startsWith("data:") == false) && (document.getElementById("currenttileimagetextbox").value.startsWith("resources/") == false)) {
+        document.getElementById("currenttileimagetextbox").value = ("https://" + document.getElementById("currenttileimagetextbox").value)
+    }
+    
+    setCookie(("tile" + tile + "currentname"), document.getElementById("currenttilenametextbox").value);
     setCookie(("tile" + tile + "currenturl"), document.getElementById("currenttileurltextbox").value);
     setCookie(("tile" + tile + "currentimage"), document.getElementById("currenttileimagetextbox").value);
     closeTileSettings();
@@ -115,6 +135,7 @@ function saveTileSettings() {
 
 function clearTileSettings() {
     var tile = document.getElementById('currenttilenumber').innerHTML;
+    setCookie(("tile" + tile + "currentname"), "");
     setCookie(("tile" + tile + "currenturl"), "");
     setCookie(("tile" + tile + "currentimage"), "");
     closeTileSettings();
@@ -131,29 +152,35 @@ function savesettings() {
     window.location.href = "https://feren-os.github.io/start-page";
 }
 
+function selectTileImageText() {
+    document.getElementById("currenttileimagetextbox").value = generateImage(document.getElementById("currenttilenametextbox").value);
+}
+
 function selectTileImage(tileimage) {
     document.getElementById("currenttileimagetextbox").value = DefaultTileImages[tileimage];
 }
 
+function tileColour() {
+    var letters = '0123'.split('');
+    var color = '#';       
+    color += letters[Math.round(Math.random() * 5)];
+    letters = '01234567'.split('');
+    for (var i = 0; i < 5; i++) {
+        color += letters[Math.round(Math.random() * 6)];
+    }
+    return color;
+}
+
 // Custom Tile Image Handler
-/**
- * Generates an image and returns a DATA: URI
- * @param {*} height  Height of Image
- * @param {*} width  Width of Image
- * @param {*} background  Hex Code for Background of Image
- * @param {*} textColor Hex Code for Text Color
- * @param {*} text  Text to Show in Image
- * @returns Data URI
- */
-function generateImage(height, width, background, textColor, text) {
-    var tCtx = document.getElementById('customTileImage').getContext('2d');
-    tCtx.canvas.width = width;
-    tCtx.canvas.height = height;
-    tCtx.fillStyle = background;
+function generateImage(text) {
+    var tCtx = document.getElementById("texttilecanvas").getContext("2d");
+    tCtx.canvas.width = 240;
+    tCtx.canvas.height = 196;
+    tCtx.fillStyle = tileColour();
     tCtx.fillRect(0, 0, tCtx.canvas.width, tCtx.canvas.height);
-    tCtx.fillStyle = textColor;
-    tCtx.textAlign = 'center';
-    tCtx.font = '32px Arial'
-    tCtx.fillText(text, width / 2, height / 2);
+    tCtx.fillStyle = "white";
+    tCtx.textAlign = "center";
+    tCtx.font = "22px Lato Light"
+    tCtx.fillText(text, (tCtx.canvas.width / 2), (tCtx.canvas.height / 2) + 8);
     return tCtx.canvas.toDataURL();
 }

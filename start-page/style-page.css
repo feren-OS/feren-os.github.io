@@ -158,7 +158,7 @@ h4 {
     float: left;
     max-width: 32px;
     max-height: 32px;
-    padding: 0px;
+    padding: 4px;
     border: none;
 }
 
@@ -403,7 +403,7 @@ input[type="text"] {
   color: black;
   min-height: 24px;
   min-width: 16px;
-  padding: 7px 20px;
+  padding: 8px 20px;
   text-decoration: none;
   font-size: 10pt;
 }
@@ -416,10 +416,9 @@ input[type="text"] {
   color: white;
   min-height: 24px;
   min-width: 16px;
-  padding: 7px 20px;
+  padding: 8px 20px;
   text-decoration: none;
   font-size: 10pt;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .destructive-btn {
@@ -429,10 +428,22 @@ input[type="text"] {
   color: white;
   min-height: 24px;
   min-width: 16px;
-  padding: 7px 20px;
+  padding: 8px 20px;
   text-decoration: none;
   font-size: 10pt;
-  font-family: 'Open Sans', sans-serif;
+  margin-right: 4px;
+}
+
+.tiletext-btn {
+  border: 1px solid rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #ededed, #e7e7e7);
+  color: black;
+  min-height: 24px;
+  min-width: 16px;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 10pt;
 }
 
 /* 	TILE SETTINGS
@@ -443,7 +454,8 @@ input[type="text"] {
     margin: 0 auto;
     top: 50%;
     left: 50%;
-    width: 50%;
+    width: 670px;
+    height: 410px;
     transform: translate(-50%, -50%);
     padding: 40px;
 	background-color: #f1f1f1;
