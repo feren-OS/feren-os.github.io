@@ -2,7 +2,7 @@
 var eng = {},
 	current = {},
 	fadeDur = 200,
-	titlePrefix = "Feren OS Start Page - ",
+	titlePrefix = "Start Page - ",
 	
 	idxWidth = 900,
 	idxLogoFull  = [225,80],
