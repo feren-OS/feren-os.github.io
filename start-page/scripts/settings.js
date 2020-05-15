@@ -87,7 +87,7 @@ function tileColour() {
     for (var i = 0; i < 5; i++) {
         color += letters[Math.round(Math.random() * 6)];
     }
-    return color;
+    return color.replace("undefined", "0");
 }
 
 // Custom Tile Image Handler
