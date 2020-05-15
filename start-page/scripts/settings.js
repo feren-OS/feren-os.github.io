@@ -83,9 +83,9 @@ function tileColour() {
     var letters = "0123".split("");
     var color = "#";       
     color += letters[Math.round(Math.random() * 5)];
-    letters = "01234567".split("");
+    letters = "1234567".split("");
     for (var i = 0; i < 5; i++) {
-        color += letters[Math.round(Math.random() * 6)];
+        color += letters[Math.round(Math.random() * 5)];
     }
     return color.replace("undefined", "0");
 }
