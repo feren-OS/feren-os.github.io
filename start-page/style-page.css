@@ -69,8 +69,8 @@ body {
 	-webkit-user-select: none;
 	font-size: 16px;
 	background-color: #f1f1f1;
-	font-family: 'Open Sans', sans-serif;
-    color: black;
+	font-family: 'Inter', 'Open Sans', sans-serif;
+	color: black;
 }
 
 body, html {
@@ -96,20 +96,20 @@ body, html {
 h2 {
     margin-top: 15px;
     font-size: 42px;
-	font-family: 'Lato Light', 'Open Sans Light', 'Segoe UI', 'Helvetica Neue', 'Roboto', sans-serif;
+	font-family: 'Inter Light', 'Lato Light', 'Open Sans Light', 'Segoe UI', 'Helvetica Neue', 'Roboto', sans-serif;
     color: black;
     font-weight: normal;
 }
 
 h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', 'Lato', sans-serif;
     font-size: 20px;
     font-weight: normal;
     margin-top: 5px;
 }
 
 h4 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', 'Lato', sans-serif;
     font-size: 20px;
     font-weight: normal;
     margin-top: 0;
@@ -184,7 +184,7 @@ input[type="text"] {
     margin-bottom: 5px;
     width: 100%;
     font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Inter', 'Open Sans', sans-serif;
 }
 
 .blog-item {
@@ -202,7 +202,7 @@ input[type="text"] {
   margin-left: 110px;
   margin-right: 110px;
   margin-bottom: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   color: rgba(255,255,255,0.4);
 }
 
@@ -261,8 +261,7 @@ input[type="text"] {
 
 #input input {
 	font-size: 140px;
-	font-family: 'Open Sans Light', sans-serif;
-	font-weight: 100;
+	font-family: 'Inter Light', 'Open Sans Light', sans-serif;
 	text-align: center;
 	background: none;
 	width: 100%;
