@@ -161,15 +161,16 @@ h1 {
 }
 
 .topbar a.button {
-  float: right;
-  color: white;
-  background: linear-gradient(to bottom, #169B39, #159837);
-  text-align: center;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 12pt;
-  border: 1px solid #12802E;
-  margin: -1px 0;
+    float: right;
+    color: white;
+    background: linear-gradient(to bottom, #169B39, #159837);
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 12pt;
+    border: 1px solid #12802E;
+    margin: -1px 0;
+    font-weight: normal;
 }
 
 /* Main content */
@@ -198,9 +199,6 @@ h1 {
   min-width: 16px;
   padding: 8px 20px;
   text-decoration: none;
-}
-.btn a {
-    font-weight: normal;
 }
 
 .suggested-btn-right {
@@ -236,9 +234,6 @@ h1 {
   min-width: 16px;
   padding: 8px 20px;
   text-decoration: none;
-}
-.tiletext-btn a {
-    font-weight: normal;
 }
 
 /* 	TILE SETTINGS
