@@ -2,7 +2,7 @@
 	----------------------------------------------------- */
 
 eng.duckduckgo = {
-	logo: "duckduckgo.png",
+	logo: "engines/duckduckgo.png",
     enginestr: "DuckDuckGo",
 	uri: "https://www.ddg.co/?q=%query%"
 };
@@ -12,7 +12,7 @@ eng.duckduckgo = {
 	----------------------------------------------------- */
 
 eng.google = {
-	logo: "google.png",
+	logo: "engines/google.png",
     enginestr: "Google",
 	uri: "http://www.google.com/search?q=%query%"
 };
@@ -22,7 +22,7 @@ eng.google = {
 	----------------------------------------------------- */
 
 eng.ecosia = {
-	logo: "ecosia.png",
+	logo: "engines/ecosia.png",
     enginestr: "Ecosia",
 	uri: "https://www.ecosia.org/search?q=%query%"
 };
@@ -32,7 +32,7 @@ eng.ecosia = {
 	----------------------------------------------------- */
 
 eng.startpage = {
-	logo: "startpage.png",
+	logo: "engines/startpage.png",
     enginestr: "Startpage",
 	uri: "https://www.startpage.com/do/search?q=%query%"
 };
@@ -42,7 +42,7 @@ eng.startpage = {
 	----------------------------------------------------- */
 
 eng.youtube = {
-	logo: "youtube.png",
+	logo: "engines/youtube.png",
     enginestr: "YouTube",
 	uri: "http://www.youtube.com/results?search_query=%query%"
 };

@@ -4,27 +4,24 @@ var eng = {},
     searchPrefix = "Search ";
 
 
-function setCookie(name, value)
-{
+function setCookie(name, value) {
     var expires = "";
     expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
     document.cookie = name + "=" + (value || "") + expires;
 }
 
-function getCookie(cname)
-{
+function getCookie(cname) {
     var match = document.cookie.match(new RegExp('(^| )' + cname + '=([^;]+)'));
     if (match) return match[2];
 }
 
-function loadSP()
-{	
+function loadSP() {	
     // Migrate settings if required
     migrateSettings();
     
 	// Create Engine Index
 	
-	//buildEngineslist()
+	buildEngineslist()
 	
 	// Set up first engine
 
@@ -41,8 +38,7 @@ function loadSP()
 	$("#input input").focus();
 }
 
-function doSearch()
-{
+function doSearch() {
 	var url = eng[current.engine].uri;
     url = url.replace("%query%", encodeURIComponent($("#i").val()));
 	if (typeof eng[current.engine].languages == "object") 
@@ -52,27 +48,41 @@ function doSearch()
 	return false;
 }
 
-function nextEngine() 
-{
+function buildEngineslist() {
+    for (e in eng) {
+        var searchenginescontaineritem = document.createElement("div");
+        searchenginescontaineritem.classList.add("searchenginescontaineritem");
+        searchenginescontaineritem.setAttribute("onclick", "selectEngine('" + e + "', true)");
+        
+        document.getElementById("searchenginescontainer").appendChild(searchenginescontaineritem);
+        
+        var searchengineitem = document.createElement("img");
+        searchengineitem.classList.add("searchenginesitem");
+        searchengineitem.src = eng[e].logo;
+        
+        searchenginescontaineritem.appendChild(searchengineitem);
+        
+        console.log(e)
+    }
+}
+
+function nextEngine() {
 	selectEngine(findNext(eng, current.engine), true);
 }
 
-function prevEngine() 
-{
+function prevEngine() {
 	selectEngine(findPrevious(eng, current.engine), true);
 }
 
 
 /*  CUSTOM BG SUPPORT
     -----------------------------------------------------  */
-function setBG()
-{
+function setBG() {
     var bgurl = (getCookie('userbg') || "https://source.unsplash.com/collection/19065423")
     document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("+bgurl+")")
 }
 
-function setSettings()
-{
+function setSettings() {
     var bgurl = (getCookie('userbg') || "https://source.unsplash.com/collection/19065423");
 
     var bgimage = new Image();      
@@ -87,8 +97,7 @@ function setSettings()
 /*	TIME
 	-----------------------------------------------------  */
 
-function startTime()
-{
+function startTime() {
     var today=new Date();
     var h=today.getHours();
     var m=today.getMinutes();
@@ -113,8 +122,7 @@ function startTime()
     t=setTimeout('startTime()',3000);
 }
 
-function checkTime(i)
-{
+function checkTime(i) {
     if (i<10) {
         i="0" + i;
     }
@@ -127,13 +135,11 @@ function checkTime(i)
 var isCtrl = false;
 var isCmd = false;
 
-$(document).keyup(function(e) 
-{
+$(document).keyup(function(e) {
 	if (e.which == 17) isCtrl=false;
 	if (e.which == 91) isCmd=false;	
 }
-).keydown(function(e) 
-{
+).keydown(function(e) {
 	if (e.which == 17) isCtrl=true;
 	if (e.which == 91) isCmd=true;
 	
