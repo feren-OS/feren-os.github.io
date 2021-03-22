@@ -39,12 +39,12 @@ function loadSP()
 
 function doSearch()
 {
-	//var url = eng[current.engine].places[current.place][0];
-	//	url = url.replace("%query%", encodeURIComponent($("#i").val()));
-	//if (typeof eng[current.engine].languages == "object") 
-	//	url = url.replace("%lang%", eng[current.engine].languages[current.language]);
+	var url = eng[current.engine].uri;
+    url = url.replace("%query%", encodeURIComponent($("#i").val()));
+	if (typeof eng[current.engine].languages == "object") 
+		url = url.replace("%lang%", eng[current.engine].languages[current.language]);
 	
-	//window.location.href = url;
+	window.location.href = url;
 	return false;
 }
 
