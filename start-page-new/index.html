@@ -1,0 +1,129 @@
+<!-- source: https://zorinos.com/start/ all credit goes to the guys at Zorin OS -->
+<html xmlns="../../../www.w3.org/1999/xhtml/index.html">
+	
+<!-- Mirrored from www.logonoff.co/projects/startpage/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2017 11:37:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <link href='cssf155.css?family=Roboto:100&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/png" href="https://ferenos.weebly.com/uploads/2/0/2/6/20267985/new-logo-svg_2.png"/>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title id="title">Start Page</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script src="scripts/jquery-1.4.2.min.js" type="text/javascript">
+	</script>
+	<script src="scripts/tools.js" type="text/javascript"></script>
+    <script src="scripts/settings.js" type="text/javascript"></script>
+	<script src="scripts/scripts.js" type="text/javascript">
+        setSettings();
+    </script>
+	<script src="engines/base.js" type="text/javascript">
+	</script>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+		
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+	<script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+		  "palette": {
+		    "popup": {
+		      "background": "#000000c1",
+		      "text": "#ffffff"
+		    },
+		    "button": {
+		      "background": "#ffffff",
+		      "text": "#006aff"
+		    }
+		  },
+		  "theme": "classic",
+		  "position": "bottom-right",
+		  "content": {
+		    "message": "This website uses cookies to save your Start Page Settings offline.",
+		    "dismiss": "OK",
+		    "link": "More info",
+		    "href": "https://feren-os.github.io/start-page/cookies"
+		  }
+		})});
+    </script>
+</head>
+<body class="parallax" id="bgparallax" onload="setSettings()">
+    <div class="blackscreen"></div>
+    <div class="toprightsection" align="right">
+        <a href="https://feren-os.github.io/start-page/settings"><span style="vertical-align: middle; padding-right: 4px;">Configure Feren OS Start Page...</span>
+        <img src="resources/settings.png" alt="Start Page Settings" title="Start Page Settings" style="vertical-align: middle;"/></a>
+        <p>New to Feren OS? Check out the <a href="https://feren-os-user-guide.readthedocs.io/">Feren OS User Guide</a></p>
+    </div>
+    <div class="topleftsection" align="left">
+        <p>Hello there, it is</p>
+        <p class="timeclass">12:00 AM</p>
+        <div id="engines"></div>
+        <form id="form" onsubmit="return doSearch()">
+            <div id="input">
+                <input id="i" type="text" autocomplete="off" spellcheck="false" placeholder="Search" results="0" />
+            </div>
+            <a onclick="nextLanguage()" id="lang"></a>
+            <ul id="sugs">
+            </ul>
+        </form>
+    </div>
+    
+    <!-- Required to generate custom tile images -->
+    <canvas id="texttilecanvas" style="display: none"></canvas>
+</body>
+
+
+<footer>
+    <div class="footer">
+        <div class="shortcutscontainer1"><div class="shortcutscontainer">
+            <div class="grid-item" id="tilestandard">
+            <a href="https://ferenos.weebly.com" id="tile1url">
+                <img class="sd-item" src="resources/sd_feren-os.png" id="tile1image">
+            </a>
+            </div>
+            <div class="grid-item" id="tilestandard">
+            <a href="https://vivaldi.net/" id="tile2url">
+                <img class="sd-item" src="resources/sd_vivaldi_community.gif" id="tile2image">
+            </a>
+            </div>
+            <div class="grid-item" id="tilestandard">
+            <a href="https://ferenos.weebly.com/discord" id="tile3url">
+                <img class="sd-item" src="resources/sd_discord_feren.png" id="tile3image">
+            </a>
+            </div>
+            <div class="grid-item" id="tilestandard">
+            <a href="https://twitter.com/Feren_OS" id="tile4url">
+                <img class="sd-item" src="resources/sd_twitter_feren.png" id="tile4image">
+            </a>
+            </div>
+            <div class="grid-item" id="tilestandard">
+            <a href="https://omgubuntu.co.uk/" id="tile5url">
+                <img class="sd-item" src="resources/sd_omgubuntu.png" id="tile5image">
+            </a>
+            </div>
+            <div class="grid-item" id="tilestandard">
+            <a href="https://facebook.com/" id="tile6url">
+                <img class="sd-item" src="resources/sd_facebook.png" id="tile6image">
+            </a>
+            </div>
+            <div class="grid-item" id="tilestandard">
+            <a href="https://twitter.com/" id="tile7url">
+                <img class="sd-item" src="resources/sd_twitter.png" id="tile7image">
+            </a>
+            </div>
+            <div class="grid-item" id="tilestandard">
+            <a href="https://chrome.google.com/webstore" id="tile8url">
+                <img class="sd-item" src="resources/sd_chrome_extensions.png" id="tile8image">
+            </a>
+            </div>
+            
+            
+            <img class="sd-item" src="resources/sd_blank.png">
+        </div></div>
+    </div>
+    
+    <script>loadTiles();</script>
+</footer>
+	
+
+<!-- Mirrored from www.logonoff.co/projects/startpage/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2017 11:38:26 GMT -->
+</html>
