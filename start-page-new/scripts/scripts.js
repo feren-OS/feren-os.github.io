@@ -49,6 +49,16 @@ function doSearch()
 	return false;
 }
 
+function nextEngine() 
+{
+	selectEngine(findNext(eng, current.engine), true);
+}
+
+function prevEngine() 
+{
+	selectEngine(findPrevious(eng, current.engine), true);
+}
+
 
 /*  CUSTOM BG SUPPORT
     -----------------------------------------------------  */

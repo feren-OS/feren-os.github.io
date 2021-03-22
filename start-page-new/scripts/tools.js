@@ -27,7 +27,7 @@ function findNext(where, now)
 	return next;
 }
 
-/*function findPrevious(where, now) 
+function findPrevious(where, now) 
 {
 	var isPrevious = false;
 	var previous = null;
@@ -40,7 +40,7 @@ function findNext(where, now)
 	}
 	if (previous == null) previous = firstProp(where);
 	return previous;
-}*/
+}
 
 function inArray(needle, haystack) 
 {
