@@ -21,18 +21,20 @@ function loadSP()
 {	
 	// Create Engine Index
 	
-	//indexCreate();
+	//buildEngineslist()
 	
 	// Set up first engine
 
-    //current.engine = (getCookie("lastengine") || "duckduckgo");
-	//build(current.engine, false);
+    current.engine = (getCookie("lastengine") || "duckduckgo");
+	selectEngine(current.engine, false);
     
     // Load settings
     setSettings();
     
     // Give search box focus
 	$("#input input").focus();
+    
+    console.log(eng)
 }
 
 function doSearch()

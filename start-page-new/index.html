@@ -61,7 +61,7 @@
         
         <p style="line-height: 40px">⠀</p>
         
-        <p class="enginearea">Search with <a onclick="toggleChangeEnginePopup(true)">DuckDuckGo <img src="resources/pickengine.png" alt="Change the Search Engine..." style="vertical-align: middle;"/></a></p>
+        <p class="enginearea">Search with <a onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr" class="enginearea">DuckDuckGo</span> <img src="resources/pickengine.png" alt="Change the Search Engine..." style="vertical-align: middle;"/></a></p>
         
         <form id="form" onsubmit="return doSearch()">
             <div id="input">
@@ -78,19 +78,19 @@
         <p style="line-height: 10px">⠀</p>
         
         <div class="searchenginescontainer">
-            <div class="searchenginescontaineritem" onclick="selectEngine('duckduckgo')">
+            <div class="searchenginescontaineritem" onclick="selectEngine('duckduckgo', true)">
                 <img class="searchenginesitem" src="engines/duckduckgo.png">
             </div>
-            <div class="searchenginescontaineritem" onclick="selectEngine('google')">
+            <div class="searchenginescontaineritem" onclick="selectEngine('google', true)">
                 <img class="searchenginesitem" src="engines/google.png">
             </div>
-            <div class="searchenginescontaineritem" onclick="selectEngine('startpage')">
+            <div class="searchenginescontaineritem" onclick="selectEngine('startpage', true)">
                 <img class="searchenginesitem" src="engines/startpage.png">
             </div>
-            <div class="searchenginescontaineritem" onclick="selectEngine('youtube')">
+            <div class="searchenginescontaineritem" onclick="selectEngine('youtube', true)">
                 <img class="searchenginesitem" src="engines/youtube.png">
             </div>
-            <div class="searchenginescontaineritem" onclick="selectEngine('ecosia')">
+            <div class="searchenginescontaineritem" onclick="selectEngine('ecosia', true)">
                 <img class="searchenginesitem" src="engines/ecosia.png">
             </div>
         </div>

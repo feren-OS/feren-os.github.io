@@ -207,7 +207,11 @@ function toggleChangeEnginePopup(show) {
     }
 
 }
-function selectEngine(enginename) {
+function selectEngine(enginename, changecookie) {
+    if (changecookie == true) {
+        setCookie("lastengine", enginename);
+    }
+    
     //TODO: Code
     
     
