@@ -96,8 +96,8 @@ function getbg() {
 }
 
 function gettickboxesstates() {
-    var use24hrclock = (getCookie("24hrclock") || true);
-    document.getElementById("toggle12hrclock").checked = !use24hrclock;
+    var use12hrclock = (getCookie("12hrclock") || false);
+    document.getElementById("toggle12hrclock").checked = use12hrclock;
 }
 function tileColour() {
     var letters = "0123".split("");
@@ -201,7 +201,7 @@ function savesettings() {
 //         document.getElementById("bgurltextbox").value="/resources/bg.jpg";
 //     }
     setCookie("userbg", document.getElementById("bgurltextbox").value);
-    setCookie("use24hrclock", !document.getElementById("toggle12hrclock").checked);
+    setCookie("use12hrclock", document.getElementById("toggle12hrclock").checked);
     window.location.href = "https://feren-os.github.io/start-page";
 }
 
