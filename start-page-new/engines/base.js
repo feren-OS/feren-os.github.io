@@ -18,16 +18,6 @@ eng.google = {
 };
 
 
-/*	ECOSIA
-	----------------------------------------------------- */
-
-eng.ecosia = {
-	logo: "engines/ecosia.png",
-    enginestr: "Ecosia",
-	uri: "https://www.ecosia.org/search?q=%query%"
-};
-
-
 /*	START PAGE
 	----------------------------------------------------- */
 
@@ -45,4 +35,14 @@ eng.youtube = {
 	logo: "engines/youtube.png",
     enginestr: "YouTube",
 	uri: "http://www.youtube.com/results?search_query=%query%"
+};
+
+
+/*	ECOSIA
+	----------------------------------------------------- */
+
+eng.ecosia = {
+	logo: "engines/ecosia.png",
+    enginestr: "Ecosia",
+	uri: "https://www.ecosia.org/search?q=%query%"
 };
