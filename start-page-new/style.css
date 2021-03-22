@@ -71,7 +71,7 @@ body, html {
 
 .shortcutscontainer {
     display: flex;
-    margin: 16px;
+    margin: 16px 17px;
 }
 
 .grid-item {
