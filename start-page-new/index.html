@@ -57,10 +57,14 @@
     <div class="topleftsection" align="left">
         <p>Hello there, it is</p>
         <p class="timeclass">12:00 AM</p>
-        <div id="engines"></div>
+        
+        <p style="line-height: 40px">⠀</p>
+        
+        <p class="enginearea">Search with DuckDuckGo <img src="resources/pickengine.png" alt="Change the Search Engine..." style="vertical-align: middle;" onclick="toggleChangeEnginePopup(true)"/>:</p>
+        
         <form id="form" onsubmit="return doSearch()">
             <div id="input">
-                <input id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search"/>
+                <input id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search anything..."/>
             </div>
         </form>
     </div>
