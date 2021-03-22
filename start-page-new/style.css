@@ -67,6 +67,7 @@ body, html {
 
 .sd-item {
     max-width: 220px;
+    max-height: 38px;
 }
 
 .toprightsection {
