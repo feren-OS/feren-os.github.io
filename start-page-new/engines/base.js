@@ -1,16 +1,10 @@
-/* var apiUrl = "https://go.infinise.com/api/2.5/"; */
-var apiUrl = "";
-
-
 /*	DUCKDUCKGO	
 	----------------------------------------------------- */
 
 eng.duckduckgo = {
-	pageTitle: "DuckDuckGo",
 	logo: "duckduckgo.png",
-	places: {
-		'Search DuckDuckGo' : ["https://www.ddg.co/?q=%query%", true]
-	}
+    placeholderstr: "Search DuckDuckGo...",
+	uri: "https://www.ddg.co/?q=%query%"
 };
 
 
@@ -18,25 +12,19 @@ eng.duckduckgo = {
 	----------------------------------------------------- */
 
 eng.google = {
-	pageTitle: "Google",
 	logo: "google.png",
-	places: {
-		'Web'    : ["http://www.google.com/search?q=%query%&hl=en",		apiUrl+"?eng=google&timestamp=%time%&q=%query%"],
-		'Images' : ["http://images.google.com/images?q=%query%&hl=en",	apiUrl+"?eng=google&timestamp=%time%&q=%query%"],
-		'Maps'   : ["http://maps.google.com/maps?q=%query%",			false]
-	}
+    placeholderstr: "Search Google...",
+	uri: "http://www.google.com/search?q=%query%"
 };
 
 
 /*	ECOSIA
 	----------------------------------------------------- */
 
-eng.twitter = {
-	pageTitle: "Ecosia",
+eng.ecosia = {
 	logo: "ecosia.png",
-	places: {
-		'Search Ecosia' : ["https://www.ecosia.org/search?q=%query%", false]
-	}
+    placeholderstr: "Search Ecosia...",
+	uri: "https://www.ecosia.org/search?q=%query%"
 };
 
 
@@ -44,11 +32,9 @@ eng.twitter = {
 	----------------------------------------------------- */
 
 eng.startpage = {
-	pageTitle: "StartPage",
 	logo: "startpage.png",
-	places: {
-		'Web'    : ["https://www.startpage.com/do/search?q=%query%&hl=en",		apiUrl+"?eng=google&timestamp=%time%&q=%query%"]
-	}
+    placeholderstr: "Search StartPage...",
+	uri: "https://www.startpage.com/do/search?q=%query%"
 };
 
 
@@ -56,9 +42,7 @@ eng.startpage = {
 	----------------------------------------------------- */
 
 eng.youtube = {
-	pageTitle: "YouTube",
 	logo: "youtube.png",
-	places: {
-		'Videos' : ["http://www.youtube.com/results?search_query=%query%", apiUrl+"?eng=youtube&timestamp=%time%&q=%query%"]
-	}
+    placeholderstr: "Search YouTube...",
+	uri: "http://www.youtube.com/results?search_query=%query%"
 };

@@ -9,8 +9,7 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <title id="title">Start Page</title>
 	<link rel="stylesheet" href="style.css" type="text/css">
-	<script src="scripts/jquery-1.4.2.min.js" type="text/javascript">
-	</script>
+	
 	<script src="scripts/tools.js" type="text/javascript"></script>
     <script src="scripts/settings.js" type="text/javascript"></script>
 	<script src="scripts/scripts.js" type="text/javascript">
@@ -59,11 +58,8 @@
         <div id="engines"></div>
         <form id="form" onsubmit="return doSearch()">
             <div id="input">
-                <input id="i" type="text" autocomplete="off" spellcheck="false" placeholder="Search" results="0" />
+                <input id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search"/>
             </div>
-            <a onclick="nextLanguage()" id="lang"></a>
-            <ul id="sugs">
-            </ul>
         </form>
     </div>
     
@@ -82,7 +78,7 @@
             </div>
             <div class="grid-item" id="tilestandard">
             <a href="https://vivaldi.net/" id="tile2url">
-                <img class="sd-item" src="resources/sd_vivaldi_community.gif" id="tile2image">
+                <img class="sd-item" src="resources/sd_vivaldi_community.png" id="tile2image">
             </a>
             </div>
             <div class="grid-item" id="tilestandard">
