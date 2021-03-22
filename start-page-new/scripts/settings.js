@@ -212,6 +212,8 @@ function selectEngine(enginename, changecookie) {
         setCookie("lastengine", enginename);
     }
     
+    document.getElementById("searchenginestr").innerHTML = eng[enginename].enginestr;
+    
     //TODO: Code
     
     

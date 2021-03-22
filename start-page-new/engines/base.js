@@ -33,7 +33,7 @@ eng.ecosia = {
 
 eng.startpage = {
 	logo: "startpage.png",
-    enginestr: "StartPage",
+    enginestr: "Startpage",
 	uri: "https://www.startpage.com/do/search?q=%query%"
 };
 
