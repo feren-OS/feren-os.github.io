@@ -75,7 +75,7 @@ body, html {
     line-height: 20pt;
 }
 
-h1 {
+h1, .h1 {
     font-size: 20pt;
     font-weight: normal;
     margin-top: 5px;
@@ -244,8 +244,8 @@ h1 {
     margin: 0 auto;
     top: 50%;
     left: 50%;
-    width: 650px;
-    height: 410px;
+    width: 670px;
+    height: 350px;
     transform: translate(-50%, -50%);
     padding: 40px;
 	background-color: #f1f1f1;

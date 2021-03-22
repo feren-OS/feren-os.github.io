@@ -1,4 +1,7 @@
-var getbgurl = getbgurl || {}
+var fadeDur = 350,
+    halffadeDur = 175;
+
+
 // Tiles configurations
 var DefaultTileURLs = [
     "",
@@ -153,14 +156,14 @@ function openTileSettings(tile) {
     document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile]);
     document.getElementById("currenttileimagetextbox").placeholder = DefaultTileImages[tile];
     
-    document.getElementById("tilesettingspopup").style.display = "inline-block";
-    document.getElementById("overlay").style.display = "block";
+    $("#overlay").fadeIn(halffadeDur);
+    $("#tilesettingspopup").fadeIn(halffadeDur);
 }
 
 function closeTileSettings() {
-    document.getElementById("tilesettingspopup").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
     loadTiles();
+    $("#overlay").fadeOut(halffadeDur);
+    $("#tilesettingspopup").fadeOut(halffadeDur);
 }
 
 function saveTileSettings() {
@@ -197,9 +200,6 @@ function clearTileSettings() {
 }
 
 function savesettings() {
-//     if (document.getElementById("bgurltextbox").value = null) {
-//         document.getElementById("bgurltextbox").value="/resources/bg.jpg";
-//     }
     setCookie("userbg", document.getElementById("bgurltextbox").value);
     setCookie("12hrclock", document.getElementById("toggle12hrclock").checked);
     window.location.href = "https://feren-os.github.io/start-page";
@@ -217,11 +217,11 @@ function selectTileImage(tileimage) {
 function toggleChangeEnginePopup(show) {
     
     if (show == true) {
-        document.getElementById("searchenginepopup").style.display = "inline-block";
-        document.getElementById("overlay").style.display = "block";
+        $("#overlay").fadeIn(halffadeDur);
+        $("#searchenginepopup").fadeIn(halffadeDur);
     } else {
-        document.getElementById("searchenginepopup").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
+        $("#overlay").fadeOut(halffadeDur);
+        $("#searchenginepopup").fadeOut(halffadeDur);
     }
 
 }
@@ -232,10 +232,6 @@ function selectEngine(enginename, changecookie) {
     
     document.getElementById("searchenginestr").innerHTML = eng[enginename].enginestr;
     current.engine = enginename;
-    
-    //TODO: Code
-    
-    
     
     toggleChangeEnginePopup(false);
 }

@@ -9,6 +9,10 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <title id="title">Start Page Settings</title>
     <link rel="stylesheet" href="style-page.css" type="text/css">
+	
+	<script src="scripts/jquery-1.4.2.min.js" type="text/javascript">
+	</script>
+	
     <script type="text/javascript" src="scripts/settings.js"></script>
 		
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
@@ -48,21 +52,21 @@
             migrateSettings();
         </script>
         <h5> </h5>
-		<h3>Background Image:</h3>
+		<h1>Background Image:</h1>
 		Choose a background image for the Start Page: <i>(only URLs are currently supported)</i>
         <p>
         <input id="bgurltextbox" class="textbox" type="text" placeholder="https://source.unsplash.com/collection/19065423"/></p>
         <script type="text/javascript">
             getbg();
         </script>
-        <h3>⠀</h3>
-        <h3>Customise the Start Page:</h3>
+        <h1>⠀</h1>
+        <h1>Customise the Start Page:</h1>
         <div class="extraspacing"><p>
         <input id="toggle12hrclock" type="checkbox"> Use a 12-hour clock instead of a 24-hour one</p>
         </div>
         <div id="tilestoggleon">
-            <h3>⠀</h3>
-            <h3>Start Page shortcuts:</h3>
+            <h1>⠀</h1>
+            <h1>Start Page shortcuts:</h1>
             Manage the shortcuts by clicking on them to change their settings:
             <div class="shortcutscontainer">
                 <div class="grid-item" id="tilestandard" onclick="openTileSettings(1)">
@@ -106,9 +110,8 @@
                     </span>
                 </div>
             </div>
-        <h3>⠀</h3>
-        <h3>⠀</h3>
-        <h3>Credits:</h3>
+        <h1>⠀</h1>
+        <h1>Credits:</h1>
         <p>• The Zorin OS Team for some of the Start Page code</p>
         <p>• The Feren OS Team for the Feren OS Start Page</p>
         <p>• Vivaldi for the Vivaldi Browser and Vivaldi Community logos</p>
@@ -129,7 +132,7 @@
     <script>loadTiles(); gettickboxesstates();</script>
         
     <div class="tilesettingspopup" id="tilesettingspopup">
-        <h4>Tile <span id="currenttilenumber">??? ??? ??? ???</span>:</h4>
+        <h1>Tile <span id="currenttilenumber" class="h1">??? ??? ??? ???</span>:</h1>
         <p>What should this tile be called?</p>
         <input id="currenttilenametextbox" class="textbox" type="text"/><p/>
         <br>
