@@ -19,6 +19,9 @@ function getCookie(cname)
 
 function loadSP()
 {	
+    // Migrate settings if required
+    migrateSettings();
+    
 	// Create Engine Index
 	
 	//buildEngineslist()

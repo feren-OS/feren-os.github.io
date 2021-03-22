@@ -54,6 +54,41 @@ function getCookie(cname)
     if (match) return match[2];
 }
 
+function migrateSettings() {
+    if (getCookie("lastconfigmirgration") == "202103") {
+        return;
+    }
+    
+    if (getCookie("userbg") == "../start-page/resources/bg.jpg") {
+        setCookie("userbg", "https://source.unsplash.com/collection/19065423");
+    }
+    if (getCookie("tile1currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile1currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile2currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile2currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile3currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile3currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile4currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile4currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile5currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile5currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile6currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile6currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile7currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile7currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile8currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile8currentimage", "resources/sd_vivaldi_community.png");
+    }
+    
+    setCookie("lastconfigmirgration", "202103");
+}
 
 function getbg() {
     var bgurltext = (getCookie("userbg") || "https://source.unsplash.com/collection/19065423");
