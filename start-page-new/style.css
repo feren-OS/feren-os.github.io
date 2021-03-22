@@ -5,6 +5,11 @@
     font-family: Inter, Arial, Helvetica, sans-serif;
     color: rgba(255, 255, 255, 1);
 	font-size: 10pt;
+    cursor: default;
+}
+
+input {
+    cursor: text;
 }
 
 a {
