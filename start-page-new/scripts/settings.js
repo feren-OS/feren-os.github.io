@@ -201,7 +201,7 @@ function savesettings() {
 //         document.getElementById("bgurltextbox").value="/resources/bg.jpg";
 //     }
     setCookie("userbg", document.getElementById("bgurltextbox").value);
-    setCookie("use12hrclock", document.getElementById("toggle12hrclock").checked);
+    setCookie("12hrclock", document.getElementById("toggle12hrclock").checked);
     window.location.href = "https://feren-os.github.io/start-page";
 }
 
