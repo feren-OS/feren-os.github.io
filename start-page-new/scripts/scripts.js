@@ -88,11 +88,17 @@ function setSettings() {
 
     var bgimage = new Image();      
     bgimage.src=bgurl;
+    
+    bgimage.onerror=pageLoadedAnim
 
     $(bgimage).load(function() {
         document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("+bgurl+")");
-        $(".blackscreen").fadeOut(500); 
+        pageLoadedAnim();
     });
+}
+
+function pageLoadedAnim() {
+    $(".blackscreen").fadeOut(500);
 }
 
 /*	TIME
@@ -108,6 +114,9 @@ function startTime() {
     if (getCookie("12hrclock") == "true") {
         if (h >= 12 && h != 24) {
             h = h - 12
+            if (h == 0) {
+                h = 12
+            }
             timesuffix="PM"
         } else if (h == 24) {
             h = 0
