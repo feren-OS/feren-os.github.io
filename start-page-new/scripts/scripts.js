@@ -7,7 +7,7 @@ var eng = {},
 function setCookie(name, value) {
     var expires = "";
     expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-    policy = "; SameSite=Strict";
+    policy = "; SameSite=Lax; Secure";
     document.cookie = name + "=" + (value || "") + expires + policy;
 }
 
