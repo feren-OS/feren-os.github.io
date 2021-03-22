@@ -95,25 +95,9 @@ function getbg() {
     document.getElementById("bgurltextbox").value = bgurltext;
 }
 
-function hidetickboxspecifics() {
-    // Only if we are in Settings
-    if (Boolean(location.href.search("settings") == -1) == false) {
-        if (document.getElementById("hidetilestoggle").checked == true) {
-            document.getElementById("tilestoggleon").style.display = "none";
-        } else {
-            document.getElementById("tilestoggleon").style.display = "block";
-        }
-    }
-}
-
 function gettickboxesstates() {
-    var hidetiles = getCookie("hidetiles");
-    document.getElementById("hidetilestoggle").checked = hidetiles;
-    var hideblog = getCookie("hideblog");
-    document.getElementById("hideblogtoggle").checked = hideblog;
-    var hidecredits = getCookie("hidecredits");
-    document.getElementById("hidecreditstoggle").checked = hidecredits;
-    hidetickboxspecifics();
+    var use24hrclock = (getCookie("24hrclock") || true);
+    document.getElementById("toggle12hrclock").checked = !use24hrclock;
 }
 function tileColour() {
     var letters = "0123".split("");
@@ -217,9 +201,7 @@ function savesettings() {
 //         document.getElementById("bgurltextbox").value="/resources/bg.jpg";
 //     }
     setCookie("userbg", document.getElementById("bgurltextbox").value);
-    setCookie("hidetiles", document.getElementById("hidetilestoggle").checked);
-    setCookie("hideblog", document.getElementById("hideblogtoggle").checked);
-    setCookie("hidecredits", document.getElementById("hidecreditstoggle").checked);
+    setCookie("use24hrclock", !document.getElementById("toggle12hrclock").checked);
     window.location.href = "https://feren-os.github.io/start-page";
 }
 

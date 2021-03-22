@@ -14,6 +14,11 @@
 	text-decoration: none;
 }
 
+a {
+    color: #006aff;
+    cursor: hand;
+}
+
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
