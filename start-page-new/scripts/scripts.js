@@ -28,13 +28,14 @@ function loadSP()
     current.engine = (getCookie("lastengine") || "duckduckgo");
 	selectEngine(current.engine, false);
     
+    // Start clock
+    startTime();
+    
     // Load settings
     setSettings();
     
     // Give search box focus
 	$("#input input").focus();
-    
-    console.log(eng)
 }
 
 function doSearch()
@@ -70,6 +71,42 @@ function setSettings()
     });
 }
 
+/*	TIME
+	-----------------------------------------------------  */
+
+function startTime()
+{
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    // add a zero in front of numbers less than 10
+    m=checkTime(m);
+    
+    if (getCookie("24hrclock") == false) {
+        if (h >= 12 && h != 24) {
+            h = h - 12
+            timesuffix="PM"
+        } else if (h == 24) {
+            h = 0
+            timesuffix="AM"
+        } else {
+            timesuffix="AM"
+        }
+        document.getElementById('timeid').innerHTML=h+":"+m+" "+timesuffix;
+    } else {
+        document.getElementById('timeid').innerHTML=h+":"+m;
+    }
+    
+    t=setTimeout('startTime()',3000);
+}
+
+function checkTime(i)
+{
+    if (i<10) {
+        i="0" + i;
+    }
+    return i;
+}
 
 /*	KEYBOARD SHORTCUTS
 	-----------------------------------------------------  */
