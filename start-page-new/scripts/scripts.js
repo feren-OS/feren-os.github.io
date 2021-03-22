@@ -105,7 +105,7 @@ function startTime() {
     // add a zero in front of numbers less than 10
     m=checkTime(m);
     
-    if (getCookie("12hrclock") == true) {
+    if (getCookie("12hrclock") == "true") {
         if (h >= 12 && h != 24) {
             h = h - 12
             timesuffix="PM"
