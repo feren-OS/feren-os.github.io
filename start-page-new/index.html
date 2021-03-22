@@ -49,6 +49,7 @@
 </head>
 <body class="parallax" id="bgparallax" onload="loadSP()">
     <div class="blackscreen"></div>
+    <div class="overlay" id="overlay"></div>
     <div class="toprightsection" align="right">
         <a href="https://feren-os.github.io/start-page/settings"><span style="vertical-align: middle; padding-right: 4px;">Configure Feren OS Start Page...</span>
         <img src="resources/settings.png" alt="Start Page Settings" title="Start Page Settings" style="vertical-align: middle;"/></a>
@@ -60,7 +61,7 @@
         
         <p style="line-height: 40px">⠀</p>
         
-        <p class="enginearea">Search with DuckDuckGo <img src="resources/pickengine.png" alt="Change the Search Engine..." style="vertical-align: middle;" onclick="toggleChangeEnginePopup(true)"/>:</p>
+        <p class="enginearea">Search with <a onclick="toggleChangeEnginePopup(true)">DuckDuckGo <img src="resources/pickengine.png" alt="Change the Search Engine..." style="vertical-align: middle;"/></a></p>
         
         <form id="form" onsubmit="return doSearch()">
             <div id="input">
@@ -71,6 +72,29 @@
     
     <!-- Required to generate custom tile images -->
     <canvas id="texttilecanvas" style="display: none"></canvas>
+    
+    <div class="searchenginepopup" id="searchenginepopup">
+        <h1>Choose a search engine</h1>
+        <p style="line-height: 10px">⠀</p>
+        
+        <div class="searchenginescontainer">
+            <div class="searchenginescontaineritem" onclick="selectEngine('duckduckgo')">
+                <img class="searchenginesitem" src="engines/duckduckgo.png">
+            </div>
+            <div class="searchenginescontaineritem" onclick="selectEngine('google')">
+                <img class="searchenginesitem" src="engines/google.png">
+            </div>
+            <div class="searchenginescontaineritem" onclick="selectEngine('startpage')">
+                <img class="searchenginesitem" src="engines/startpage.png">
+            </div>
+            <div class="searchenginescontaineritem" onclick="selectEngine('youtube')">
+                <img class="searchenginesitem" src="engines/youtube.png">
+            </div>
+            <div class="searchenginescontaineritem" onclick="selectEngine('ecosia')">
+                <img class="searchenginesitem" src="engines/ecosia.png">
+            </div>
+        </div>
+    </div>
 </body>
 
 

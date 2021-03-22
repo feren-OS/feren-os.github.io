@@ -194,3 +194,23 @@ function selectTileImageText() {
 function selectTileImage(tileimage) {
     document.getElementById("currenttileimagetextbox").value = DefaultTileImages[tileimage];
 }
+
+
+function toggleChangeEnginePopup(show) {
+    
+    if (show == true) {
+        document.getElementById("searchenginepopup").style.display = "inline-block";
+        document.getElementById("overlay").style.display = "block";
+    } else {
+        document.getElementById("searchenginepopup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+}
+function selectEngine(enginename) {
+    //TODO: Code
+    
+    
+    
+    toggleChangeEnginePopup(false);
+}
