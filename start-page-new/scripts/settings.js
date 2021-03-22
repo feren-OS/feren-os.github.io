@@ -93,8 +93,8 @@ function tileColour() {
 // Custom Tile Image Handler
 function generateImage(text) {
     var tCtx = document.getElementById("texttilecanvas").getContext("2d");
-    tCtx.canvas.width = 240;
-    tCtx.canvas.height = 196;
+    tCtx.canvas.width = 220;
+    tCtx.canvas.height = 38;
     tCtx.fillStyle = tileColour();
     tCtx.fillRect(0, 0, tCtx.canvas.width, tCtx.canvas.height);
     tCtx.fillStyle = "white";

@@ -17,17 +17,23 @@ function getCookie(cname)
     if (match) return match[2];
 }
 
-$(function()
+function loadSP()
 {	
 	// Create Engine Index
 	
-	indexCreate();
+	//indexCreate();
 	
 	// Set up first engine
 
-    current.engine = (getCookie("lastengine") || "duckduckgo");
-	build(current.engine, false);
-});
+    //current.engine = (getCookie("lastengine") || "duckduckgo");
+	//build(current.engine, false);
+    
+    // Load settings
+    setSettings();
+    
+    // Give search box focus
+	$("#input input").focus();
+}
 
 function doSearch()
 {
