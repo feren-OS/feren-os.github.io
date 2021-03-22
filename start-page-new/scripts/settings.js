@@ -44,7 +44,8 @@ function setCookie(name, value)
 {
     var expires = "";
     expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-    document.cookie = name + "=" + (value || "") + expires;
+    policy = "; SameSite=Strict";
+    document.cookie = name + "=" + (value || "") + expires + policy;
 }
 
 function getCookie(cname)
