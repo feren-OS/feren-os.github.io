@@ -12,6 +12,24 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 10pt;
+    cursor: default;
+}
+
+input[type="text"] {
+    cursor: text;
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+a {
+    color: #006aff;
+    cursor: hand;
+    font-weight: 600;
 }
 
 .stop-scrolling {
@@ -19,33 +37,8 @@
   overflow: hidden;
 }
 
-@-webkit-keyframes slide {
-	0% {-webkit-transform: translateY(80px); opacity: 0;}
-	100% {-webkit-transform: translateY(0px); opacity: 1;}
-}
-
-@-moz-keyframes slide {
-	0% {-moz-transform: translateY(80px); opacity: 0;}
-	100% {-moz-transform: translateY(0px); opacity: 1;}
-}
-
-@-ms-keyframes slide {
-	0% {-ms-transform: translateY(80px); opacity: 0;}
-	100% {-ms-transform: translateY(0px); opacity: 1;}
-}
-
-@-o-keyframes slide {
-	0% {-o-transform: translateY(80px); opacity: 0;}
-	100% {-o-transform: translateY(0px); opacity: 1;}
-}
-
-@keyframes slide {
-	0% {transform: translateY(80px); opacity: 0;}
-	100% {transform: translateY(0px); opacity: 1;}
-}
-
 placeholder {
-	color: rgba(0,0,0, 0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-input-placeholder {
@@ -61,16 +54,13 @@ placeholder {
 }
 
 :-ms-input-placeholder {
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 body {
 	-webkit-text-size-adjust: none;
 	-webkit-user-select: none;
-	font-size: 16px;
 	background-color: #f1f1f1;
-	font-family: 'Inter', 'Open Sans', sans-serif;
-	color: black;
 }
 
 body, html {
@@ -85,34 +75,10 @@ body, html {
     line-height: 20pt;
 }
 
-#containersearch {
-	position: absolute;
-	left: 0px;
-	top: 93px;
-	width: 100%;
-	height: 144px;
-}
-
-h2 {
-    margin-top: 15px;
-    font-size: 42px;
-	font-family: 'Inter Light', 'Lato Light', 'Open Sans Light', 'Segoe UI', 'Helvetica Neue', 'Roboto', sans-serif;
-    color: black;
-    font-weight: normal;
-}
-
-h3 {
-    font-family: 'Inter', 'Lato', sans-serif;
-    font-size: 20px;
+h1, .h1 {
+    font-size: 20pt;
     font-weight: normal;
     margin-top: 5px;
-}
-
-h4 {
-    font-family: 'Inter', 'Lato', sans-serif;
-    font-size: 20px;
-    font-weight: normal;
-    margin-top: 0;
 }
 
 .shortcutscontainer {
@@ -168,172 +134,12 @@ h4 {
 
 .sd-item {
     float: center;
-    max-width: 240px;
-    max-height: 196px;
+    max-width: 220px;
+    max-height: 38px;
     padding: 0px;
     box-shadow: 0 0 rgba(0, 0, 0, 0.1), 0 0 2px 2px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
-
-.btn {
-
-}
-
-input[type="text"] {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    font-size: 16px;
-	font-family: 'Inter', 'Open Sans', sans-serif;
-}
-
-.blog-item {
-  margin-top: 20px;
-  margin-left: 110px;
-  margin-right: 110px;
-  box-shadow: 0 0 rgba(0, 0, 0, 0.1), 0 0 3px 3px rgba(0, 0, 0, 0.07);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: white;
-  border-radius: 5px;
-}
-
-.disclaimers {
-  margin-top: 20px;
-  margin-left: 110px;
-  margin-right: 110px;
-  margin-bottom: 25px;
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  color: rgba(255,255,255,0.4);
-}
-
-.parallax { 
-    /* The image used */
-    background-image: url("resources/kyle-hinkson-498968-unsplash.jpg");
-
-    /* Set a specific height */
-    height: 100%; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-/*	ENGINE INDEX
-	----------------------------------------------------- */
-
-#engines {
-	width: 700px;
-	height: 80px;
-	position: absolute;
-	top: 10px;
-	left: 50%;
-	margin-left: -350px;
-	margin-bottom: 10%;
-	-webkit-animation:slide 0.75s ease;
-	moz-animation:slide 0.75s ease;
-	ms-animation:slide 0.75s ease;
-	o-animation:slide 0.75s ease;
-	animation:slide 0.75s ease;
-}
-
-#engines a {
-	display: block;
-	width: 225px;
-	height: 80px;
-	cursor: pointer;
-	opacity: 0.0;
-	position: absolute;
-}
-
-#engines a img {
-	display: block;
-	height: 100%;
-	width: 100%;
-}
-
-
-
-/* 	SEARCH BOX
-	----------------------------------------------------- */
-
-#input input {
-	font-size: 140px;
-	font-family: 'Inter Extra Light', 'Open Sans Light', sans-serif;
-	text-align: center;
-	background: none;
-	width: 100%;
-	outline: 0;
-	color: rgba(255,255,255,1);
-	border: 0px;
-}
-
-#lang {
-	position: absolute;
-	right: 49px;
-	top: 39px;
-	font-size: 13px;
-	font-weight: bold;
-	padding: 3px 5px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	color: #ffffff;
-	cursor: pointer;
-}
-
-#lang:hover {
-	background: #ffffff;
-	color: white;
-}
-
-#lang:active {
-	background: #ffffff;
-}
-
-#method {
-	display: none;
-}
-
-
-
-/* 	SEARCH SUGGESTIONS
-	----------------------------------------------------- */
-
-#sugs {
-	display: none;
-	position: absolute;
-	background: rgba(255,255,255,0.8);
-	border: 1px solid #212121;
-	border-top: 0;
-	left: 41px;
-	top: 68px;
-	right: 41px;
-	list-style: none;
-	padding: 3px 0;
-	font-size: 11px;
-	-webkit-border-bottom-left-radius: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	-moz-border-radius-bottomleft: 5px;
-	-moz-border-radius-bottomright: 5px;
-}
-
-#sugs li a {
-	display: block;
-	padding: 3px 8px;
-	color: #212121;
-}
-
-#sugs li.active a {
-	background: #212121;
-	color: white;
-}
-
-#sugs li a:active {
-	background: #212121;
-}
-
 
 /* The navigation bar */
 .topbar {
@@ -355,15 +161,16 @@ input[type="text"] {
 }
 
 .topbar a.button {
-  float: right;
-  color: white;
-  background: linear-gradient(to bottom, #169B39, #159837);
-  text-align: center;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 12pt;
-  border: 1px solid #12802E;
-  margin: -1px 0;
+    float: right;
+    color: white;
+    background: linear-gradient(to bottom, #169B39, #159837);
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 12pt;
+    border: 1px solid #12802E;
+    margin: -1px 0;
+    font-weight: normal;
 }
 
 /* Main content */
@@ -371,18 +178,6 @@ input[type="text"] {
     margin-top: 65px; /* Add a top margin to avoid content overlay */
     margin-left: 20px;
     margin-right: 20px;
-}
-
-
-
-.btn-blue {
-  border: 0;
-  background: none;
-  background-color: #006aff;
-  color: white;
-  padding: .5em 2em;
-  text-decoration: none;
-  font-size: 16px;
 }
 
 .btn-alt {
@@ -404,7 +199,6 @@ input[type="text"] {
   min-width: 16px;
   padding: 8px 20px;
   text-decoration: none;
-  font-size: 10pt;
 }
 
 .suggested-btn-right {
@@ -417,7 +211,6 @@ input[type="text"] {
   min-width: 16px;
   padding: 8px 20px;
   text-decoration: none;
-  font-size: 10pt;
 }
 
 .destructive-btn {
@@ -429,7 +222,6 @@ input[type="text"] {
   min-width: 16px;
   padding: 8px 20px;
   text-decoration: none;
-  font-size: 10pt;
   margin-right: 4px;
 }
 
@@ -442,7 +234,6 @@ input[type="text"] {
   min-width: 16px;
   padding: 8px 20px;
   text-decoration: none;
-  font-size: 10pt;
 }
 
 /* 	TILE SETTINGS
@@ -454,7 +245,7 @@ input[type="text"] {
     top: 50%;
     left: 50%;
     width: 670px;
-    height: 410px;
+    height: 350px;
     transform: translate(-50%, -50%);
     padding: 40px;
 	background-color: #f1f1f1;

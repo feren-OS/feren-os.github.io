@@ -1,4 +1,7 @@
-var getbgurl = getbgurl || {}
+var fadeDur = 350,
+    halffadeDur = 175;
+
+
 // Tiles configurations
 var DefaultTileURLs = [
     "",
@@ -6,10 +9,10 @@ var DefaultTileURLs = [
     "https://vivaldi.net/",
     "https://ferenos.weebly.com/discord",
     "https://twitter.com/Feren_OS",
+    "https://chrome.google.com/webstore",
     "https://omgubuntu.co.uk/",
     "https://facebook.com/",
-    "https://twitter.com/",
-    "https://chrome.google.com/webstore"
+    "https://twitter.com/"
 ]
 var DefaultTileNames = [
     "",
@@ -17,21 +20,21 @@ var DefaultTileNames = [
     "Vivaldi Community",
     "Feren Community Discord",
     "Feren OS on Twitter",
+    "Get More Extensions",
     "OMG! Ubuntu",
     "Facebook",
-    "Twitter",
-    "Get More Extensions"
+    "Twitter"
 ]
 var DefaultTileImages = [
     "",
     "resources/sd_feren-os.png",
-    "resources/sd_vivaldi_community.gif",
+    "resources/sd_vivaldi_community.png",
     "resources/sd_discord_feren.png",
     "resources/sd_twitter_feren.png",
+    "resources/sd_chrome_extensions.png",
     "resources/sd_omgubuntu.png",
     "resources/sd_facebook.png",
     "resources/sd_twitter.png",
-    "resources/sd_chrome_extensions.png",
     "resources/sd_feren.png",
     "resources/sd_vivaldi.png",
     "resources/sd_generic.png",
@@ -44,7 +47,8 @@ function setCookie(name, value)
 {
     var expires = "";
     expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-    document.cookie = name + "=" + (value || "") + expires;
+    policy = "; SameSite=Lax; Secure";
+    document.cookie = name + "=" + (value || "") + expires + policy;
 }
 
 function getCookie(cname)
@@ -53,31 +57,50 @@ function getCookie(cname)
     if (match) return match[2];
 }
 
+function migrateSettings() {
+    if (getCookie("lastconfigmirgration") == "202103") {
+        return;
+    }
+    
+    if (getCookie("userbg") == "../start-page/resources/bg.jpg") {
+        setCookie("userbg", "https://source.unsplash.com/collection/19065423");
+    }
+    if (getCookie("tile1currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile1currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile2currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile2currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile3currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile3currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile4currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile4currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile5currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile5currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile6currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile6currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile7currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile7currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile8currentimage") == "resources/sd_vivaldi_community.gif" ) {
+        setCookie("tile8currentimage", "resources/sd_vivaldi_community.png");
+    }
+    
+    setCookie("lastconfigmirgration", "202103");
+}
 
 function getbg() {
-    var bgurltext = (getCookie("userbg") || "../start-page/resources/bg.jpg");
+    var bgurltext = (getCookie("userbg") || "https://source.unsplash.com/collection/19065423");
     document.getElementById("bgurltextbox").value = bgurltext;
 }
 
-function hidetickboxspecifics() {
-    // Only if we are in Settings
-    if (Boolean(location.href.search("settings") == -1) == false) {
-        if (document.getElementById("hidetilestoggle").checked == true) {
-            document.getElementById("tilestoggleon").style.display = "none";
-        } else {
-            document.getElementById("tilestoggleon").style.display = "block";
-        }
-    }
-}
-
 function gettickboxesstates() {
-    var hidetiles = getCookie("hidetiles");
-    document.getElementById("hidetilestoggle").checked = hidetiles;
-    var hideblog = getCookie("hideblog");
-    document.getElementById("hideblogtoggle").checked = hideblog;
-    var hidecredits = getCookie("hidecredits");
-    document.getElementById("hidecreditstoggle").checked = hidecredits;
-    hidetickboxspecifics();
+    var use12hrclock = (getCookie("12hrclock") || false);
+    document.getElementById("toggle12hrclock").checked = use12hrclock;
 }
 function tileColour() {
     var letters = "0123".split("");
@@ -93,13 +116,13 @@ function tileColour() {
 // Custom Tile Image Handler
 function generateImage(text) {
     var tCtx = document.getElementById("texttilecanvas").getContext("2d");
-    tCtx.canvas.width = 240;
-    tCtx.canvas.height = 196;
+    tCtx.canvas.width = 220;
+    tCtx.canvas.height = 38;
     tCtx.fillStyle = tileColour();
     tCtx.fillRect(0, 0, tCtx.canvas.width, tCtx.canvas.height);
     tCtx.fillStyle = "white";
     tCtx.textAlign = "center";
-    tCtx.font = "20px Lato"
+    tCtx.font = "16px Inter"
     tCtx.fillText(text, (tCtx.canvas.width / 2), (tCtx.canvas.height / 2) + 8);
     return tCtx.canvas.toDataURL();
 }
@@ -133,14 +156,14 @@ function openTileSettings(tile) {
     document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile]);
     document.getElementById("currenttileimagetextbox").placeholder = DefaultTileImages[tile];
     
-    document.getElementById("tilesettingspopup").style.display = "inline-block";
-    document.getElementById("overlay").style.display = "block";
+    $("#overlay").fadeIn(halffadeDur);
+    $("#tilesettingspopup").fadeIn(halffadeDur);
 }
 
 function closeTileSettings() {
-    document.getElementById("tilesettingspopup").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
     loadTiles();
+    $("#overlay").fadeOut(halffadeDur);
+    $("#tilesettingspopup").fadeOut(halffadeDur);
 }
 
 function saveTileSettings() {
@@ -177,13 +200,8 @@ function clearTileSettings() {
 }
 
 function savesettings() {
-//     if (document.getElementById("bgurltextbox").value = null) {
-//         document.getElementById("bgurltextbox").value="/resources/bg.jpg";
-//     }
     setCookie("userbg", document.getElementById("bgurltextbox").value);
-    setCookie("hidetiles", document.getElementById("hidetilestoggle").checked);
-    setCookie("hideblog", document.getElementById("hideblogtoggle").checked);
-    setCookie("hidecredits", document.getElementById("hidecreditstoggle").checked);
+    setCookie("12hrclock", document.getElementById("toggle12hrclock").checked);
     window.location.href = "https://feren-os.github.io/start-page";
 }
 
@@ -193,4 +211,27 @@ function selectTileImageText() {
 
 function selectTileImage(tileimage) {
     document.getElementById("currenttileimagetextbox").value = DefaultTileImages[tileimage];
+}
+
+
+function toggleChangeEnginePopup(show) {
+    
+    if (show == true) {
+        $("#overlay").fadeIn(halffadeDur);
+        $("#searchenginepopup").fadeIn(halffadeDur);
+    } else {
+        $("#overlay").fadeOut(halffadeDur);
+        $("#searchenginepopup").fadeOut(halffadeDur);
+    }
+
+}
+function selectEngine(enginename, changecookie) {
+    if (changecookie == true) {
+        setCookie("lastengine", enginename);
+    }
+    
+    document.getElementById("searchenginestr").innerHTML = eng[enginename].enginestr;
+    current.engine = enginename;
+    
+    toggleChangeEnginePopup(false);
 }

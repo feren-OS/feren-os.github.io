@@ -9,6 +9,10 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <title id="title">Start Page Settings</title>
     <link rel="stylesheet" href="style-page.css" type="text/css">
+	
+	<script src="scripts/jquery-1.4.2.min.js" type="text/javascript">
+	</script>
+	
     <script type="text/javascript" src="scripts/settings.js"></script>
 		
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
@@ -44,26 +48,26 @@
         <a class="button" onclick="savesettings()">Save and Return</a>
     </div>
     <div class="main">
+        <script type="text/javascript">
+            migrateSettings();
+        </script>
         <h5> </h5>
-		<h3>Background Image:</h3>
+		<h1>Background Image:</h1>
 		Choose a background image for the Start Page: <i>(only URLs are currently supported)</i>
         <p>
-        <input id="bgurltextbox" class="textbox" type="text" placeholder="../start-page/resources/bg.jpg"/></p>
+        <input id="bgurltextbox" class="textbox" type="text" placeholder="https://source.unsplash.com/collection/19065423"/></p>
         <script type="text/javascript">
             getbg();
         </script>
-        <h3>⠀</h3>
-        <h3>Hide elements of Start Page:</h3>
-		Choose what elements of the Start Page you'd like to have hidden:
+        <h1>⠀</h1>
+        <h1>Customise the Start Page:</h1>
         <div class="extraspacing"><p>
-        <input id="hidetilestoggle" type="checkbox" onclick="hidetickboxspecifics()"> All tiles</p>
-        <input id="hideblogtoggle" type="checkbox" onclick="hidetickboxspecifics()"> Feren OS Blog and Twitter preview</p>
-        <input id="hidecreditstoggle" type="checkbox" onclick="hidetickboxspecifics()"> Credits</p>
+        <input id="toggle12hrclock" type="checkbox"> Use a 12-hour clock instead of a 24-hour one</p>
         </div>
         <div id="tilestoggleon">
-            <h3>⠀</h3>
-            <h3>Start Page tiles:</h3>
-            Manage the tiles by clicking on them to change their settings:
+            <h1>⠀</h1>
+            <h1>Start Page shortcuts:</h1>
+            Manage the shortcuts by clicking on them to change their settings:
             <div class="shortcutscontainer">
                 <div class="grid-item" id="tilestandard" onclick="openTileSettings(1)">
                     <span class="grid-item-contents">
@@ -87,26 +91,39 @@
                 </div>
                 <div class="grid-item" id="tilestandard" onclick="openTileSettings(5)">
                     <span class="grid-item-contents">
-                    <img class="sd-item" src="resources/sd_omgubuntu.png" border="0" id="tile5image">
+                    <img class="sd-item" src="resources/sd_chrome_extensions.png" border="0" id="tile5image">
                     </span>
                 </div>
                 <div class="grid-item" id="tilestandard" onclick="openTileSettings(6)">
                     <span class="grid-item-contents">
-                    <img class="sd-item" src="resources/sd_facebook.png" border="0" id="tile6image">
+                    <img class="sd-item" src="resources/sd_omgubuntu.png" border="0" id="tile6image">
                     </span>
                 </div>
                 <div class="grid-item" id="tilestandard" onclick="openTileSettings(7)">
                     <span class="grid-item-contents">
-                    <img class="sd-item" src="resources/sd_twitter.png" border="0" id="tile7image">
+                    <img class="sd-item" src="resources/sd_facebook.png" border="0" id="tile7image">
                     </span>
                 </div>
                 <div class="grid-item" id="tilestandard" onclick="openTileSettings(8)">
                     <span class="grid-item-contents">
-                    <img class="sd-item" src="resources/sd_chrome_extensions.png" border="0" id="tile8image">
+                    <img class="sd-item" src="resources/sd_twitter.png" border="0" id="tile8image">
                     </span>
                 </div>
             </div>
-        <h3>⠀</h3>
+        <h1>⠀</h1>
+        <h1>Credits:</h1>
+        <p>• The Zorin OS Team for some of the Start Page code</p>
+        <p>• The Feren OS Team for the Feren OS Start Page</p>
+        <p>• Vivaldi for the Vivaldi Browser and Vivaldi Community logos</p>
+        <p>• Discord for the Discord logo</p>
+        <p>• Twitter for the Twitter logo</p>
+        <p>• Facebook for the Facebook logo</p>
+        <p>• Ohso Ltd for the OMG! Ubuntu logo</p>
+        <p>• Unsplash for the Unsplash logo</p>
+        <p>• Nohat for the Wikipedia Logo (concept by Paullusmagnus) <a onclick=" window.open('https://creativecommons.org/licenses/by-sa/3.0','_blank')">(CC BY-SA 3.0)</a></p>
+        <p>• <a onclick=" window.open('https://github.com/feren-OS/feren-os.github.io/pulls?utf8=✓&q=is%3Apr+is%3Amerged','_blank')">Everyone who has contributed improvements to this Start Page</a></p>
+        <p>• Everyone on <a onclick=" window.open('https://unsplash.com','_blank')">Unsplash</a> who have made <a onclick=" window.open('https://unsplash.com/collections/19065423','_blank')">backgrounds featured in this Start Page</a></p>
+        <p>⠀</p>
     </div></div>
 
     <!-- Required to generate custom tile images -->
@@ -115,7 +132,7 @@
     <script>loadTiles(); gettickboxesstates();</script>
         
     <div class="tilesettingspopup" id="tilesettingspopup">
-        <h4>Tile <span id="currenttilenumber">??? ??? ??? ???</span>:</h4>
+        <h1>Tile <span id="currenttilenumber" class="h1">??? ??? ??? ???</span>:</h1>
         <p>What should this tile be called?</p>
         <input id="currenttilenametextbox" class="textbox" type="text"/><p/>
         <br>
@@ -147,7 +164,7 @@
                     <img class="smol-sd-item" src="resources/vivaldicommunityicon.png" border="0">
                 </span>
             </div>
-            <div class="smol-grid-item" onclick="selectTileImage(8)">
+            <div class="smol-grid-item" onclick="selectTileImage(5)">
                 <span class="grid-item-contents">
                     <img class="smol-sd-item" src="resources/vivaldiextensionsicon.png" border="0">
                 </span>
@@ -167,17 +184,17 @@
                     <img class="smol-sd-item" src="resources/discordicon.png" border="0">
                 </span>
             </div>
-            <div class="smol-grid-item" onclick="selectTileImage(7)">
+            <div class="smol-grid-item" onclick="selectTileImage(8)">
                 <span class="grid-item-contents">
                     <img class="smol-sd-item" src="resources/twittericon.png" border="0">
                 </span>
             </div>
-            <div class="smol-grid-item" onclick="selectTileImage(6)">
+            <div class="smol-grid-item" onclick="selectTileImage(7)">
                 <span class="grid-item-contents">
                     <img class="smol-sd-item" src="resources/facebookicon.png" border="0">
                 </span>
             </div>
-            <div class="smol-grid-item" onclick="selectTileImage(5)">
+            <div class="smol-grid-item" onclick="selectTileImage(6)">
                 <span class="grid-item-contents">
                     <img class="smol-sd-item" src="https://149366088.v2.pressablecdn.com/wp-content/themes/omgubuntu-theme-20_04_0/images/favicons/favicon-96x96.png" border="0">
                 </span>
