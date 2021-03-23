@@ -8,6 +8,16 @@ eng.duckduckgo = {
 };
 
 
+/*	ECOSIA
+	----------------------------------------------------- */
+
+eng.ecosia = {
+	logo: "engines/ecosia.png",
+    enginestr: "Ecosia",
+	uri: "https://www.ecosia.org/search?q=%query%"
+};
+
+
 /*	GOOGLE
 	----------------------------------------------------- */
 
@@ -25,16 +35,6 @@ eng.bing = {
 	logo: "engines/bing.png",
     enginestr: "Microsoft Bing",
 	uri: "https://www.bing.com/search?q=%query%"
-};
-
-
-/*	ECOSIA
-	----------------------------------------------------- */
-
-eng.ecosia = {
-	logo: "engines/ecosia.png",
-    enginestr: "Ecosia",
-	uri: "https://www.ecosia.org/search?q=%query%"
 };
 
 
