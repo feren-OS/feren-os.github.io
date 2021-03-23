@@ -23,6 +23,9 @@ function loadSP() {
 	// Create Engine Index
 	
 	buildEngineslist()
+    
+    // Resize Engines dialog
+    calculateEnginesSize()
 	
 	// Set up first engine
 
@@ -66,6 +69,28 @@ function buildEngineslist() {
         
         searchenginescontaineritem.appendChild(searchengineitem);
     }
+}
+
+function calculateEnginesSize() {
+    var numberofrows = 0;
+    var numberofenginesdone = 0;
+    for (e in eng) {
+        numberofenginesdone += 1
+        if (numberofenginesdone !== 0 && numberofenginesdone % 2 !== 0) {
+            numberofrows += 1
+        }
+    }
+    
+    var currentboxsize = document.getElementById("searchenginepopup").offsetHeight;
+    var calculatedboxsize = 10;
+        
+    if (numberofrows != 0) {
+        calculatedboxsize += 10
+    }
+    calculatedboxsize += 100*numberofrows
+    
+    
+    document.getElementById("searchenginepopup").style.height = calculatedboxsize+"px";
 }
 
 function nextEngine() {
