@@ -119,16 +119,18 @@ function startTime() {
             }
             timesuffix="PM"
         } else if (h == 24) {
-            h = 00
+            h = 12
             timesuffix="AM"
         } else {
             timesuffix="AM"
         }
+        h=checkTime(h);
         document.getElementById('timeid').innerHTML=h+":"+m+" "+timesuffix;
     } else {
         if (h == 24) {
-            h = 00
+            h = 0
         }
+        h=checkTime(h);
         document.getElementById('timeid').innerHTML=h+":"+m;
     }
     
