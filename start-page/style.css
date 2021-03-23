@@ -195,7 +195,7 @@ h1 {
 
 .searchenginesscrollbox {
     overflow: auto;
-    height: calc(100% - 2px);
+    height: calc(100% - 36px);
     width: 100%;
 }
 
