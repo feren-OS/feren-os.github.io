@@ -56,3 +56,13 @@ eng.youtube = {
     enginestr: "YouTube",
 	uri: "http://www.youtube.com/results?search_query=%query%"
 };
+
+
+/*	QWANT
+	----------------------------------------------------- */
+
+eng.qwant = {
+	logo: "engines/qwant.png",
+    enginestr: "Qwant",
+	uri: "https://www.qwant.com/?q=%query%"
+};
