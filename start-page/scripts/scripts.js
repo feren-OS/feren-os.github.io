@@ -184,7 +184,7 @@ $(document).keyup(function(e) {
 	if (e.which == 17) isCtrl=true;
 	if (e.which == 91) isCmd=true;
 	
-	if (e.which == 39 && isCtrl == true)				{ /* Arrow Right */	nextEngine(); }
+	if (e.which == 39 && isCtrl == true)				{ /* Arrow Right */	nextEngine(); toggleChangeEnginePopup(false); }
 });
 
 
