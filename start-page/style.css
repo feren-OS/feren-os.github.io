@@ -45,10 +45,12 @@ body, html {
     height: 100%;
 }
 
-.shownscrollbar::-webkit-scrollbar:not(.searchenginesscrollbox) { width: 0; height: 10px; background: transparent; }
-.shownscrollbar::-webkit-scrollbar-thumb:not(.searchenginesscrollbox) { background: rgba(255, 255, 255, 0.2); }
-::-webkit-scrollbar:not(.searchenginesscrollbox) { width: 0; height: 10px; background: transparent; }
-::-webkit-scrollbar-thumb:not(.searchenginesscrollbox) { background: transparent; }
+.shownscrollbar::-webkit-scrollbar { background: transparent; height: 10px; }
+.shownscrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+.dialogscrollbar::-webkit-scrollbar { background: transparent; width: 10px; }
+.dialogscrollbar::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.2); }
+::-webkit-scrollbar { background: transparent; }
+::-webkit-scrollbar-thumb { background: transparent; }
 
 .shortcutscontainer1 {
     overflow: overlay;

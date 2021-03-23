@@ -217,9 +217,11 @@ function selectTileImage(tileimage) {
 function toggleChangeEnginePopup(show) {
     
     if (show == true) {
+        $(".searchenginesscrollbox").addClass("dialogscrollbar");
         $("#overlay").fadeIn(halffadeDur);
         $("#searchenginepopup").fadeIn(halffadeDur);
     } else {
+        $(".searchenginesscrollbox").removeClass("dialogscrollbar");
         $("#overlay").fadeOut(halffadeDur);
         $("#searchenginepopup").fadeOut(halffadeDur);
     }
