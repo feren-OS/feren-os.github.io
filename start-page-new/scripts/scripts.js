@@ -29,6 +29,9 @@ function loadSP() {
     current.engine = (getCookie("lastengine") || "duckduckgo");
 	selectEngine(current.engine, false);
     
+    // Hover events
+    setupHoverEvents();
+    
     // Start clock
     startTime();
     
@@ -62,8 +65,6 @@ function buildEngineslist() {
         searchengineitem.src = eng[e].logo;
         
         searchenginescontaineritem.appendChild(searchengineitem);
-        
-        console.log(e)
     }
 }
 
@@ -160,3 +161,45 @@ $(document).keyup(function(e) {
 	
 	if (e.which == 39 && isCtrl == true)				{ /* Arrow Right */	nextEngine(); }
 });
+
+
+
+/*	SHORTCUTS SCROLLING
+	-----------------------------------------------------  */
+var h_amount = '';
+function scroll_h() {
+    $('#shortcutscontainer1').animate({
+        scrollLeft: h_amount
+    }, 100, 'linear',function() {
+        if (h_amount != '') {
+            scroll_h();
+        }
+    });
+}
+
+function setupHoverEvents() {
+    var bottomshortcutsarea = document.getElementById("shortcutscontainer1");
+    var leftscrollarea = document.getElementById("direction_left");
+    var rightscrollarea = document.getElementById("direction_right");
+
+    bottomshortcutsarea.addEventListener("mouseenter", function( event ) {
+        $("#shortcutscontainer1").addClass("shownscrollbar");
+    }, false);
+    bottomshortcutsarea.addEventListener("mouseleave", function( event ) {
+        $("#shortcutscontainer1").removeClass("shownscrollbar");
+    }, false);
+
+
+    $('.direction_left').hover(function() {
+        h_amount = '-=50';
+        scroll_h();
+    }, function() {
+        h_amount = '';
+    });
+    $('.direction_right').hover(function() {
+        h_amount = '+=50';
+        scroll_h();
+    }, function() {
+        h_amount = '';
+    });
+}

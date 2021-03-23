@@ -45,9 +45,13 @@ body, html {
     height: 100%;
 }
 
+.shownscrollbar::-webkit-scrollbar { width: 0; height: 10px; background: transparent; }
+.shownscrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+::-webkit-scrollbar { width: 0; height: 10px; background: transparent; }
+::-webkit-scrollbar-thumb { background: transparent; }
+
 .shortcutscontainer1 {
     overflow: overlay;
-    height: 70px;
 }
 
 .shortcutscontainer {
@@ -220,4 +224,26 @@ h1 {
     max-height: 80px;
     max-width: 230px;
     flex: 1;
+}
+
+
+
+/* 	SHORTCUTS SCROLLING
+	----------------------------------------------------- */
+
+.direction_left {
+    z-index:10;
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width: 20px;
+}
+.direction_right {
+    z-index:10;
+    position:fixed;
+    top:0;
+    right:0;
+    height:100%;
+    width: 20px;
 }
