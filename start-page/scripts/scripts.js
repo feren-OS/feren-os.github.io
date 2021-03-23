@@ -88,6 +88,10 @@ function calculateEnginesSize() {
         calculatedboxsize += 10
     }
     calculatedboxsize += 100*numberofrows
+        
+    if (numberofrows != 0) {
+        calculatedboxsize += 10
+    }
     
     
     document.getElementById("searchenginepopup").style.height = calculatedboxsize+"px";
