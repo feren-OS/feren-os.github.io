@@ -46,3 +46,13 @@ eng.ecosia = {
     enginestr: "Ecosia",
 	uri: "https://www.ecosia.org/search?q=%query%"
 };
+
+
+/*	BING
+	----------------------------------------------------- */
+
+eng.bing = {
+	logo: "engines/bing.png",
+    enginestr: "Microsoft Bing",
+	uri: "https://www.bing.com/search?q=%query%"
+};
