@@ -123,7 +123,7 @@ function generateImage(text) {
     tCtx.fillStyle = "white";
     tCtx.textAlign = "center";
     tCtx.font = "16px Inter"
-    tCtx.fillText(text, (tCtx.canvas.width / 2), (tCtx.canvas.height / 2) + 8);
+    tCtx.fillText(text, (tCtx.canvas.width / 2), (tCtx.canvas.height / 2));
     return tCtx.canvas.toDataURL();
 }
 
