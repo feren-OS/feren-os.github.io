@@ -51,7 +51,7 @@ function loadSP() {
 
 function browserOptimisations() {
     if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) {
-        const myNode = document.getElementById("shortcutscontainer1").innerHTML = "<div class='shortcutscontainer' id='shortcutscontainer' style='text-align:left; color:rgba(255, 255, 255, 0.4)'>It looks like you are using Mozilla Firefox. Unfortunately, Gecko-based browsers lack required functionality such as div scrollbox support, so some features had to be disabled. Please switch to a browser that supports these standards and isn't stuck in 2012 (for example Mozilla Firefox STILL has no touch screen support by default in Feren OS and more, in 2021, while Chromium has had support for YEARS) to experience the Feren OS Start Page properly.</div>";
+        const myNode = document.getElementById("shortcutscontainer1").innerHTML = "<div class='shortcutscontainer' id='shortcutscontainer' style='text-align:left; color:rgba(255, 255, 255, 0.7)'>It looks like you are using Mozilla Firefox. Unfortunately, Gecko-based browsers lack required functionality such as div scrollbox support, so some features had to be disabled. Please switch to a browser that supports these standards and isn't stuck in 2012 (for example Mozilla Firefox STILL has no touch screen support by default in Feren OS and more, in 2021, while Chromium has had support for YEARS) to experience the Feren OS Start Page properly.</div>";
     }
 }
 
