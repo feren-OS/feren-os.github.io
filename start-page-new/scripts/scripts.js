@@ -118,7 +118,7 @@ function startTime() {
                 h = 12
             }
             timesuffix="PM"
-        } else if (h == 24) {
+        } else if (h == 0) {
             h = 12
             timesuffix="AM"
         } else {
