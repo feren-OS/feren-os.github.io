@@ -119,13 +119,16 @@ function startTime() {
             }
             timesuffix="PM"
         } else if (h == 24) {
-            h = 0
+            h = 00
             timesuffix="AM"
         } else {
             timesuffix="AM"
         }
         document.getElementById('timeid').innerHTML=h+":"+m+" "+timesuffix;
     } else {
+        if (h == 24) {
+            h = 00
+        }
         document.getElementById('timeid').innerHTML=h+":"+m;
     }
     
