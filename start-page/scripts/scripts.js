@@ -82,7 +82,7 @@ function calculateEnginesSize() {
     }
     
     var currentboxsize = document.getElementById("searchenginepopup").offsetHeight;
-    var calculatedboxsize = 23;
+    var calculatedboxsize = 33;
         
     if (numberofrows != 0) {
         calculatedboxsize += 10
