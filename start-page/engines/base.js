@@ -86,3 +86,13 @@ eng.baidu = {
     enginestr: "百度搜索",
 	uri: "https://www.baidu.com/s?wd=%query%"
 };
+
+
+/*	NICOVIDEO
+	----------------------------------------------------- */
+
+eng.nicovideo = {
+	logo: "engines/nicovideo.png",
+    enginestr: "ニコニコ動画",
+	uri: "https://www.nicovideo.jp/search/%query%"
+};
