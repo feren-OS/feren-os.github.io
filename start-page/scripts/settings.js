@@ -58,7 +58,7 @@ function getCookie(cname)
 }
 
 function migrateSettings() {
-    if (getCookie("lastconfigmirgration") == "202104") {
+    if (getCookie("lastconfigmigration") == "202103") {
         return;
     }
     
@@ -93,7 +93,7 @@ function migrateSettings() {
         setCookie("tile8currentimage", "resources/sd_vivaldi_community.png");
     }
     
-    setCookie("lastconfigmirgration", "202104");
+    setCookie("lastconfigmigration", "202103");
 }
 
 function getbg() {
