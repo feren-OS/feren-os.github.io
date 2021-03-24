@@ -66,3 +66,13 @@ eng.qwant = {
     enginestr: "Qwant",
 	uri: "https://www.qwant.com/?q=%query%"
 };
+
+
+/*	ALLES GO BRR
+	----------------------------------------------------- */
+
+eng.alles = {
+	logo: "engines/alles.png",
+    enginestr: "Alles",
+	uri: "https://alles.cx/s/%query%"
+};
