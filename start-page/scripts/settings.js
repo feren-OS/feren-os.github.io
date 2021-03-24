@@ -58,12 +58,15 @@ function getCookie(cname)
 }
 
 function migrateSettings() {
-    if (getCookie("lastconfigmirgration") == "202103") {
+    if (getCookie("lastconfigmirgration") == "202104") {
         return;
     }
     
     if (getCookie("userbg") == "../start-page/resources/bg.jpg") {
         setCookie("userbg", "https://source.unsplash.com/collection/19065423");
+    }
+    if (getCookie("lastengine") == "alles") {
+        setCookie("lastengine", "duckduckgo");
     }
     if (getCookie("tile1currentimage") == "resources/sd_vivaldi_community.gif" ) {
         setCookie("tile1currentimage", "resources/sd_vivaldi_community.png");
