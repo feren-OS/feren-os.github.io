@@ -93,7 +93,7 @@ function migrateSettings() {
         setCookie("tile8currentimage", "resources/sd_vivaldi_community.png");
     }
     
-    setCookie("lastconfigmirgration", "202103");
+    setCookie("lastconfigmirgration", "202104");
 }
 
 function getbg() {
