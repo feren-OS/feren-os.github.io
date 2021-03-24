@@ -76,3 +76,13 @@ eng.yahoo = {
     enginestr: "Yahoo",
 	uri: "https://search.yahoo.com/search?p=%query%"
 };
+
+
+/*	BAIDU
+	----------------------------------------------------- */
+
+eng.baidu = {
+	logo: "engines/baidu.png",
+    enginestr: "百度搜索",
+	uri: "https://www.baidu.com/s?wd=%query%"
+};
