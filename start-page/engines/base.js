@@ -68,11 +68,11 @@ eng.qwant = {
 };
 
 
-/*	ALLES GO BRR
+/*	YAHOO
 	----------------------------------------------------- */
 
-eng.alles = {
-	logo: "engines/alles.png",
-    enginestr: "Alles",
-	uri: "https://alles.cx/s/%query%"
+eng.yahoo = {
+	logo: "engines/yahoo.png",
+    enginestr: "Yahoo",
+	uri: "https://search.yahoo.com/search?p=%query%"
 };
