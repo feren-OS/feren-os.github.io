@@ -137,6 +137,8 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     var tilescount = getCookie("tilescurrentcount");
+    // Clear the current entries
+    document.getElementById("shortcutscontainer").innerHTML = '';
     for (i=1; i <= tilescount; i++) {
         
         var shortcutscontaineritem = document.createElement("div");
