@@ -109,6 +109,13 @@ function loadTiles() {
             startpageitem.setAttribute("onclick", "openTileSettings(" + e + ")");            
         }
     }
+    
+    if (Boolean(location.href.search("settings") == -1) == true) {
+        var dummystartpageitem = document.createElement("img");
+        dummystartpageitem.classList.add("sd-item");
+        dummystartpageitem.src = "resources/sd_blank.png";
+        shortcutscontaineritem.appendChild(dummystartpageitem);
+    }
 }
 
 function buildEngineslist() {
