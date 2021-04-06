@@ -83,7 +83,7 @@ function loadTiles() {
         shortcutscontaineritem.appendChild(startpageitem);
         
         // If we"re in the Settings page, then add grid-item-contents
-        if (Boolean(location.href.search("settings") == -1) == true) {
+        if (Boolean(location.href.search("settings") == -1) == false) {
             var griditemspan = document.createElement("span");
             griditemspan.classList.add("grid-item-contents");
             shortcutscontaineritem.appendChild(griditemspan);
@@ -111,6 +111,7 @@ function loadTiles() {
         }
     }
     
+    // Add dummy item for right-side spacing
     if (Boolean(location.href.search("settings") == -1) == true) {
         var dummystartpageitem = document.createElement("img");
         dummystartpageitem.classList.add("sd-item");
