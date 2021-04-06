@@ -138,7 +138,7 @@ function generateImage(text) {
 
 function loadTiles() {
     var i;
-    var tilescount = getCookie("tilescurrentcount");
+    var tilescount = getCookie("tilescurrentcount") || predefinedtiles;
     // Clear the current entries
     document.getElementById("shortcutscontainer").innerHTML = '';
     for (i=1; i <= tilescount; i++) {
@@ -227,6 +227,20 @@ function openTileSettings(tile) {
     
     $("#overlay").fadeIn(halffadeDur);
     $("#tilesettingspopup").fadeIn(halffadeDur);
+}
+
+function minusTile() {
+    var tilescurrentcount = getCookie("tilescurrentcount") || 8;
+    tilescurrentcount--;
+    setCookie("tilescurrentcount", tilescurrentcount);
+    loadTiles();
+}
+
+function plusTile() {
+    var tilescurrentcount = getCookie("tilescurrentcount") || 8;
+    tilescurrentcount++;
+    setCookie("tilescurrentcount", tilescurrentcount);
+    loadTiles();
 }
 
 function closeTileSettings() {
