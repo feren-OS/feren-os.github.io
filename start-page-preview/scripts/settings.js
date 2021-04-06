@@ -149,14 +149,14 @@ function loadTiles() {
         startpageitem.classList.add("sd-item");
         startpageitem.id = "tile"+i+"url";
         
-        shortcutscontaineritem.appendChild(startpageitem);
-        
         // If we"re in the Settings page, then add grid-item-contents
         if (Boolean(location.href.search("settings") == -1) == false) {
             var griditemspan = document.createElement("span");
             griditemspan.classList.add("grid-item-contents");
             shortcutscontaineritem.appendChild(griditemspan);
         }
+        
+        shortcutscontaineritem.appendChild(startpageitem);
         
         if (getCookie("tile" + i + "usestext") == "true") {
             startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
@@ -185,7 +185,7 @@ function loadTiles() {
         var dummystartpageitem = document.createElement("img");
         dummystartpageitem.classList.add("sd-item");
         dummystartpageitem.src = "resources/sd_blank.png";
-        shortcutscontaineritem.appendChild(dummystartpageitem);
+        document.getElementById("shortcutscontainer").appendChild(dummystartpageitem);
     }
 }
 
