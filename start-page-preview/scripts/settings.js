@@ -147,7 +147,9 @@ function loadTiles() {
         
         var startpageitem = document.createElement("img");
         startpageitem.classList.add("sd-item");
-        startpageitem.id = "tile"+i+"url";
+        
+        var startpageitemurl = document.createElement("a");
+        startpageitemurl.id = "tile"+i+"url";
         
         // If we"re in the Settings page, then add grid-item-contents
         if (Boolean(location.href.search("settings") == -1) == false) {
@@ -156,7 +158,8 @@ function loadTiles() {
             shortcutscontaineritem.appendChild(griditemspan);
         }
         
-        shortcutscontaineritem.appendChild(startpageitem);
+        shortcutscontaineritem.appendChild(startpageitemurl);
+        startpageitemurl.appendChild(startpageitem);
         
         if (getCookie("tile" + i + "usestext") == "true") {
             startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
@@ -171,12 +174,12 @@ function loadTiles() {
         // Check if we"re not in the Settings page when trying to set tile links
         if (Boolean(location.href.search("settings") == -1) == true) {
             if (i < 9 ) { // Is the tile in the predefined list?
-                startpageitem.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
+                startpageitemurl.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
             } else {
-                startpageitem.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
+                startpageitemurl.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
             }
         } else {
-            startpageitem.setAttribute("onclick", "openTileSettings(" + e + ")");            
+            griditemspan.setAttribute("onclick", "openTileSettings(" + e + ")");            
         }
     }
     
