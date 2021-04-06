@@ -137,7 +137,7 @@ function generateImage(text) {
 function loadTiles() {
     var i;
     var tilescount = getCookie("tilescurrentcount");
-    for (i=1; i < tilescount; i++) {
+    for (i=1; i <= tilescount; i++) {
         
         var shortcutscontaineritem = document.createElement("div");
         shortcutscontaineritem.classList.add("grid-item");
