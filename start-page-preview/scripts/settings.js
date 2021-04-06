@@ -180,7 +180,7 @@ function loadTiles() {
                 startpageitemurl.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
             }
         } else {
-            griditemspan.setAttribute("onclick", "openTileSettings(" + e + ")");            
+            griditemspan.setAttribute("onclick", "openTileSettings(" + i + ")");            
         }
     }
     
