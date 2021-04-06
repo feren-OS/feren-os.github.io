@@ -161,7 +161,7 @@ function loadTiles() {
         if (getCookie("tile" + i + "usestext") == "true") {
             startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
         } else {
-            if (i < tilescount ) { // Is the tile in the predefined list?
+            if (i < 9 ) { // Is the tile in the predefined list?
                 startpageitem.src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
             } else {
                 startpageitem.src = (getCookie("tile" + i + "currentimage") || "resources/sd_generic.png");
@@ -170,7 +170,7 @@ function loadTiles() {
         
         // Check if we"re not in the Settings page when trying to set tile links
         if (Boolean(location.href.search("settings") == -1) == true) {
-            if (i < tilescount ) { // Is the tile in the predefined list?
+            if (i < 9 ) { // Is the tile in the predefined list?
                 startpageitem.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
             } else {
                 startpageitem.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
