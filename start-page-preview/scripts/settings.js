@@ -140,12 +140,20 @@ function loadTiles() {
         if (getCookie("tile" + i + "usestext") == "true") {
             document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
         } else {
-            document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
+            if (i < 9 ) { // Is the tile in the predefined list?
+                document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
+            } else {
+                document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || "resources/sd_generic.png");
+            }
         }
         
         // Check if we"re not in the Settings page before trying to set tile links
         if (Boolean(location.href.search("settings") == -1) == true) {
-            document.getElementById("tile" + i + "url").href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
+            if (i < 9 ) { // Is the tile in the predefined list?
+                document.getElementById("tile" + i + "url").href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
+            } else {
+                document.getElementById("tile" + i + "url").href = (getCookie("tile" + i + "currenturl") || "https://example.com");
+            }
         }
     }
 }
