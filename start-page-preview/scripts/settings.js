@@ -147,6 +147,7 @@ function loadTiles() {
         
         var startpageitem = document.createElement("img");
         startpageitem.classList.add("sd-item");
+        startpageitem.id = "tile"+i+"image";
         
         var startpageitemurl = document.createElement("a");
         startpageitemurl.id = "tile"+i+"url";
