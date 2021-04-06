@@ -201,14 +201,29 @@ function openTileSettings(tile) {
     //currenttilenumber is used in the settings popout dialog
     document.getElementById("currenttilenumber").innerHTML = tile;
     
-    document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || DefaultTileNames[tile] || "");
-    document.getElementById("currenttilenametextbox").placeholder = (DefaultTileNames[tile] || "");
+    if (tile <= predefinedtiles ) { // Is the tile in the predefined list?
+        document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || DefaultTileNames[tile]);
+        document.getElementById("currenttilenametextbox").placeholder = DefaultTileNames[tile];
+    } else {
+        document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || "");
+        document.getElementById("currenttilenametextbox").placeholder = "";    
+    }
     
-    document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || DefaultTileURLs[tile] || fallbackwebsite);
-    document.getElementById("currenttileurltextbox").placeholder = (DefaultTileURLs[tile] || fallbackwebsite);
+    if (tile <= predefinedtiles ) { // Is the tile in the predefined list?
+        document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || DefaultTileURLs[tile]);
+        document.getElementById("currenttileurltextbox").placeholder = DefaultTileURLs[tile];
+    } else {
+        document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || fallbackwebsite);
+        document.getElementById("currenttileurltextbox").placeholder = fallbackwebsite;
+    }
     
-    document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile] || "resources/sd_generic.png");
-    document.getElementById("currenttileimagetextbox").placeholder = (DefaultTileImages[tile] || "resources/sd_generic.png");
+    if (tile <= predefinedtiles ) { // Is the tile in the predefined list?
+        document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile]);
+        document.getElementById("currenttileimagetextbox").placeholder = DefaultTileImages[tile];
+    } else {
+        document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || "resources/sd_generic.png");
+        document.getElementById("currenttileimagetextbox").placeholder = "resources/sd_generic.png";
+    }
     
     $("#overlay").fadeIn(halffadeDur);
     $("#tilesettingspopup").fadeIn(halffadeDur);
