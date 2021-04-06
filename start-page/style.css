@@ -62,8 +62,6 @@ body, html {
 }
 
 .grid-item {
-    display: flex;
-    flex: 1px;
     margin-right: 16px;
 }
 

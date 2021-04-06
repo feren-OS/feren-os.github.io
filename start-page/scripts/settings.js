@@ -1,5 +1,7 @@
 var fadeDur = 350,
-    halffadeDur = 175;
+    halffadeDur = 175,
+    predefinedtiles = 8,
+    fallbackwebsite = "";
 
 
 // Tiles configurations
@@ -58,7 +60,7 @@ function getCookie(cname)
 }
 
 function migrateSettings() {
-    if (getCookie("lastconfigmigration") == "202103") {
+    if (getCookie("lastconfigmigration") == "202104") {
         return;
     }
     
@@ -93,7 +95,11 @@ function migrateSettings() {
         setCookie("tile8currentimage", "resources/sd_vivaldi_community.png");
     }
     
-    setCookie("lastconfigmigration", "202103");
+    if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null ) {
+        setCookie("tilescurrentcount", predefinedtiles);
+    }
+    
+    setCookie("lastconfigmigration", "202104");
 }
 
 function getbg() {
@@ -132,17 +138,62 @@ function generateImage(text) {
 
 function loadTiles() {
     var i;
-    for (i=1; i < 9; i++) {
-        if (getCookie("tile" + i + "usestext") == "true") {
-            document.getElementById("tile" + i + "image").src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
-        } else {
-            document.getElementById("tile" + i + "image").src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
+    var tilescount = getCookie("tilescurrentcount") || predefinedtiles;
+    // Clear the current entries
+    document.getElementById("shortcutscontainer").innerHTML = '';
+    for (i=1; i <= tilescount; i++) {
+        
+        var shortcutscontaineritem = document.createElement("div");
+        shortcutscontaineritem.classList.add("grid-item");
+        shortcutscontaineritem.id = "tilestandard";
+        
+        document.getElementById("shortcutscontainer").appendChild(shortcutscontaineritem);
+        
+        var startpageitem = document.createElement("img");
+        startpageitem.classList.add("sd-item");
+        startpageitem.id = "tile"+i+"image";
+        
+        var startpageitemurl = document.createElement("a");
+        startpageitemurl.id = "tile"+i+"url";
+        
+        // If we"re in the Settings page, then add grid-item-contents
+        if (Boolean(location.href.search("settings") == -1) == false) {
+            var griditemspan = document.createElement("span");
+            griditemspan.classList.add("grid-item-contents");
+            shortcutscontaineritem.appendChild(griditemspan);
         }
         
-        // Check if we"re not in the Settings page before trying to set tile links
-        if (Boolean(location.href.search("settings") == -1) == true) {
-            document.getElementById("tile" + i + "url").href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
+        shortcutscontaineritem.appendChild(startpageitemurl);
+        startpageitemurl.appendChild(startpageitem);
+        
+        if (getCookie("tile" + i + "usestext") == "true") {
+            startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
+        } else {
+            if (i <= predefinedtiles ) { // Is the tile in the predefined list?
+                startpageitem.src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
+            } else {
+                startpageitem.src = (getCookie("tile" + i + "currentimage") || "resources/sd_generic.png");
+            }
         }
+        
+        // Check if we"re not in the Settings page when trying to set tile links
+        if (Boolean(location.href.search("settings") == -1) == true) {
+            if (i <= predefinedtiles ) { // Is the tile in the predefined list?
+                startpageitemurl.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
+            } else {
+                startpageitemurl.href = (getCookie("tile" + i + "currenturl") || fallbackwebsite);
+            }
+        } else {
+            shortcutscontaineritem.setAttribute("onclick", "openTileSettings(" + i + ")");    
+        }
+    }
+    
+    // Add dummy item for right-side spacing
+    if (Boolean(location.href.search("settings") == -1) == true) {
+        var dummystartpageitem = document.createElement("img");
+        dummystartpageitem.classList.add("sd-item");
+        dummystartpageitem.src = "resources/sd_blank.png";
+        document.getElementById("shortcutscontainer").appendChild(dummystartpageitem);
     }
 }
 
@@ -150,17 +201,46 @@ function openTileSettings(tile) {
     //currenttilenumber is used in the settings popout dialog
     document.getElementById("currenttilenumber").innerHTML = tile;
     
-    document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || DefaultTileNames[tile]);
-    document.getElementById("currenttilenametextbox").placeholder = DefaultTileNames[tile];
+    if (tile <= predefinedtiles ) { // Is the tile in the predefined list?
+        document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || DefaultTileNames[tile]);
+        document.getElementById("currenttilenametextbox").placeholder = DefaultTileNames[tile];
+    } else {
+        document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || "");
+        document.getElementById("currenttilenametextbox").placeholder = "";    
+    }
     
-    document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || DefaultTileURLs[tile]);
-    document.getElementById("currenttileurltextbox").placeholder = DefaultTileURLs[tile];
+    if (tile <= predefinedtiles ) { // Is the tile in the predefined list?
+        document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || DefaultTileURLs[tile]);
+        document.getElementById("currenttileurltextbox").placeholder = DefaultTileURLs[tile];
+    } else {
+        document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || fallbackwebsite);
+        document.getElementById("currenttileurltextbox").placeholder = fallbackwebsite;
+    }
     
-    document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile]);
-    document.getElementById("currenttileimagetextbox").placeholder = DefaultTileImages[tile];
+    if (tile <= predefinedtiles ) { // Is the tile in the predefined list?
+        document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile]);
+        document.getElementById("currenttileimagetextbox").placeholder = DefaultTileImages[tile];
+    } else {
+        document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || "resources/sd_generic.png");
+        document.getElementById("currenttileimagetextbox").placeholder = "resources/sd_generic.png";
+    }
     
     $("#overlay").fadeIn(halffadeDur);
     $("#tilesettingspopup").fadeIn(halffadeDur);
+}
+
+function minusTile() {
+    var tilescurrentcount = parseInt(getCookie("tilescurrentcount")) || 8;
+    setCookie("tilescurrentcount", (tilescurrentcount - 1));
+    loadTiles();
+    console.log(getCookie("tilescurrentcount"));
+}
+
+function plusTile() {
+    var tilescurrentcount = parseInt(getCookie("tilescurrentcount")) || 8;
+    setCookie("tilescurrentcount", (tilescurrentcount + 1));
+    loadTiles();
+    console.log(getCookie("tilescurrentcount"));
 }
 
 function closeTileSettings() {
