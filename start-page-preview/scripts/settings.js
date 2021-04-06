@@ -1,6 +1,7 @@
 var fadeDur = 350,
-    halffadeDur = 175;
-    predefinedtiles = 8;
+    halffadeDur = 175,
+    predefinedtiles = 8,
+    fallbackwebsite = "";
 
 
 // Tiles configurations
@@ -95,7 +96,7 @@ function migrateSettings() {
     }
     
     if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null ) {
-        setCookie("tilescurrentcount", 8);
+        setCookie("tilescurrentcount", predefinedtiles);
     }
     
     setCookie("lastconfigmigration", "202104");
@@ -180,7 +181,7 @@ function loadTiles() {
             if (i <= predefinedtiles ) { // Is the tile in the predefined list?
                 startpageitemurl.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
             } else {
-                startpageitemurl.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
+                startpageitemurl.href = (getCookie("tile" + i + "currenturl") || fallbackwebsite);
             }
         } else {
             shortcutscontaineritem.setAttribute("onclick", "openTileSettings(" + i + ")");    
@@ -200,14 +201,14 @@ function openTileSettings(tile) {
     //currenttilenumber is used in the settings popout dialog
     document.getElementById("currenttilenumber").innerHTML = tile;
     
-    document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || DefaultTileNames[tile]);
-    document.getElementById("currenttilenametextbox").placeholder = DefaultTileNames[tile];
+    document.getElementById("currenttilenametextbox").value = (getCookie("tile" + tile + "currentname") || DefaultTileNames[tile] || "");
+    document.getElementById("currenttilenametextbox").placeholder = (DefaultTileNames[tile] || "");
     
-    document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || DefaultTileURLs[tile]);
-    document.getElementById("currenttileurltextbox").placeholder = DefaultTileURLs[tile];
+    document.getElementById("currenttileurltextbox").value = (getCookie("tile" + tile + "currenturl") || DefaultTileURLs[tile] || fallbackwebsite);
+    document.getElementById("currenttileurltextbox").placeholder = (DefaultTileURLs[tile] || fallbackwebsite);
     
-    document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile]);
-    document.getElementById("currenttileimagetextbox").placeholder = DefaultTileImages[tile];
+    document.getElementById("currenttileimagetextbox").value = (getCookie("tile" + tile + "currentimage") || DefaultTileImages[tile] || "resources/sd_generic.png");
+    document.getElementById("currenttileimagetextbox").placeholder = (DefaultTileImages[tile] || "resources/sd_generic.png");
     
     $("#overlay").fadeIn(halffadeDur);
     $("#tilesettingspopup").fadeIn(halffadeDur);
