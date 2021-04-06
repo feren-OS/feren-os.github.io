@@ -1,0 +1,145 @@
+<html xmlns="../../../www.w3.org/1999/xhtml/index.html">
+  <head>
+    <link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title id="title">Start Page</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	
+	<script src="scripts/jquery-1.4.2.min.js" type="text/javascript">
+	</script>
+	
+	<script src="scripts/tools.js" type="text/javascript"></script>
+    <script src="scripts/settings.js" type="text/javascript"></script>
+	<script src="scripts/scripts.js" type="text/javascript">
+        setSettings();
+    </script>
+	<script src="engines/base.js" type="text/javascript">
+	</script>
+		
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+	<script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+		  "palette": {
+		    "popup": {
+		      "background": "#000000c1",
+		      "text": "#ffffff"
+		    },
+		    "button": {
+		      "background": "#ffffff",
+		      "text": "#006aff"
+		    }
+		  },
+		  "theme": "classic",
+		  "position": "bottom-right",
+		  "content": {
+		    "message": "This website uses cookies to save your Start Page Settings offline.",
+		    "dismiss": "OK",
+		    "link": "More info",
+		    "href": "https://feren-os.github.io/start-page/cookies"
+		  }
+		})});
+    </script>
+</head>
+<body class="parallax" id="bgparallax" onload="loadSP()">
+    <div class="blackscreen"></div>
+    <div class="overlay" id="overlay"></div>
+    <div class="toprightsection" align="right">
+        <a href="https://feren-os.github.io/start-page/settings"><span style="vertical-align: middle; padding-right: 4px;">Configure Feren OS Start Page...</span>
+        <img src="resources/settings.png" alt="Start Page Settings" title="Start Page Settings" style="vertical-align: middle;"/></a>
+        <p>New to Feren OS? Check out the <a href="https://feren-os-user-guide.readthedocs.io/">Feren OS User Guide</a></p>
+        <p><a href="https://medium.com/feren-os">See the latest news about Feren OS...</a></p>
+    </div>
+    <div class="topleftsection" align="left">
+        <p>Hello there, it is</p>
+        <p class="timeclass" id="timeid">12:00 AM</p>
+        
+        <p style="line-height: 40px">⠀</p>
+        
+        <p class="enginearea">Search with <a onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr" class="enginearea">DuckDuckGo</span> <img src="resources/pickengine.png" alt="Change the Search Engine..." style="vertical-align: middle;"/></a></p>
+        
+        <form id="form" onsubmit="return doSearch()">
+            <div id="input">
+                <input id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search the web..."/>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Required to generate custom tile images -->
+    <canvas id="texttilecanvas" style="display: none"></canvas>
+    
+    <div class="searchenginepopup" id="searchenginepopup">
+        <h1>Choose a search engine</h1>
+        <p style="line-height: 2px">⠀</p>
+        <p>Tip: You can press CTRL + Right Arrow Key to quickly cycle between search engines.</p>
+        <p style="line-height: 10px">⠀</p>
+        
+        <div class="searchenginesscrollbox">
+            <div class="searchenginescontainer" id="searchenginescontainer">
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<footer>
+    <div class="footer">
+        <div class="shortcutscontainer1" id="shortcutscontainer1">
+            <div class="direction_left" id="direction_left"></div>
+            <div class="direction_right" id="direction_right"></div>
+            
+            <div class="shortcutscontainer" id="shortcutscontainer">
+                <div class="grid-item" id="tilestandard">
+                <a href="https://ferenos.weebly.com" id="tile1url">
+                    <img class="sd-item" src="resources/sd_feren-os.png" id="tile1image">
+                </a>
+                </div>
+                <div class="grid-item" id="tilestandard">
+                <a href="https://vivaldi.net/" id="tile2url">
+                    <img class="sd-item" src="resources/sd_vivaldi_community.png" id="tile2image">
+                </a>
+                </div>
+                <div class="grid-item" id="tilestandard">
+                <a href="https://ferenos.weebly.com/discord" id="tile3url">
+                    <img class="sd-item" src="resources/sd_discord_feren.png" id="tile3image">
+                </a>
+                </div>
+                <div class="grid-item" id="tilestandard">
+                <a href="https://twitter.com/Feren_OS" id="tile4url">
+                    <img class="sd-item" src="resources/sd_twitter_feren.png" id="tile4image">
+                </a>
+                </div>
+                <div class="grid-item" id="tilestandard">
+                <a href="https://chrome.google.com/webstore" id="tile5url">
+                    <img class="sd-item" src="resources/sd_chrome_extensions.png" id="tile5image">
+                </a>
+                </div>
+                <div class="grid-item" id="tilestandard">
+                <a href="https://omgubuntu.co.uk/" id="tile6url">
+                    <img class="sd-item" src="resources/sd_omgubuntu.png" id="tile6image">
+                </a>
+                </div>
+                <div class="grid-item" id="tilestandard">
+                <a href="https://facebook.com/" id="tile7url">
+                    <img class="sd-item" src="resources/sd_facebook.png" id="tile7image">
+                </a>
+                </div>
+                <div class="grid-item" id="tilestandard">
+                <a href="https://twitter.com/" id="tile8url">
+                    <img class="sd-item" src="resources/sd_twitter.png" id="tile8image">
+                </a>
+                </div>
+                
+                
+                <img class="sd-item" src="resources/sd_blank.png">
+            </div>
+        </div>
+    </div>
+    
+    <script>loadTiles();</script>
+</footer>
+	
+
+<!-- Mirrored from www.logonoff.co/projects/startpage/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2017 11:38:26 GMT -->
+</html>
