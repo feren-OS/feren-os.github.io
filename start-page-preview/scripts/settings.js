@@ -232,6 +232,7 @@ function openTileSettings(tile) {
 function minusTile() {
     var tilescurrentcount = getCookie("tilescurrentcount") || 8;
     tilescurrentcount--;
+    console.log(tilescurrentcount + " " + tilescurrentcount--);
     setCookie("tilescurrentcount", tilescurrentcount);
     loadTiles();
 }
