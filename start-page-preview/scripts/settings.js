@@ -1,5 +1,6 @@
 var fadeDur = 350,
     halffadeDur = 175;
+    predefinedtiles = 8;
 
 
 // Tiles configurations
@@ -167,7 +168,7 @@ function loadTiles() {
         if (getCookie("tile" + i + "usestext") == "true") {
             startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
         } else {
-            if (i < 9 ) { // Is the tile in the predefined list?
+            if (i <= predefinedtiles ) { // Is the tile in the predefined list?
                 startpageitem.src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
             } else {
                 startpageitem.src = (getCookie("tile" + i + "currentimage") || "resources/sd_generic.png");
@@ -176,7 +177,7 @@ function loadTiles() {
         
         // Check if we"re not in the Settings page when trying to set tile links
         if (Boolean(location.href.search("settings") == -1) == true) {
-            if (i < 9 ) { // Is the tile in the predefined list?
+            if (i <= predefinedtiles ) { // Is the tile in the predefined list?
                 startpageitemurl.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
             } else {
                 startpageitemurl.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
