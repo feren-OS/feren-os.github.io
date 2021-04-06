@@ -231,16 +231,13 @@ function openTileSettings(tile) {
 
 function minusTile() {
     var tilescurrentcount = getCookie("tilescurrentcount") || 8;
-    tilescurrentcount--;
-    console.log(tilescurrentcount + " " + tilescurrentcount--);
-    setCookie("tilescurrentcount", tilescurrentcount);
+    setCookie("tilescurrentcount", (tilescurrentcount - 1));
     loadTiles();
 }
 
 function plusTile() {
     var tilescurrentcount = getCookie("tilescurrentcount") || 8;
-    tilescurrentcount++;
-    setCookie("tilescurrentcount", tilescurrentcount);
+    setCookie("tilescurrentcount", (tilescurrentcount + 1));
     loadTiles();
 }
 
