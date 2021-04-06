@@ -67,6 +67,7 @@ function doSearch() {
 
 function loadTiles() {
     var i;
+    var tilescount = getCookie("tilescurrentcount");
     for (i=1; i < DefaultTileURLs.length; i++) {
         
         var shortcutscontaineritem = document.createElement("div");
