@@ -65,6 +65,52 @@ function doSearch() {
 	return false;
 }
 
+function loadTiles() {
+    var i;
+    for (i=1; i < 9; i++) {
+        
+        var shortcutscontaineritem = document.createElement("div");
+        shortcutscontaineritem.classList.add("grid-item");
+        shortcutscontaineritem.id = "tilestandard";
+        
+        document.getElementById("shortcutscontainer").appendChild(shortcutscontaineritem);
+        
+        var startpageitem = document.createElement("img");
+        startpageitem.classList.add("sd-item");
+        startpageitem.id = "tile"+i+"url";
+        
+        shortcutscontaineritem.appendChild(startpageitem);
+        
+        // If we"re in the Settings page, then add grid-item-contents
+        if (Boolean(location.href.search("settings") == -1) == true) {
+            var griditemspan = document.createElement("span");
+            griditemspan.classList.add("grid-item-contents");
+            shortcutscontaineritem.appendChild(griditemspan);
+        }
+        
+        if (getCookie("tile" + i + "usestext") == "true") {
+            startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
+        } else {
+            if (i < 9 ) { // Is the tile in the predefined list?
+                startpageitem.src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
+            } else {
+                startpageitem.src = (getCookie("tile" + i + "currentimage") || "resources/sd_generic.png");
+            }
+        }
+        
+        // Check if we"re not in the Settings page when trying to set tile links
+        if (Boolean(location.href.search("settings") == -1) == true) {
+            if (i < 9 ) { // Is the tile in the predefined list?
+                startpageitem.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
+            } else {
+                startpageitem.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
+            }
+        } else {
+            startpageitem.setAttribute("onclick", "openTileSettings(" + e + ")");            
+        }
+    }
+}
+
 function buildEngineslist() {
     for (e in eng) {
         var searchenginescontaineritem = document.createElement("div");
