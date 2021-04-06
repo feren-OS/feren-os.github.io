@@ -67,7 +67,7 @@ function doSearch() {
 
 function loadTiles() {
     var i;
-    for (i=1; i < 9; i++) {
+    for (i=1; i < DefaultTileURLs.length; i++) {
         
         var shortcutscontaineritem = document.createElement("div");
         shortcutscontaineritem.classList.add("grid-item");
@@ -91,7 +91,7 @@ function loadTiles() {
         if (getCookie("tile" + i + "usestext") == "true") {
             startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
         } else {
-            if (i < 9 ) { // Is the tile in the predefined list?
+            if (i < DefaultTileURLs.length ) { // Is the tile in the predefined list?
                 startpageitem.src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
             } else {
                 startpageitem.src = (getCookie("tile" + i + "currentimage") || "resources/sd_generic.png");
@@ -100,7 +100,7 @@ function loadTiles() {
         
         // Check if we"re not in the Settings page when trying to set tile links
         if (Boolean(location.href.search("settings") == -1) == true) {
-            if (i < 9 ) { // Is the tile in the predefined list?
+            if (i < DefaultTileURLs.length ) { // Is the tile in the predefined list?
                 startpageitem.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
             } else {
                 startpageitem.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
