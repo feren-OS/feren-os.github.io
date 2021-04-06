@@ -65,61 +65,6 @@ function doSearch() {
 	return false;
 }
 
-function loadTiles() {
-    var i;
-    var tilescount = getCookie("tilescurrentcount");
-    for (i=1; i < DefaultTileURLs.length; i++) {
-        
-        var shortcutscontaineritem = document.createElement("div");
-        shortcutscontaineritem.classList.add("grid-item");
-        shortcutscontaineritem.id = "tilestandard";
-        
-        document.getElementById("shortcutscontainer").appendChild(shortcutscontaineritem);
-        
-        var startpageitem = document.createElement("img");
-        startpageitem.classList.add("sd-item");
-        startpageitem.id = "tile"+i+"url";
-        
-        shortcutscontaineritem.appendChild(startpageitem);
-        
-        // If we"re in the Settings page, then add grid-item-contents
-        if (Boolean(location.href.search("settings") == -1) == false) {
-            var griditemspan = document.createElement("span");
-            griditemspan.classList.add("grid-item-contents");
-            shortcutscontaineritem.appendChild(griditemspan);
-        }
-        
-        if (getCookie("tile" + i + "usestext") == "true") {
-            startpageitem.src = generateImage(getCookie("tile" + i + "currentimage").substr(5));
-        } else {
-            if (i < DefaultTileURLs.length ) { // Is the tile in the predefined list?
-                startpageitem.src = (getCookie("tile" + i + "currentimage") || DefaultTileImages[i]);
-            } else {
-                startpageitem.src = (getCookie("tile" + i + "currentimage") || "resources/sd_generic.png");
-            }
-        }
-        
-        // Check if we"re not in the Settings page when trying to set tile links
-        if (Boolean(location.href.search("settings") == -1) == true) {
-            if (i < DefaultTileURLs.length ) { // Is the tile in the predefined list?
-                startpageitem.href = (getCookie("tile" + i + "currenturl") || DefaultTileURLs[i]);
-            } else {
-                startpageitem.href = (getCookie("tile" + i + "currenturl") || "https://example.com");
-            }
-        } else {
-            startpageitem.setAttribute("onclick", "openTileSettings(" + e + ")");            
-        }
-    }
-    
-    // Add dummy item for right-side spacing
-    if (Boolean(location.href.search("settings") == -1) == true) {
-        var dummystartpageitem = document.createElement("img");
-        dummystartpageitem.classList.add("sd-item");
-        dummystartpageitem.src = "resources/sd_blank.png";
-        shortcutscontaineritem.appendChild(dummystartpageitem);
-    }
-}
-
 function buildEngineslist() {
     for (e in eng) {
         var searchenginescontaineritem = document.createElement("div");
