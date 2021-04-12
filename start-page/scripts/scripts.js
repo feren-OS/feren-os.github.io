@@ -51,7 +51,7 @@ function loadSP() {
 
 function browserOptimisations() {
     if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) {
-        const myNode = document.getElementById("shortcutscontainer1").innerHTML = "<div class='shortcutscontainer' id='shortcutscontainer' style='text-align:left; color:rgba(255, 255, 255, 0.7)'>It looks like you are using Mozilla Firefox. Unfortunately, Gecko-based browsers lack required functionality such as horizontal div scrollbox support, so some features had to be disabled. Please switch to a browser that supports these standards and isn't stuck in 2012 (Mozilla Firefox (and forks) is one of if not the only Linux browser to not support touch screens by default in 2021) to experience the Feren OS Start Page properly.</div>";
+        const myNode = document.getElementById("shortcutscontainer1").innerHTML = "<div class='shortcutscontainer' id='shortcutscontainer' style='text-align:left; color:rgba(255, 255, 255, 0.7)'><p>It looks like you are using Mozilla Firefox. Look, you probably hate Chromium, I get it, but unfortunately there's a non-standard (for some weird reason) feature that this Start Page uses for the shortcuts bar - div scrollboxes, and the Gecko renderer lacks it. Therefore, we had to disable this bar and put this message here instead to make the page still look normal. Please switch to a browser with full Start Page compatibility, such as Vivaldi, or, if you know how to make this work in Firefox, submit a Pull Request. Link's in the settings.</p><p> </p><p>Though, why are you even suffering with a browser that doesn't even support touch screens in 2021, anyway?</p></div>";
     }
 }
 
