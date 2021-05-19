@@ -21,17 +21,16 @@ function loadSP() {
     // Migrate settings if required
     migrateSettings();
     
-	// Create Engine Index
-	
-	buildEngineslist()
+    // Create Engine Index
+    buildEngineslist()
     
     // Resize Engines dialog
     calculateEnginesSize()
 	
-	// Set up first engine
+    // Set up first engine
 
     current.engine = (getCookie("lastengine") || "duckduckgo");
-	selectEngine(current.engine, false);
+    selectEngine(current.engine, false);
     
     // Hover events
     setupHoverEvents();
@@ -46,12 +45,14 @@ function loadSP() {
     browserOptimisations();
     
     // Give search box focus
-	$("#input input").focus();
+    $("#input input").focus();
 }
 
 function browserOptimisations() {
-    if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) {
+    if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) { /*Firefox*/
         const myNode = document.getElementById("shortcutscontainer1").innerHTML = "<div style='text-align:left; color:rgba(255, 255, 255, 0.7); margin: 16px 17px'><p>It looks like you are using Mozilla Firefox. Look, you probably hate Chromium, I get it, but unfortunately there's a non-standard (for some weird reason) feature that this Start Page uses for the shortcuts bar - div scrollboxes - and the Gecko renderer lacks it. Therefore, we had to disable this bar and put this message here instead to make the page still look normal. Please switch to a browser with full Start Page compatibility, such as Vivaldi, or, if you know how to make this work in Firefox, submit a Pull Request. Link's in the settings.</p><p>⠀</p><p>Though, why are you even suffering with a browser that doesn't even support touch screens in 2021, anyway?</p></div>";
+    } else if (UA.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)); { /*I.E.*/
+	const myNode = document.getElementById("shortcutscontainer1").innerHTML = "<div style='text-align:left; color:rgba(255, 255, 255, 0.7); margin: 16px 17px'><p>You're using Internet Explorer, it seems. I appreciate the ambition, but... look, unless Microsoft changes their mind, the official end of Internet Explorer begins in 2022 for ALL Windows releases, including Windows 10 too. Therefore, you NEED to switch browsers as soon as possible. Do yourself a favour and try out Vivaldi Browser - it's what Feren OS comes with by default. You can get Vivaldi via https://vivaldi.com/. Just enter that into the textbox at the top left of Internet Explorer and get downloading today.</p><p>⠀</p><p>I'm not gonna lie, I'll miss Internet Explorer, much as I'm glad to see it go. By the way, if you want to stick to Microsoft browsers for whatever reason, Microsoft Edge is where it's at these days.</p></div>";
     }
 }
 
