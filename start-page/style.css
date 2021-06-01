@@ -52,10 +52,10 @@ body, html {
 ::-webkit-scrollbar { background: transparent; }
 ::-webkit-scrollbar-thumb { background: transparent; }
 
-.shortcutscontainer1 {
+#shortcutscontainer1 {
     overflow: overlay;
 }
-.shortcutscontainer1-nonium {
+#shortcutscontainer1-nonium {
     overflow-x: auto;
     overflow-y: none;
 }
