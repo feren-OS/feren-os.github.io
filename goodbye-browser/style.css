@@ -1,0 +1,69 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: white;
+	font-size: 10pt;
+    cursor: default;
+}
+
+a {
+    font-weight: 600;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	-webkit-user-select: none;
+}
+
+body, html {
+    height: 100%;
+}
+
+.shownscrollbar::-webkit-scrollbar { background: transparent; height: 10px; }
+.shownscrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+
+.topleftsection {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    z-index: 1;
+}
+
+.timeclass {
+	font-size: 20pt;
+}
+
+h1 {
+	font-size: 20pt;
+    font-weight: normal;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url("");
+    background-color: black;
+
+    /* Set a specific height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 	GOODBYE BROWSER
+	----------------------------------------------------- */
+.center {
+    align: center;
+    text-align: center;
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    width: 64%;
+    transform: translate(-50%, -50%);
+}

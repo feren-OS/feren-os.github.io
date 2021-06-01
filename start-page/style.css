@@ -253,3 +253,18 @@ h1 {
     height:100%;
     width: 20px;
 }
+
+
+
+/* 	GOODBYE BROWSER
+	----------------------------------------------------- */
+.center {
+    align: center;
+    text-align: center;
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    width: 64%;
+    transform: translate(-50%, -50%);
+}
