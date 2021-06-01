@@ -55,6 +55,10 @@ body, html {
 .shortcutscontainer1 {
     overflow: overlay;
 }
+.shortcutscontainer1-nonium {
+    overflow-x: auto;
+    overflow-y: none;
+}
 
 .shortcutscontainer {
     display: flex;
