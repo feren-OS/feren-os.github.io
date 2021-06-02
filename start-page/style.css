@@ -56,6 +56,8 @@ body, html {
     overflow: overlay;
 }
 #shortcutscontainer1-nonium {
+	  scrollbar-width: thin;
+		scrollbar-color: rgba(0.582, 0.582, 0.582, 0.582) transparent;
     overflow-x: auto;
     overflow-y: none;
 }
@@ -133,13 +135,13 @@ h1 {
   color: rgba(243,248,255,0.6);
 }
 
-.parallax { 
+.parallax {
     /* The image used */
     background-image: url("");
     background-color: black;
 
     /* Set a specific height */
-    height: 100%; 
+    height: 100%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
