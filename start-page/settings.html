@@ -85,10 +85,10 @@
             You can find out more here, along with each cookie's name and what their purpose is: <a onclick=" window.open('https://feren-os.github.io/start-page/cookies','_blank')">https://feren-os.github.io/start-page/cookies</a>
             <p style="line-height: 16px">⠀</p>
         </div>
-        <div align="center"><button class="btn"  onclick="shutCookies()">Shut</button></div>
+        <div align="center"><button id="cookieshutbtn" class="btn"  onclick="shutCookies()">OK</button></div>
     </div>
         
-    <script>loadTiles(); gettickboxesstates();</script>
+    <script>loadTiles(); gettickboxesstates(); cookiesPopup();</script>
         
     <div class="tilesettingspopup" id="tilesettingspopup">
         <h1>Tile <span id="currenttilenumber" class="h1">??? ??? ??? ???</span>:</h1>

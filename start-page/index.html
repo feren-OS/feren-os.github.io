@@ -47,14 +47,14 @@
     <!-- Required to generate custom tile images -->
     <canvas id="texttilecanvas" style="display: none"></canvas>
     
-    <div class="cookiepopup" id="cookiepopup" onload="cookiesPopup()">        
+    <div class="cookiepopup" id="cookiepopup">        
         <div class="cookiescrollbox">
             Just to let you know, this website uses cookies to save your Start Page settings offline, such as the background and the bottom shortcuts. No other cookies are saved from using Feren OS Start Page.
             <p style="line-height: 10px">⠀</p>
             You can find out more here, along with each cookie's name and what their purpose is: <a onclick=" window.open('https://feren-os.github.io/start-page/cookies','_blank')">https://feren-os.github.io/start-page/cookies</a>
             <p style="line-height: 16px">⠀</p>
         </div>
-        <div align="center"><button class="btn"  onclick="shutCookies()">Shut</button></div>
+        <div align="center"><button id="cookieshutbtn" class="btn"  onclick="shutCookies()">OK</button></div>
     </div>
     
     <div class="searchenginepopup" id="searchenginepopup">

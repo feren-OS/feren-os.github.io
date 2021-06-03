@@ -44,8 +44,8 @@ function loadSP() {
     // Browser optimisations
     browserOptimisations();
     
-    // Give search box focus
-    $("#input input").focus();
+    // Cookies Popup
+    cookiesPopup();
 }
 
 function browserOptimisations() {

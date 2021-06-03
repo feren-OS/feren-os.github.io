@@ -323,6 +323,9 @@ function selectEngine(enginename, changecookie) {
 
 function cookiesPopup() {
     if (getCookie("cookieconsent_status") == "dismiss") {
+        // Give search box focus
+        $("#input input").focus();
+    
         return;
     }
     setCookie("cookieconsent_status", "shown");
@@ -332,9 +335,15 @@ function cookiesPopup() {
     }
     $("#overlay").fadeIn(halffadeDur);
     $("#cookiepopup").fadeIn(halffadeDur);
+    
+    // Give cookies button focus
+    $("#cookieshutbtn button").focus();
 }
 function shutCookies() {
     setCookie("cookieconsent_status", "dismiss");
     $("#overlay").fadeOut(halffadeDur);
     $("#cookiepopup").fadeOut(halffadeDur);
+    
+    // Give search box focus
+    $("#input input").focus();
 }
