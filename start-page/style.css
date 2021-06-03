@@ -198,6 +198,7 @@ h1 {
     left: 50%;
     width: 530px;
     max-height: 70%;
+    max-width: 80%;
     transform: translate(-50%, -50%);
     padding: 40px;
 	background-color: #f1f1f1;
@@ -274,21 +275,6 @@ h1 {
 }
 
 
-
-/* 	GOODBYE BROWSER
-	----------------------------------------------------- */
-.center {
-    align: center;
-    text-align: center;
-    position: fixed;
-    margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    width: 64%;
-    transform: translate(-50%, -50%);
-}
-
-
 /* 	COOKIES
 	----------------------------------------------------- */
 .cookiepopup {
@@ -298,6 +284,7 @@ h1 {
     left: 50%;
     width: 510px;
     max-height: 70%;
+    max-width: 80%;
     transform: translate(-50%, -50%);
     padding: 40px;
 	background-color: #f1f1f1;

@@ -337,7 +337,7 @@ function cookiesPopup() {
     $("#cookiepopup").fadeIn(halffadeDur);
     
     // Give cookies button focus
-    $("#cookieshutbtn button").focus();
+    document.getElementById("cookieshutbtn").focus();
 }
 function shutCookies() {
     setCookie("cookieconsent_status", "dismiss");
