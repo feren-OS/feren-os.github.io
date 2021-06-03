@@ -10,32 +10,6 @@
     
     
     <script type="text/javascript" src="scripts/settings.js"></script>
-		
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-    <script>
-		window.addEventListener("load", function(){
-		window.cookieconsent.initialise({
-		  "palette": {
-		    "popup": {
-		      "background": "#000000c1",
-		      "text": "#ffffff"
-		    },
-		    "button": {
-		      "background": "#ffffff",
-		      "text": "#006aff"
-		    }
-		  },
-		  "theme": "classic",
-		  "position": "bottom-right",
-		  "content": {
-		    "message": "This website uses cookies to save your Start Page Settings offline.",
-		    "dismiss": "OK",
-		    "link": "More info",
-		    "href": "https://feren-os.github.io/start-page/cookies"
-		  }
-		})});
-    </script>
 </head>
 <body>
     <script type="text/javascript">
@@ -103,6 +77,16 @@
 
     <!-- Required to generate custom tile images -->
     <canvas id="texttilecanvas" style="display: none"></canvas>
+    
+    <div class="cookiepopup" id="cookiepopup" onload="cookiesPopup()">        
+        <div class="cookiescrollbox">
+            Just to let you know, this website uses cookies to save your Start Page settings offline, such as the background and the bottom shortcuts. No other cookies are saved from using Feren OS Start Page.
+            <p style="line-height: 10px">⠀</p>
+            You can find out more here, along with each cookie's name and what their purpose is: <a onclick=" window.open('https://feren-os.github.io/start-page/cookies','_blank')">https://feren-os.github.io/start-page/cookies</a>
+            <p style="line-height: 16px">⠀</p>
+        </div>
+        <div align="center"><button class="btn"  onclick="shutCookies()">Shut</button></div>
+    </div>
         
     <script>loadTiles(); gettickboxesstates();</script>
         

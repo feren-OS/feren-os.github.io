@@ -320,3 +320,21 @@ function selectEngine(enginename, changecookie) {
     
     toggleChangeEnginePopup(false);
 }
+
+function cookiesPopup() {
+    if (getCookie("cookieconsent_status") == "dismiss") {
+        return;
+    }
+    setCookie("cookieconsent_status", "shown");
+    
+    if (getCookie("cookieconsent_status") != "shown") {
+        return;
+    }
+    $("#overlay").fadeIn(halffadeDur);
+    $("#cookiepopup").fadeIn(halffadeDur);
+}
+function shutCookies() {
+    setCookie("cookieconsent_status", "dismiss");
+    $("#overlay").fadeOut(halffadeDur);
+    $("#cookiepopup").fadeOut(halffadeDur);
+}

@@ -123,6 +123,17 @@ h1 {
     font-weight: normal;
 }
 
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #ededed, #e7e7e7);
+  color: black;
+  min-height: 24px;
+  min-width: 16px;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+
 .disclaimers {
   margin-top: 20px;
   margin-left: auto;
@@ -275,4 +286,26 @@ h1 {
     left: 50%;
     width: 64%;
     transform: translate(-50%, -50%);
+}
+
+
+/* 	COOKIES
+	----------------------------------------------------- */
+.cookiepopup {
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    width: 510px;
+    max-height: 70%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+	background-color: #f1f1f1;
+    z-index: 9000002;
+    display: none;
+    border-radius: 4px;
+    color: black;
+}
+.cookiepopup * {
+    color: black;
 }
