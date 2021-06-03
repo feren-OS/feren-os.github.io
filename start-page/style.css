@@ -57,7 +57,7 @@ body, html {
 }
 #shortcutscontainer1-nonium {
 	  scrollbar-width: thin;
-		scrollbar-color: rgba(0.582, 0.582, 0.582, 0.582) transparent;
+	  scrollbar-color: rgba(0.582, 0.582, 0.582, 0.582) transparent;
     overflow-x: auto;
     overflow-y: none;
 }
