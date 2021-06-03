@@ -129,7 +129,7 @@ function setSettings() {
     var bgimage = new Image();      
     bgimage.src=bgurl;
     
-    bgimage.onerror=pageLoadedAnim
+    bgimage.onerror=pageLoadedAnim();
 
     $(bgimage).load(function() {
         document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("+bgurl+")");
