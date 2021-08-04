@@ -6,13 +6,15 @@
 
 h2 {
     font-size: 36px;
-	font-family: 'Open Sans Light', sans-serif;
+	font-family: 'Inter', sans-serif;
     color: black;
+    font-weight: normal;
 }
 h3 {
     font-size: 36px;
-	font-family: 'Open Sans Light', sans-serif;
+	font-family: 'Inter', sans-serif;
     color: black;
+    font-weight: normal;
 }
 
 .main {
