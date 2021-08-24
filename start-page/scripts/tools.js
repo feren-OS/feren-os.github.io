@@ -26,3 +26,19 @@ function findNext(where, now)
 	if (next == null) next = firstProp(where);
 	return next;
 }
+
+function findPrevious(where, now) 
+{
+	var previous = null;
+	for (item in where) {
+		if (item == now) {
+			break;
+		} else {
+			previous = item;	
+		};
+	}
+
+	// https://stackoverflow.com/a/21622274
+	if (previous == null) previous = Object.keys(where)[Object.keys(where).length-1];;
+	return previous;
+}

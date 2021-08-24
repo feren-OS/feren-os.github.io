@@ -197,7 +197,8 @@ $(document).keyup(function(e) {
 ).keydown(function(e) {
 	if (e.which == 17) isCtrl=true;
 	if (e.which == 91) isCmd=true;
-	
+
+    if (e.which == 37 && isCtrl == true)				{ /* Arrow Left */	prevEngine(); toggleChangeEnginePopup(false); }
 	if (e.which == 39 && isCtrl == true)				{ /* Arrow Right */	nextEngine(); toggleChangeEnginePopup(false); }
 });
 
