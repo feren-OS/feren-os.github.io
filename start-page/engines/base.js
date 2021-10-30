@@ -11,7 +11,7 @@ eng.duckduckgo = {
 	----------------------------------------------------- */
 
 eng.brave = {
-	logo: "engines/brave.svg",
+	logo: "engines/brave.png",
     enginestr: "Brave",
 	uri: "https://search.brave.com/search?q=%s"
 };
