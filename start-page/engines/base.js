@@ -7,6 +7,15 @@ eng.duckduckgo = {
 	uri: "https://www.ddg.co/?q=%query%"
 };
 
+/*	Brave Search	
+	----------------------------------------------------- */
+
+eng.brave = {
+	logo: "engines/brave.png",
+    enginestr: "Brave",
+	uri: "https://search.brave.com/search?q=%s"
+};
+
 
 /*	ECOSIA
 	----------------------------------------------------- */
