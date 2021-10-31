@@ -32,7 +32,7 @@ eng.ecosia = {
 eng.oceanhero = {
 	logo: "engines/oceanhero.png",
     enginestr: "OceanHero",
-	uri: "https://oceanhero.today/search"
+	uri: "https://oceanhero.today/web?q=%query%"
 };
 
 /*	GOOGLE
