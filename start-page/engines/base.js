@@ -35,6 +35,15 @@ eng.oceanhero = {
 	uri: "https://oceanhero.today/web?q=%query%"
 };
 
+/*	SearchScene
+	----------------------------------------------------- */
+
+eng.searchscene = {
+	logo: "engines/searchscene.jpg",
+    enginestr: "SearchScene",
+	uri: "https://www.searchscene.com/search?q=%query%"
+};
+
 /*	GOOGLE
 	----------------------------------------------------- */
 
