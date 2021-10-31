@@ -26,6 +26,14 @@ eng.ecosia = {
 	uri: "https://www.ecosia.org/search?q=%query%"
 };
 
+/*	Ocean Hero
+	----------------------------------------------------- */
+
+eng.oceanhero = {
+	logo: "engines/oceanhero.png",
+    enginestr: "OceanHero",
+	uri: "https://oceanhero.today/search"
+};
 
 /*	GOOGLE
 	----------------------------------------------------- */
