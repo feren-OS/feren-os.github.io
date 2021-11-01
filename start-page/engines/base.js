@@ -44,6 +44,15 @@ eng.searchscene = {
 	uri: "https://www.searchscene.com/search?q=%query%"
 };
 
+/*	WikiHow
+	----------------------------------------------------- */
+
+eng.wikihow = {
+	logo: "engines/wikihow.png",
+    enginestr: "WikiHow",
+	uri: "ttps://www.wikihow.com/wikiHowTo?search=%query%"
+};
+
 /*	GOOGLE
 	----------------------------------------------------- */
 
