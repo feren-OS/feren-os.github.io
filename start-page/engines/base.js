@@ -50,7 +50,7 @@ eng.searchscene = {
 eng.wikihow = {
 	logo: "engines/wikihow.png",
     enginestr: "WikiHow",
-	uri: "ttps://www.wikihow.com/wikiHowTo?search=%query%"
+	uri: "https://www.wikihow.com/wikiHowTo?search=%query%"
 };
 
 /*	GOOGLE
