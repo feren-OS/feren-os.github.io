@@ -39,7 +39,7 @@ eng.oceanhero = {
 	----------------------------------------------------- */
 
 eng.searchscene = {
-	logo: "engines/searchscene.jpg",
+	logo: "engines/searchscene.png",
     enginestr: "SearchScene",
 	uri: "https://www.searchscene.com/search?q=%query%"
 };
