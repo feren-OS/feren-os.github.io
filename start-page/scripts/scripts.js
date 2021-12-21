@@ -73,9 +73,9 @@ function loadSPIce() {
     //Flavour text
     const urlParams = new URLSearchParams(window.location.search);
 
-    const iceName = urlParams.get('ice-name')    
+    const iceText = urlParams.get('ice-text')    
     
-    document.getElementById('iceid').innerHTML=iceName;
+    document.getElementById('iceid').innerHTML=iceText;
 }
 
 
