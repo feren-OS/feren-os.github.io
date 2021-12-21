@@ -296,3 +296,16 @@ h1 {
 .cookiepopup * {
     color: black;
 }
+
+
+
+
+/* 	ICE
+	----------------------------------------------------- */
+
+.bottomleftfooter {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    z-index: 1;
+}

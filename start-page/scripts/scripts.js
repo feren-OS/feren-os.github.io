@@ -48,6 +48,37 @@ function loadSP() {
     cookiesPopup();
 }
 
+
+function loadSPIce() {
+    // Migrate settings if required
+    migrateSettings();
+    
+    // Create Engine Index
+    buildEngineslist()
+    
+    // Resize Engines dialog
+    calculateEnginesSize()
+	
+    // Set up first engine
+
+    current.engine = (getCookie("lastengine") || "duckduckgo");
+    selectEngine(current.engine, false);
+    
+    // Start clock
+    startTime();
+    
+    // Cookies Popup
+    cookiesPopup();
+    
+    //Flavour text
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const iceName = urlParams.get('ice-name')    
+    
+    document.getElementById('iceid').innerHTML=iceName;
+}
+
+
 function browserOptimisations() {
     if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) { /*Firefox*/
         //Switch id of scrollbox to non-chromium
