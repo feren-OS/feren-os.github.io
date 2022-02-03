@@ -18,7 +18,7 @@
   "screenshots": [],
   "shortcuts": [],
   "short_name": "Start Page",
-  "start_url": "https://feren-os.github.io/start-page&pwa=true",
+  "start_url": "https://feren-os.github.io/start-page?pwa=true",
   "theme_color": "#000000",
   "scope": "/"
 }
