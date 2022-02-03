@@ -3,6 +3,8 @@ var eng = {},
 	fadeDur = 350,
     searchPrefix = "Search ",
     UA=navigator.userAgent;
+    
+var urlParams = new URLSearchParams(window.location.search);
 
 
 function setCookie(name, value) {
@@ -71,9 +73,7 @@ function loadSPIce() {
     cookiesPopup();
     
     //Flavour text
-    const urlParams = new URLSearchParams(window.location.search);
-
-    const iceText = urlParams.get('ice-text')    
+    const iceText = urlParams.get('ice-text')
     
     document.getElementById('iceid').innerHTML=iceText;
 }
@@ -92,7 +92,14 @@ function doSearch() {
 	if (typeof eng[current.engine].languages == "object") 
 		url = url.replace("%lang%", eng[current.engine].languages[current.language]);
 	
-	window.location.href = url;
+    
+    const pwaMode = urlParams.get('pwa')
+    
+    if (pwaMode != "true") {    
+        window.location.href = url;
+    } else {
+        window.open(url);
+    }
 	return false;
 }
 
