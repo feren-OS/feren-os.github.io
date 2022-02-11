@@ -1,0 +1,76 @@
+/* Generic Feren OS website CSS - REDESIGN, work in progress, do NOT use yet */
+@import 'colors.css';
+
+.window { /* fake window decorations and CSA for dialogs, etc. */
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter";
+    /*background-color: alpha(var(--theme_titlebar_background), 0.6);*/
+    background-color: var(--theme_titlebar_background);
+    color: var(--theme_titlebar_foreground);
+    /*box-shadow: inset 0 0 1px 1px alpha(var(--theme_titlebar_background), 0.6), inset 0 0 1px 1px #ffffff66, 0 0 1px 1px #00000066;*/
+    box-shadow: inset 0 0 1px 1px #ffffff66, inset 0 0 1px 1px var(--theme_titlebar_background), 0 0 1px 1px #00000066, 0px 0px 16px rgba(0, 0, 0, 0.25), 0px 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+.title-bar { /* window titlebar */
+    margin: 1px 1px 0px 1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-size: 10pt;
+    height: 30px;
+}
+
+.title-bar-text {
+    margin: auto;
+    text-align: center;
+}
+
+.title-bar-contents {
+    display: flex;
+    margin: auto;
+    min-height: 28px;
+    margin: 0 2px;
+}
+.title-bar-contents button {
+    min-width: 38px;
+    max-height: 26px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: none;
+    background-color: white;
+    border: none;
+}
+.title-bar-contents button[titlebtn-type="Help"] {
+    background-color: pink;
+}
+.title-bar-contents button[titlebtn-type="Help"]:not(:disabled):hover {
+    background-color: green;
+}
+.title-bar-contents button[titlebtn-type="Help"]:not(:disabled):active {
+    background-color: white;
+}
+
+.title-bar-contents button[titlebtn-type="Close"] {
+    background-color: white;
+}
+.title-bar-contents button[titlebtn-type="Close"]:not(:disabled):hover {
+    background-color: pink;
+}
+.title-bar-contents button[titlebtn-type="Close"]:not(:disabled):active {
+    background-color: green;
+}
+
+.window-body { /* window contents */
+    background-color: var(--theme_bg_color);
+    color: var(--theme_fg_color);
+    padding: 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin: 0px 1px 1px 1px;
+}
