@@ -1,0 +1,8 @@
+/* Generic Feren OS website CSS (Basic style overrides for less capable browsers) - REDESIGN, work in progress, do NOT use yet */
+@import 'colors.css';
+
+.window { /* Basic style overrides for titlebar area */
+    background-color: var(--basic-window-color);
+    color: white;
+    box-shadow: inset 0 0 1px 1px #ffffff66, inset 0 0 1px 1px var(--basic-window-color), 0 0 1px 1px #00000066, 0px 0px 16px rgba(0, 0, 0, 0.25), 0px 2px 8px rgba(0, 0, 0, 0.3)
+}
