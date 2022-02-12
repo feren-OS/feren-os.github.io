@@ -8,6 +8,6 @@
         </linearGradient>
     </defs>
     <path transform="scale(.26458334)" d="m0 0v23c0 2.77 2.2300001 5 5 5h28c2.77 0 5-2.23 5-5v-23h-1v23c0 2.216-1.783999 4-4 4h-28c-2.2159999 0-4-1.784-4-4v-23h-1z" fill="url(#linearGradient913)" stroke-linecap="square" stroke-linejoin="bevel" stroke-opacity=".8" stroke-width="3.99999"/>
-    <path transform="scale(.26458334)" d="m1 0v23c0 2.216 1.7840001 4 4 4h28c2.216 0 4-1.784 4-4v-23h-36z" fill="#fff" fill-opacity=".2" stroke-linecap="square" stroke-linejoin="bevel" stroke-opacity=".8" stroke-width="3.99999"/>
+    <path transform="scale(.26458334)" d="m1 1v22c0 2.216 1.7840001 4 4 4h28c2.216 0 4-1.784 4-4v-22z" fill="#fff" fill-opacity=".2" stroke-linecap="square" stroke-linejoin="bevel" stroke-opacity=".8" stroke-width="3.99999"/>
     <path class="color" d="m5.0270835 4.3790787-1.1794451 1.1771715-0.408055-0.4083582 1.1790368-1.1791418h0.4088713m-3.969e-4 0.4103285 1.1794339 1.1771715 0.408055-0.4083582-1.1790368-1.1791418h-0.4088712m3.969e-4 -0.4103286-1.179434-1.1771715-0.408055 0.4083582 1.1790368 1.1791419h0.4088713m-4.08e-4 -0.4103286 1.179445-1.1771715 0.408055 0.4083582-1.1790368 1.1791419h-0.4088712" fill="#fff" stroke-width=".264583"/>
 </svg>

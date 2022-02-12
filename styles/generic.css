@@ -20,7 +20,7 @@
     backdrop-filter: blur(70px);
 }
 .title-bar { /* window titlebar */
-    margin: 1px 1px 0px 1px;
+    margin: 0px 1px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     font-size: 10pt;
