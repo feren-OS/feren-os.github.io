@@ -45,6 +45,7 @@
     max-height: 28px;
     margin: 0 1px;
     border-radius: 0 0 4px 4px;
+    border-width: 0;
     
     background: none;
     background-repeat: no-repeat !important;
