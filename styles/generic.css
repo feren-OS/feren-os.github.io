@@ -46,32 +46,32 @@
     margin: 0 1px;
     border-radius: 0 0 4px 4px;
     
+    background: none;
     background-repeat: no-repeat !important;
     background-position: center !important;
     box-shadow: none;
     border-color: transparent;
     background-color: transparent;
-    transition: background 100ms;
 }
 
 .title-bar-contents button[titlebtn-type="Help"] {
-    background-image: url('img/titlebar/button-help.svg');
+    background: url('img/titlebar/button-help.svg');
 }
 .title-bar-contents button[titlebtn-type="Help"]:not(:disabled):hover {
-    background-image: url('img/titlebar/button-help-hover.svg');
+    background: url('img/titlebar/button-help-hover.svg');
 }
 .title-bar-contents button[titlebtn-type="Help"]:not(:disabled):active {
-    background-image: url('img/titlebar/button-help-pressed.svg');
+    background: url('img/titlebar/button-help-pressed.svg');
 }
 
 .title-bar-contents button[titlebtn-type="Close"] {
-    background-image: url('img/titlebar/button-close.svg');
+    background: url('img/titlebar/button-close.svg');
 }
 .title-bar-contents button[titlebtn-type="Close"]:not(:disabled):hover {
-    background-image: url('img/titlebar/button-close-hover.svg');
+    background: url('img/titlebar/button-close-hover.svg');
 }
 .title-bar-contents button[titlebtn-type="Close"]:not(:disabled):active {
-    background-image: url('img/titlebar/button-close-pressed.svg');
+    background: url('img/titlebar/button-close-pressed.svg');
 }
 
 .window-body { /* window contents */
