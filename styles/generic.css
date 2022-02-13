@@ -89,6 +89,7 @@
 button {
     border: 1px solid transparent;
     border-radius: 4px;
+    transition: background 100ms;
 }
 button:not(:disabled) {
     background: linear-gradient(to bottom, rgb(var(--theme_button_background_normal)),
