@@ -31,6 +31,20 @@
 --warning_color: 227, 107, 26;
 --warning_color_insensitive: 235, 185, 148;
 
+/* Buttons */
+--button-border-top: 195, 195, 195;
+--button-gradient-bottom: 235, 235, 235;
+--button-hover-top: 198, 219, 249;
+--button-hover-bottom: 187, 209, 239;
+--button-hover-border-gradient-top: 156, 177, 207;
+--button-pressed: 219, 219, 219;
+--button-pressed-border-gradient-top: 156, 156, 156;
+--button-pressed-border-gradient-bottom: 195, 195, 195;
+--button-disabled-gradient-top: 236, 236, 236;
+--button-disabled-gradient-bottom: 224, 224, 224;
+--button-disabled-border-gradient-bottom: 60, 127, 221;
+
+/* Misc. */
 --basic-window-color: #646464;
 --ferengtk_darkening_bg: rgba(0, 0, 0, 0.08);
 --ferengtk_border_generic: rgba(0, 0, 0, 0.19);

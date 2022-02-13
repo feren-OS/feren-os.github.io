@@ -1,6 +1,8 @@
 /* Generic Feren OS website CSS - REDESIGN, work in progress, do NOT use yet */
 @import 'colors.css';
 
+
+/*** WINDOWS ***/
 .window { /* fake window decorations and CSA for dialogs, etc. */
     position: fixed;
     margin: 0 auto;
@@ -79,4 +81,38 @@
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     margin: 0px 1px 1px 1px;
+}
+
+
+/*** BUTTONS ***/
+
+button {
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+button:not(:disabled) {
+    background: linear-gradient(to bottom, rgb(var(--theme_button_background_normal)),
+                                rgb(var(--button-gradient-bottom))) padding-box,
+                                linear-gradient(to bottom, rgb(var(--button-border-top)), rgb(var(--button-border-top)) 50%,
+                                rgb(var(--theme_selected_bg_color)) 67%, rgb(var(--theme_selected_bg_color))) border-box;
+    color: rgb(var(--theme_button_foreground_normal));
+}
+button:not(:disabled):hover {
+    background: linear-gradient(to bottom, rgb(var(--button-hover-top)),
+                                rgb(var(--button-hover-bottom))) padding-box,
+                                linear-gradient(to bottom, rgb(var(--button-hover-border-gradient-top)), rgb(var(--button-hover-border-gradient-top)) 50%,
+                                rgb(var(--theme_selected_bg_color)) 67%, rgb(var(--theme_selected_bg_color))) border-box;
+}
+button:not(:disabled):active {
+    background: linear-gradient(to bottom, rgb(var(--button-pressed)),
+                                rgb(var(--button-pressed))) padding-box,
+                                linear-gradient(to bottom, rgb(var(--button-pressed-border-gradient-top)), rgb(var(--button-pressed-border-gradient-top)) 33%,
+                                rgb(var(--button-pressed-border-gradient-bottom)) 50%, rgb(var(--button-pressed-border-gradient-bottom))) border-box;
+}
+button:disabled {
+    background: linear-gradient(to bottom, rgb(var(--button-disabled-gradient-top)),
+                                rgb(var(--button-disabled-gradient-bottom))) padding-box,
+                                linear-gradient(to bottom, rgb(var(--button-border-top)), rgb(var(--button-border-top)) 50%,
+                                rgb(var(--button-disabled-border-gradient-bottom)) 67%, rgb(var(--button-disabled-border-gradient-bottom))) border-box;
+    color: rgb(var(--theme_button_foreground_insensitive));
 }
