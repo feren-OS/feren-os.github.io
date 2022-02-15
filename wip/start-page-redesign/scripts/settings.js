@@ -187,14 +187,14 @@ function loadTiles() {
                 startpageitemurl.href = (getCookie("tile" + i + "currenturl") || fallbackwebsite);
             }
         } else {
-            shortcutscontaineritem.setAttribute("onclick", "openTileSettings(" + i + ")");    
+            shortcutscontaineritem.setAttribute("onclick", "openTileSettings(" + i + ")");
         }
     }
     
     // Add dummy item for right-side spacing
     if (Boolean(location.href.search("settings") == -1) == true) {
         var dummystartpageitem = document.createElement("img");
-        dummystartpageitem.classList.add("sd-item");
+        dummystartpageitem.classList.add("sd-dummy");
         dummystartpageitem.src = "resources/sd_blank.png";
         document.getElementById("shortcutscontainer").appendChild(dummystartpageitem);
     }

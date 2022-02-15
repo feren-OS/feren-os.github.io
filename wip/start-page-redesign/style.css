@@ -1,19 +1,7 @@
+@import '../../styles/generic.css';
+
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: Inter, Arial, Helvetica, sans-serif;
     color: white;
-    font-size: 10pt;
-    cursor: default;
-}
-
-input[type="text"] {
-    cursor: text;
-}
-
-a {
-    font-weight: 600;
 }
 
 placeholder {
@@ -36,15 +24,6 @@ placeholder {
 	color: rgba(255, 255, 255, 0.5);
 }
 
-body {
-	-webkit-text-size-adjust: none;
-	-webkit-user-select: none;
-}
-
-body, html {
-    height: 100%;
-}
-
 .shownscrollbar::-webkit-scrollbar { background: transparent; height: 10px; }
 .shownscrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
 .dialogscrollbar::-webkit-scrollbar { background: transparent; width: 10px; }
@@ -64,18 +43,6 @@ body, html {
     scrollbar-color: white rgba(0, 0, 0, 0.2);
 }
 
-.footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    box-shadow: 0 -1px 1px #00000066;
-    border-image: url('img/style-shell/button-border.svg') 4;
-	background-image: linear-gradient(to bottom, #1a1a1a8f, #0000008f);
-    backdrop-filter: blur(70px);
-}
-
 .shortcutscontainer {
     display: flex;
     margin: 10px 11px;
@@ -88,16 +55,21 @@ body, html {
 .sd-item {
     max-width: 220px;
     max-height: 38px;
-    border-radius: 4px;
-    box-shadow: inset 0 0 1px 1px #ffffff61; /*TODO: Use border-image instead to have proper gradient outline instead*/
-    background-image: linear-gradient(to bottom, #ffffff0f, #ffffff00);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    
+    background: linear-gradient(to bottom, #ffffff61, #ffffff61 50%,
+                                #ffffffab 67%, #ffffffab) border-box;
 }
 .sd-item img {
-    max-width: 220px;
-    max-height: 38px;
+    z-index: 10;
     border-radius: 4px;
-    position: relative;
-    z-index: -1;
+    background: linear-gradient(to bottom, #ffffff0f, #ffffff00) padding-box;
+}
+.sd-dummy {
+    border-color: transparent;
+    background: none;
+    margin: 0 -4px;
 }
 
 .toprightsection {
@@ -115,25 +87,8 @@ body, html {
     z-index: 1;
 }
 
-.blackscreen {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background: black;
-}
-
 .timeclass {
 	font-size: 20pt;
-}
-
-.enginearea {
-	font-size: 20pt;
-}
-.enginearea a {
-    font-size: 20pt;
 }
 
 h1 {
@@ -166,57 +121,16 @@ h1 {
   color: rgba(243,248,255,0.6);
 }
 
-.parallax {
-    /* The image used */
-    background-image: url("");
-    background-color: black;
-
-    /* Set a specific height */
-    height: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-/* 	SEARCH BOX
-	----------------------------------------------------- */
-
-#input input {
-	font-size: 100px;
-	font-family: 'Inter Extra Light', 'Open Sans Light', 'Segoe UI', 'Helvetica Neue', 'Roboto', sans-serif;
-	background: none;
-	width: 100%;
-	outline: 0;
-	color: rgba(255,255,255,1);
-	border: 0px;
-}
-
 
 /* 	SEARCH ENGINE
 	----------------------------------------------------- */
 
 .searchenginepopup {
-    position: fixed;
-    margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    width: 530px;
     max-height: 70%;
     max-width: 80%;
     transform: translate(-50%, -50%);
-    padding: 40px;
-	background-color: #f1f1f1;
     z-index: 9000001;
     display: none;
-    border-radius: 4px;
-    color: black;
-}
-.searchenginepopup * {
-    color: black;
 }
 
 .searchenginesscrollbox {

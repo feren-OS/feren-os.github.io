@@ -22,11 +22,23 @@
     <script type="text/javascript">
         browserRedirs();
     </script>
-    <div class="blackscreen"></div>
+    
+    <div class="header flex">
+        <button class="enginebtn" onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr">DuckDuckGo</span>   <img src="resources/pickengine.png" alt="Change the Search Engine..."/></button>
+        
+        <div class="inputcontainer" style="flex-grow: 1">
+            <form id="form" onsubmit="return doSearch()">
+                <input class="fullwidth" id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search the internet..."></input>
+            </form>
+            <img src="resources/settings.png" alt="Search"/>
+        </div>
+        
+        <button class="flat" onclick="openSettings()"><img src="resources/settings.png" alt="Settings"/>   Configure Start Page...</span></button>
+    </div>
+    
     <div class="overlay" id="overlay"></div>
     <div class="toprightsection" align="right">
-        <a href="https://feren-os.github.io/start-page/settings"><span style="vertical-align: middle; padding-right: 4px;">Configure Feren OS Start Page...</span>
-        <img src="resources/settings.png" alt="Start Page Settings" title="Start Page Settings" style="vertical-align: middle;"/></a>
+        
         <p>New to Feren OS? Check out the <a href="https://feren-os-user-guide.readthedocs.io/">Feren OS User Guide</a></p>
         <p><a href="https://medium.com/feren-os">See the latest news about Feren OS...</a></p>
         <p>THIS IS A CONCEPT (CONSIDERABLE CHANGES MAY OCCUR)</a></p>
@@ -37,13 +49,7 @@
         
         <p style="line-height: 40px">⠀</p>
         
-        <p class="enginearea">Search with <a onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr" class="enginearea">DuckDuckGo</span> <img src="resources/pickengine.png" alt="Change the Search Engine..." style="vertical-align: middle;"/></a></p>
         
-        <form id="form" onsubmit="return doSearch()">
-            <div id="input">
-                <input id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search the web..."/>
-            </div>
-        </form>
     </div>
     
     <!-- Required to generate custom tile images -->
@@ -59,14 +65,20 @@
         <div align="center"><button id="cookieshutbtn" class="btn"  onclick="shutCookies()">OK</button></div>
     </div>
     
-    <div class="searchenginepopup" id="searchenginepopup">
-        <h1>Choose a search engine</h1>
-        <p style="line-height: 2px">⠀</p>
-        <p>Tip: You can press CTRL + Left or Right Arrow Keys to quickly cycle between search engines.</p>
-        <p style="line-height: 10px">⠀</p>
-        
-        <div class="searchenginesscrollbox">
-            <div class="searchenginescontainer" id="searchenginescontainer">
+    <div class="window searchenginepopup" id="searchenginepopup">
+        <div class="title-bar">
+            <div class="title-bar-contents">
+            <div class="title-bar-text">Choose a search engine</div>
+            <button titlebtn-type="Close" onclick="toggleChangeEnginePopup(false)"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <p>Tip: You can press CTRL + Left or Right Arrow Keys to quickly cycle between search engines.</p>
+            <p style="line-height: 10px">⠀</p>
+            
+            <div class="searchenginesscrollbox">
+                <div class="searchenginescontainer" id="searchenginescontainer">
+                </div>
             </div>
         </div>
     </div>

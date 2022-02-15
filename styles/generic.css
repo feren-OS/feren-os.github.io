@@ -1,6 +1,119 @@
 /* Generic Feren OS website CSS - REDESIGN, work in progress, do NOT use yet */
 @import 'colors.css';
 
+body, html {
+	-webkit-text-size-adjust: none;
+	-webkit-user-select: none;
+}
+html {
+    background-color: rgb(var(--theme_base_color));
+    color: rgb(var(--theme_fg_color));
+}
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Inter, "Segoe UI Variable", "Segoe UI", Helvetica, Roboto, Tahoma, sans-serif;
+    font-size: 10pt;
+    cursor: default;
+}
+a {
+    font-weight: 600;
+}
+input[type="text"] {
+    cursor: text;
+}
+
+
+/*** PARALLAX BACKGROUNDS ***/
+.parallax {
+    /* The image used */
+    background-image: url("");
+    background-color: black;
+
+    /* Set a specific height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*** HEADER - Shell type ***/
+.header {
+    min-height: 38px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    text-align: center;
+    box-shadow: inset 0 -1px 1px #ffffff66, 0 1px 1px #00000066;
+	background-image: linear-gradient(to bottom, #1a1a1a8f, #0000008f);
+    backdrop-filter: blur(70px);
+    color: white;
+}
+.header.flex {
+    display: flex;
+    align-items: stretch;
+}
+
+.header button {
+    color: white !important;
+    background: linear-gradient(to bottom, #ffffff4a, #ffffff3b) padding-box !important;
+    border: 1px solid #ffffff85;
+    margin: 7px;
+    padding: 8px 10px;
+}
+.header button.flat {
+    background: none !important;
+    border-color: transparent !important;
+}
+
+.header .inputcontainer {
+    display: flex;
+    
+    background-color: #ffffff33;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 7px;
+    padding: 8px 10px;
+    border: 1px solid #ffffff85;
+}
+.header .inputcontainer input,
+.header .inputcontainer form {
+    flex-grow: 1;
+    height: 100%;
+    
+    background: none;
+    background-color: none;
+    border: none;
+}
+.header .inputcontainer img {
+    vertical-align: center;
+}
+
+.header .fullwidth {
+    width: calc(100% - 14px);
+}
+
+
+/*** FOOTER - Shell type ***/
+.footer {
+    min-height: 38px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    box-shadow: inset 0 1px 1px #ffffff66, 0 -1px 1px #00000066;
+	background-image: linear-gradient(to bottom, #1a1a1a8f, #0000008f);
+    backdrop-filter: blur(70px);
+    color: white;
+}
+
 
 /*** WINDOWS ***/
 .window { /* fake window decorations and CSA for dialogs, etc. */
@@ -83,6 +196,9 @@
     border-bottom-right-radius: 3px;
     margin: 0px 1px 1px 1px;
 }
+.window-body * {
+    color: rgb(var(--theme_fg_color));
+}
 
 
 /*** BUTTONS ***/
@@ -91,6 +207,10 @@ button {
     border: 1px solid transparent;
     border-radius: 4px;
     transition: background 100ms;
+    padding: 4px 6px;
+}
+button * {
+    vertical-align: middle;
 }
 button:not(:disabled) {
     background: linear-gradient(to bottom, rgb(var(--theme_button_background_normal)),
