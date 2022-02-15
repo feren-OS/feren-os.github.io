@@ -44,7 +44,7 @@ function loadSP() {
     setSettings();
     
     // Browser optimisations
-    browserOptimisations();
+    browserOptimisationsSP();
     
     // Cookies Popup
     cookiesPopup();
@@ -79,7 +79,7 @@ function loadSPIce() {
 }
 
 
-function browserOptimisations() {
+function browserOptimisationsSP() {
     if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) { /*Firefox*/
         //Switch id of scrollbox to non-chromium
         document.getElementById("shortcutscontainer1").id = "shortcutscontainer1-nonium";
