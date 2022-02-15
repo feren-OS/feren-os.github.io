@@ -95,27 +95,27 @@ function doSearch() {
     
     const pwaMode = urlParams.get('pwa')
     
-        
-    var davetheiframe = document.createElement("iframe");
-    davetheiframe.src = url;
-    davetheiframe.title = "Search";
-    davetheiframe.style.width = "100%";
-    davetheiframe.style.height = "100%";
-    davetheiframe.style.border = "none";
+    if (pwaMode != "true") {    
+        window.location.href = url;
+    } else {
+        window.open(url);
+    }
+	return false;
     
         
-    document.getElementById("iframepage").innerHTML = "";
-    document.getElementById("iframepage").appendChild(davetheiframe);
+//     var davetheiframe = document.createElement("iframe");
+//     davetheiframe.src = url;
+//     davetheiframe.title = "Search";
+//     davetheiframe.style.width = "100%";
+//     davetheiframe.style.height = "100%";
+//     davetheiframe.style.border = "none";
     
-    document.getElementById("mainpage").style.display="none";
-    document.getElementById("iframepage").style.display="block";
-    
-//     if (pwaMode != "true") {    
-//         window.location.href = url;
-//     } else {
-//         window.open(url);
-//     }
-	//return false;
+        
+//     document.getElementById("iframepage").innerHTML = "";
+//     document.getElementById("iframepage").appendChild(davetheiframe);
+//     
+//     document.getElementById("mainpage").style.display="none";
+//     document.getElementById("iframepage").style.display="block";
 }
 
 function buildEngineslist() {
