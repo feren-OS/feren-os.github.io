@@ -197,6 +197,9 @@ input[type="text"] {
     margin: 0px 1px 1px 1px;
     height: 100%;
 }
+.view { /* window contents */
+    background-color: rgb(var(--theme_base_color));
+}
 .window-body * {
     color: rgb(var(--theme_fg_color));
 }
