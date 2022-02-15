@@ -195,6 +195,7 @@ input[type="text"] {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     margin: 0px 1px 1px 1px;
+    height: 100%;
 }
 .window-body * {
     color: rgb(var(--theme_fg_color));
