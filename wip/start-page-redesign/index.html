@@ -32,10 +32,10 @@
     <div style="display: flex; flex-direction: column; height: 100%">
     
     <div class="header flex inflex">
-        <button class="enginebtn" onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr">DuckDuckGo</span>   <img src="resources/pickengine.png" alt="Change the Search Engine..."/></button>
+        <button class="enginebtn" onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr"></span>   <img src="resources/pickengine.png" alt="Change the Search Engine..."/></button>
         
         <div class="inputcontainer" style="flex-grow: 1">
-            <form id="form" onsubmit="return doSearch()">
+            <form id="form" onsubmit="doSearch()">
                 <input class="fullwidth" id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search the internet..."></input>
             </form>
             <img src="resources/settings.png" onclick="doSearch()" alt="Search"/>
@@ -44,7 +44,7 @@
         <button class="flat" onclick="openSettings()"><img src="resources/settings.png" alt="Settings"/>   Configure Start Page...</span></button>
     </div>
     
-    <div class="mainpage" style="flex-grow: 1; position: relative">
+    <div id="mainpage" class="mainpage" style="flex-grow: 1; position: relative">
         <div class="toprightsection" align="right">
             
             <p>New to Feren OS? Check out the <a href="https://feren-os-user-guide.readthedocs.io/">Feren OS User Guide</a></p>
@@ -61,6 +61,9 @@
             
             
         </div>
+    </div>
+    <div id="iframepage" style="flex-grow: 1; display: none">
+        <iframe src="" title="Search"></iframe>
     </div>
     
     <div class="footer inflex">
