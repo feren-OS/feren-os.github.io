@@ -24,7 +24,7 @@ eng.ecosia = {
 eng.google = {
 	logo: "engines/google.png",
     enginestr: "Google",
-	uri: "http://www.google.com/search?q=%query%"
+	uri: "https://www.google.com/search?q=%query%"
 };
 
 
@@ -54,7 +54,7 @@ eng.startpage = {
 eng.youtube = {
 	logo: "engines/youtube.png",
     enginestr: "YouTube",
-	uri: "http://www.youtube.com/results?search_query=%query%"
+	uri: "https://www.youtube.com/results?search_query=%query%"
 };
 
 
