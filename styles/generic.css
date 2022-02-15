@@ -55,6 +55,9 @@ input[type="text"] {
     backdrop-filter: blur(70px);
     color: white;
 }
+.header.inflex {
+    position: inherit;
+}
 .header.flex {
     display: flex;
     align-items: stretch;
@@ -91,6 +94,10 @@ input[type="text"] {
     background-color: none;
     border: none;
 }
+.header .inputcontainer input:focus,
+.header .inputcontainer form:focus {
+    outline: none;
+}
 .header .inputcontainer img {
     vertical-align: center;
 }
@@ -112,6 +119,9 @@ input[type="text"] {
 	background-image: linear-gradient(to bottom, #1a1a1a8f, #0000008f);
     backdrop-filter: blur(70px);
     color: white;
+}
+.footer.inflex {
+    position: inherit;
 }
 
 

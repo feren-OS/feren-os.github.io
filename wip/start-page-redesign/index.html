@@ -27,7 +27,11 @@
         browserRedirs();
     </script>
     
-    <div class="header flex">
+    <div class="overlay" id="overlay"></div>
+    
+    <div style="display: flex; flex-direction: column; height: 100%">
+    
+    <div class="header flex inflex">
         <button class="enginebtn" onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr">DuckDuckGo</span>   <img src="resources/pickengine.png" alt="Change the Search Engine..."/></button>
         
         <div class="inputcontainer" style="flex-grow: 1">
@@ -40,20 +44,35 @@
         <button class="flat" onclick="openSettings()"><img src="resources/settings.png" alt="Settings"/>   Configure Start Page...</span></button>
     </div>
     
-    <div class="overlay" id="overlay"></div>
-    <div class="toprightsection" align="right">
+    <div class="mainpage" style="flex-grow: 1; position: relative">
+        <div class="toprightsection" align="right">
+            
+            <p>New to Feren OS? Check out the <a href="https://feren-os-user-guide.readthedocs.io/">Feren OS User Guide</a></p>
+            <p><a href="https://medium.com/feren-os">See the latest news about Feren OS...</a></p>
+            <p>THIS IS A CONCEPT (CONSIDERABLE CHANGES MAY OCCUR)</a></p>
+        </div>
         
-        <p>New to Feren OS? Check out the <a href="https://feren-os-user-guide.readthedocs.io/">Feren OS User Guide</a></p>
-        <p><a href="https://medium.com/feren-os">See the latest news about Feren OS...</a></p>
-        <p>THIS IS A CONCEPT (CONSIDERABLE CHANGES MAY OCCUR)</a></p>
+        <div class="topleftsection" align="left">
+        
+            <p>Hello there, it is</p>
+            <p class="timeclass" id="timeid">12:00 AM</p>
+            
+            <p style="line-height: 40px">⠀</p>
+            
+            
+        </div>
     </div>
-    <div class="topleftsection" align="left">
-        <p>Hello there, it is</p>
-        <p class="timeclass" id="timeid">12:00 AM</p>
-        
-        <p style="line-height: 40px">⠀</p>
-        
-        
+    
+    <div class="footer inflex">
+        <div class="shortcutscontainer1" id="shortcutscontainer1">
+            <div class="direction_left" id="direction_left"></div>
+            <div class="direction_right" id="direction_right"></div>
+            
+            <div class="shortcutscontainer" id="shortcutscontainer">
+            </div>
+        </div>
+    </div>
+    
     </div>
     
     <!-- Required to generate custom tile images -->
@@ -96,16 +115,6 @@
 
 
 <footer>
-    <div class="footer">
-        <div class="shortcutscontainer1" id="shortcutscontainer1">
-            <div class="direction_left" id="direction_left"></div>
-            <div class="direction_right" id="direction_right"></div>
-            
-            <div class="shortcutscontainer" id="shortcutscontainer">
-            </div>
-        </div>
-    </div>
-    
     <script>loadTiles();</script>
 </footer>
 	

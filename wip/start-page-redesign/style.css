@@ -54,10 +54,8 @@ placeholder {
     max-width: 220px;
     max-height: 38px;
     border-radius: 5px;
-    border: 1px solid transparent;
-    
-    background: linear-gradient(to bottom, #ffffff61, #ffffff61 50%,
-                                #ffffffab 67%, #ffffffab) border-box;
+    background: linear-gradient(to bottom, #ffffff4a, #ffffff3b) padding-box !important;
+    border: 1px solid #ffffff85;
 }
 .sd-item img {
     z-index: 10;
