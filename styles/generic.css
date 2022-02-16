@@ -19,6 +19,7 @@ html {
 }
 a {
     font-weight: 600;
+    cursor: hand;
 }
 input[type="text"] {
     cursor: text;

@@ -92,7 +92,6 @@ function doSearch() {
 	if (typeof eng[current.engine].languages == "object") 
 		url = url.replace("%lang%", eng[current.engine].languages[current.language]);
 	
-    
     const pwaMode = urlParams.get('pwa')
     
     if (pwaMode != "true") {    
@@ -100,8 +99,8 @@ function doSearch() {
     } else {
         window.open(url);
     }
-	return false;
     
+	return false;
         
 //     var davetheiframe = document.createElement("iframe");
 //     davetheiframe.src = url;

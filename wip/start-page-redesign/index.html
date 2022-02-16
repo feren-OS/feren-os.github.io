@@ -35,7 +35,7 @@
         <button class="enginebtn" onclick="toggleChangeEnginePopup(true)"><span id="searchenginestr"></span>   <img src="resources/pickengine.png" alt="Change the Search Engine..."/></button>
         
         <div class="inputcontainer" style="flex-grow: 1">
-            <form id="form" onsubmit="doSearch()">
+            <form id="form" onsubmit="return doSearch()">
                 <input class="fullwidth" id="i" type="text" autocomplete="off" spellcheck="true" placeholder="Search the internet..."></input>
             </form>
             <img src="resources/settings.png" onclick="doSearch()" alt="Search"/>
