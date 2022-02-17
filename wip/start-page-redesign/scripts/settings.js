@@ -104,12 +104,11 @@ function migrateSettings() {
     }
     
     // Update default tiles count
-    if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null) {
+    if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null || getCookie("tilescurrentcount") === 8) {
         setCookie("tilescurrentcount", predefinedtiles);
     }
     
     // Update default tiles to new configs //
-    
     // Tile 2: Vivaldi.net -> Feren OS News
     if (getCookie("tile2currentimage") == "resources/sd_vivaldi_community.png") {
         setCookie("tile2currentimage", "resources/sd_feren-news.png");
