@@ -182,17 +182,7 @@ function setBG() {
 }
 
 function setSettings() {
-    var bgurl = (getCookie('userbg') || "https://source.unsplash.com/collection/19065423");
-
-    var bgimage = new Image();      
-    bgimage.src=bgurl;
-    
-    bgimage.onerror=pageLoadedAnim();
-
-    $(bgimage).load(function() {
-        document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0)), url("+bgurl+")");
-        pageLoadedAnim();
-    });
+    setBG();
 }
 
 function pageLoadedAnim() {
