@@ -1,6 +1,6 @@
 var fadeDur = 350,
     halffadeDur = 175,
-    predefinedtiles = 8,
+    predefinedtiles = 7,
     fallbackwebsite = "";
 
 
@@ -8,33 +8,36 @@ var fadeDur = 350,
 var DefaultTileURLs = [
     "",
     "https://ferenos.weebly.com",
-    "https://vivaldi.net/",
+    "https://medium.com/feren-os",
+    "https://feren-os-user-guide.readthedocs.io",
     "https://ferenos.weebly.com/discord",
     "https://twitter.com/Feren_OS",
     "https://chrome.google.com/webstore",
-    "https://omgubuntu.co.uk/",
-    "https://facebook.com/",
-    "https://twitter.com/"
+    "https://vivaldi.net",
+    "https://facebook.com",
+    "https://twitter.com"
 ]
 var DefaultTileNames = [
     "",
     "Feren OS Website",
-    "Vivaldi Community",
+    "Feren OS News",
+    "Feren OS User Guide",
     "Feren Community Discord",
     "Feren OS on Twitter",
     "Get More Extensions",
-    "OMG! Ubuntu",
+    "Vivaldi Community",
     "Facebook",
     "Twitter"
 ]
 var DefaultTileImages = [
     "",
     "resources/sd_feren-os.png",
-    "resources/sd_vivaldi_community.png",
+    "resources/sd_feren-news.png",
+    "resources/sd_feren-guide.png",
     "resources/sd_discord_feren.png",
     "resources/sd_twitter_feren.png",
     "resources/sd_chrome_extensions.png",
-    "resources/sd_omgubuntu.png",
+    "resources/sd_vivaldi_community.png",
     "resources/sd_facebook.png",
     "resources/sd_twitter.png",
     "resources/sd_feren.png",
@@ -60,16 +63,21 @@ function getCookie(cname)
 }
 
 function migrateSettings() {
-    if (getCookie("lastconfigmigration") == "202104") {
+    if (getCookie("lastconfigmigration") == "202202") {
         return;
     }
     
+    // Transition from original Start Page design
     if (getCookie("userbg") == "../start-page/resources/bg.jpg") {
         setCookie("userbg", "https://source.unsplash.com/collection/19065423");
     }
+    
+    // Alles was removed
     if (getCookie("lastengine") == "alles") {
         setCookie("lastengine", "duckduckgo");
     }
+    
+    // Change Vivaldi Community tile image to new tile
     if (getCookie("tile1currentimage") == "resources/sd_vivaldi_community.gif" ) {
         setCookie("tile1currentimage", "resources/sd_vivaldi_community.png");
     }
@@ -95,11 +103,80 @@ function migrateSettings() {
         setCookie("tile8currentimage", "resources/sd_vivaldi_community.png");
     }
     
-    if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null ) {
+    // Update default tiles count
+    if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null) {
         setCookie("tilescurrentcount", predefinedtiles);
     }
     
-    setCookie("lastconfigmigration", "202104");
+    // Update default tiles to new configs //
+    
+    // Tile 2: Vivaldi.net -> Feren OS News
+    if (getCookie("tile2currentimage") == "resources/sd_vivaldi_community.png") {
+        setCookie("tile2currentimage", "resources/sd_feren-news.png");
+    }
+    if (getCookie("tile2currentname") == "Vivaldi Community") {
+        setCookie("tile2currentname", "Feren OS News");
+    }
+    if (getCookie("tile2currenturl") == "https://vivaldi.net/" || getCookie("tile2currenturl") == "https://vivaldi.net") {
+        setCookie("tile2currenturl", "https://medium.com/feren-os");
+    }
+    
+    // Tile 3: Feren Community Discord -> Feren OS User Guide
+    if (getCookie("tile3currentimage") == "resources/sd_discord_feren.png") {
+        setCookie("tile3currentimage", "resources/sd_feren-guide.png");
+    }
+    if (getCookie("tile3currentname") == "Feren Community Discord") {
+        setCookie("tile3currentname", "Feren OS User Guide");
+    }
+    if (getCookie("tile3currenturl") == "https://ferenos.weebly.com/discord") {
+        setCookie("tile3currenturl", "https://feren-os-user-guide.readthedocs.io");
+    }
+    
+    // Tile 4: Feren OS on Twitter -> Feren Community Discord
+    if (getCookie("tile4currentimage") == "resources/sd_twitter_feren.png") {
+        setCookie("tile4currentimage", "resources/sd_discord_feren.png");
+    }
+    if (getCookie("tile4currentname") == "Feren OS on Twitter") {
+        setCookie("tile4currentname", "Feren Community Discord");
+    }
+    if (getCookie("tile4currenturl") == "https://twitter.com/Feren_OS") {
+        setCookie("tile4currenturl", "https://ferenos.weebly.com/discord");
+    }
+    
+    // Tile 5: Get More Extensions -> Feren OS on Twitter
+    if (getCookie("tile5currentimage") == "resources/sd_chrome_extensions.png") {
+        setCookie("tile5currentimage", "resources/sd_twitter_feren.png");
+    }
+    if (getCookie("tile5currentname") == "Get More Extensions") {
+        setCookie("tile5currentname", "Feren OS on Twitter");
+    }
+    if (getCookie("tile5currenturl") == "https://chrome.google.com/webstore") {
+        setCookie("tile5currenturl", "https://twitter.com/Feren_OS");
+    }
+    
+    // Tile 6: OMG! Ubuntu -> Get More Extensions
+    if (getCookie("tile6currentimage") == "resources/sd_omgubuntu.png") {
+        setCookie("tile6currentimage", "resources/sd_chrome_extensions.png");
+    }
+    if (getCookie("tile6currentname") == "OMG! Ubuntu") {
+        setCookie("tile6currentname", "Get More Extensions");
+    }
+    if (getCookie("tile6currenturl") == "https://omgubuntu.co.uk/" || getCookie("tile6currenturl") == "https://omgubuntu.co.uk") {
+        setCookie("tile6currenturl", "https://chrome.google.com/webstore");
+    }
+    
+    // Tile 7: Facebook -> Vivaldi Community
+    if (getCookie("tile7currentimage") == "resources/sd_facebook.png") {
+        setCookie("tile7currentimage", "resources/sd_vivaldi_community.png");
+    }
+    if (getCookie("tile7currentname") == "Facebook") {
+        setCookie("tile7currentname", "Vivaldi Community");
+    }
+    if (getCookie("tile7currenturl") == "https://facebook.com/" || getCookie("tile7currenturl") == "https://facebook.com") {
+        setCookie("tile7currenturl", "https://vivaldi.net");
+    }
+    
+    setCookie("lastconfigmigration", "202202");
 }
 
 function getbg() {
