@@ -309,14 +309,14 @@ function openTileSettings(tile) {
 }
 
 function minusTile() {
-    var tilescurrentcount = parseInt(getCookie("tilescurrentcount")) || 8;
+    var tilescurrentcount = parseInt(getCookie("tilescurrentcount")) || 7;
     setCookie("tilescurrentcount", (tilescurrentcount - 1));
     loadTiles();
     console.log(getCookie("tilescurrentcount"));
 }
 
 function plusTile() {
-    var tilescurrentcount = parseInt(getCookie("tilescurrentcount")) || 8;
+    var tilescurrentcount = parseInt(getCookie("tilescurrentcount")) || 7;
     setCookie("tilescurrentcount", (tilescurrentcount + 1));
     loadTiles();
     console.log(getCookie("tilescurrentcount"));
