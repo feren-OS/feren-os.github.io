@@ -172,7 +172,13 @@ function prevEngine() {
     -----------------------------------------------------  */
 function setBG() {
     var bgurl = (getCookie('userbg') || "https://source.unsplash.com/collection/19065423")
-    document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("+bgurl+")")
+    
+    if (bgurl.startsWith("color:")) {
+        var colorval = bgurl.replace("color:", "")
+        document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0)), linear-gradient("+colorval+", "+colorval+")")
+    } else {
+        document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0)), url("+bgurl+")")
+    }
 }
 
 function setSettings() {
@@ -184,7 +190,7 @@ function setSettings() {
     bgimage.onerror=pageLoadedAnim();
 
     $(bgimage).load(function() {
-        document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("+bgurl+")");
+        document.getElementById("bgparallax").style.backgroundImage = ("linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0)), url("+bgurl+")");
         pageLoadedAnim();
     });
 }
