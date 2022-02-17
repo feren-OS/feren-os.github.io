@@ -104,7 +104,7 @@ function migrateSettings() {
     }
     
     // Update default tiles count
-    if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null || getCookie("tilescurrentcount") === 8) {
+    if (getCookie("tilescurrentcount") === undefined || getCookie("tilescurrentcount") === null || getCookie("tilescurrentcount") == 8) {
         setCookie("tilescurrentcount", predefinedtiles);
     }
     
