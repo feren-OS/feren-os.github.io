@@ -2,7 +2,8 @@ var eng = {},
 	current = {},
 	fadeDur = 350,
     searchPrefix = "Search ",
-    UA=navigator.userAgent;
+    UA=navigator.userAgent,
+    searchEnginesBoxHeight = 0;
     
 var urlParams = new URLSearchParams(window.location.search);
 
@@ -19,15 +20,16 @@ function getCookie(cname) {
     if (match) return match[2];
 }
 
+window.addEventListener('resize', function(event) {
+    calculateHeights();
+}, true);
+
 function loadSP() {    
     // Migrate settings if required
     migrateSettings();
     
     // Create Engine Index
-    buildEngineslist()
-    
-    // Resize Engines dialog
-    calculateEnginesSize()
+    buildEngineslist();
 	
     // Set up first engine
 
@@ -48,6 +50,9 @@ function loadSP() {
     
     // Cookies Popup
     cookiesPopup();
+    
+    // Calculate heights
+    calculateHeights();
 }
 
 
@@ -56,10 +61,10 @@ function loadSPIce() {
     migrateSettings();
     
     // Create Engine Index
-    buildEngineslist()
+    buildEngineslist();
     
     // Resize Engines dialog
-    calculateEnginesSize()
+    calculateEnginesSize();
 	
     // Set up first engine
 
@@ -76,6 +81,41 @@ function loadSPIce() {
     const iceText = urlParams.get('ice-text')
     
     document.getElementById('iceid').innerHTML=iceText;
+    
+    // Calculate heights
+    calculateHeights();
+}
+
+
+function calculateHeights() {
+    
+    var searchEnginesColumns = Math.floor((window.innerWidth * 0.8) / 310);
+    document.getElementById("searchenginepopup").style.width = (250 * searchEnginesColumns) + 56;
+    var searchEnginesCount = 0;
+    for (e in eng) {
+        searchEnginesCount += 1
+    }
+    var targetHeight = 62 + (80 * Math.ceil(searchEnginesCount / searchEnginesColumns));
+    if ((window.innerHeight * 0.7) < targetHeight) {
+        document.getElementById("searchenginepopup").style.height = "100%";
+    } else {
+        document.getElementById("searchenginepopup").style.height = targetHeight + 32;
+    }
+    
+    var settingsShown = (document.getElementById("settingspopup").style.display == "block");
+    if (settingsShown == false) {
+        document.getElementById("settingspopup").style.opacity = "0";
+        document.getElementById("settingspopup").style.display = "block";
+    }
+    if (window.innerHeight < document.getElementById("settingsarea").offsetHeight) {
+        document.getElementById("settingspopup").style.height = "100%";
+    } else {
+        document.getElementById("settingspopup").style.height = document.getElementById("settingsarea").offsetHeight + 32;
+    }
+    if (settingsShown == false) {
+        document.getElementById("settingspopup").style.display = "none";
+        document.getElementById("settingspopup").style.opacity = null;
+    }
 }
 
 
@@ -131,32 +171,6 @@ function buildEngineslist() {
         
         searchenginescontaineritem.appendChild(searchengineitem);
     }
-}
-
-function calculateEnginesSize() {
-    var numberofrows = 0;
-    var numberofenginesdone = 0;
-    for (e in eng) {
-        numberofenginesdone += 1
-        if (numberofenginesdone !== 0 && numberofenginesdone % 2 !== 0) {
-            numberofrows += 1
-        }
-    }
-    
-    var currentboxsize = document.getElementById("searchenginepopup").offsetHeight;
-    var calculatedboxsize = 33;
-        
-    if (numberofrows != 0) {
-        calculatedboxsize += 10
-    }
-    calculatedboxsize += 100*numberofrows
-        
-    if (numberofrows != 0) {
-        calculatedboxsize += 10
-    }
-    
-    
-    document.getElementById("searchenginepopup").style.height = calculatedboxsize+"px";
 }
 
 function nextEngine() {
@@ -290,4 +304,59 @@ function setupHoverEvents() {
     }, function() {
         h_amount = '';
     });
+}
+
+
+
+
+
+function toggleSettingsPopup(show) {
+    
+    if (show == true) {
+        $("#overlay").fadeIn(halffadeDur);
+        $("#settingspopup").fadeIn(halffadeDur);
+    } else {
+        $("#overlay").fadeOut(halffadeDur);
+        $("#settingspopup").fadeOut(halffadeDur);
+    }
+}
+
+function cookiesPopup() {
+    if (getCookie("cookieconsent_status") == "dismiss") {
+        // Give search box focus
+        $("#input input").focus();
+    
+        return;
+    }
+    setCookie("cookieconsent_status", "shown");
+    
+    if (getCookie("cookieconsent_status") != "shown") {
+        return;
+    }
+    $("#overlay").fadeIn(halffadeDur);
+    $("#cookiepopup").fadeIn(halffadeDur);
+    
+    // Give cookies button focus
+    document.getElementById("cookieshutbtn").focus();
+}
+function shutCookies() {
+    setCookie("cookieconsent_status", "dismiss");
+    $("#overlay").fadeOut(halffadeDur);
+    $("#cookiepopup").fadeOut(halffadeDur);
+    
+    // Give search box focus
+    $("#input input").focus();
+}
+
+function toggleChangeEnginePopup(show) {
+    
+    if (show == true) {
+        $(".searchenginesscrollbox").addClass("dialogscrollbar");
+        $("#overlay").fadeIn(halffadeDur);
+        $("#searchenginepopup").fadeIn(halffadeDur);
+    } else {
+        $(".searchenginesscrollbox").removeClass("dialogscrollbar");
+        $("#overlay").fadeOut(halffadeDur);
+        $("#searchenginepopup").fadeOut(halffadeDur);
+    }
 }

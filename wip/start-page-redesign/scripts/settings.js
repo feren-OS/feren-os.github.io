@@ -376,19 +376,6 @@ function selectTileImage(tileimage) {
 }
 
 
-function toggleChangeEnginePopup(show) {
-    
-    if (show == true) {
-        $(".searchenginesscrollbox").addClass("dialogscrollbar");
-        $("#overlay").fadeIn(halffadeDur);
-        $("#searchenginepopup").fadeIn(halffadeDur);
-    } else {
-        $(".searchenginesscrollbox").removeClass("dialogscrollbar");
-        $("#overlay").fadeOut(halffadeDur);
-        $("#searchenginepopup").fadeOut(halffadeDur);
-    }
-
-}
 function selectEngine(enginename, changecookie) {
     if (changecookie == true) {
         setCookie("lastengine", enginename);
@@ -398,31 +385,4 @@ function selectEngine(enginename, changecookie) {
     current.engine = enginename;
     
     toggleChangeEnginePopup(false);
-}
-
-function cookiesPopup() {
-    if (getCookie("cookieconsent_status") == "dismiss") {
-        // Give search box focus
-        $("#input input").focus();
-    
-        return;
-    }
-    setCookie("cookieconsent_status", "shown");
-    
-    if (getCookie("cookieconsent_status") != "shown") {
-        return;
-    }
-    $("#overlay").fadeIn(halffadeDur);
-    $("#cookiepopup").fadeIn(halffadeDur);
-    
-    // Give cookies button focus
-    document.getElementById("cookieshutbtn").focus();
-}
-function shutCookies() {
-    setCookie("cookieconsent_status", "dismiss");
-    $("#overlay").fadeOut(halffadeDur);
-    $("#cookiepopup").fadeOut(halffadeDur);
-    
-    // Give search box focus
-    $("#input input").focus();
 }

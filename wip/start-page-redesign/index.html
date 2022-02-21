@@ -17,12 +17,10 @@
     
 	<script src="scripts/tools.js" type="text/javascript"></script>
     <script src="scripts/settings.js" type="text/javascript"></script>
-	<script src="scripts/scripts.js" type="text/javascript">
-        setSettings();
-    </script>
+	<script src="scripts/scripts.js" type="text/javascript"></script>
 	<script src="engines/base.js" type="text/javascript"></script>
 </head>
-<body class="parallax" id="bgparallax" onload="browserOptimisations(); loadSP()">
+<body class="parallax" id="bgparallax">
     <script type="text/javascript">
         browserRedirs();
     </script>
@@ -41,7 +39,7 @@
             <img src="resources/settings.png" onclick="doSearch()" alt="Search"/>
         </div>
         
-        <button class="flat" onclick="openSettings()"><img src="resources/settings.png" alt="Settings"/>   Configure Start Page...</span></button>
+        <button class="flat" onclick="toggleSettingsPopup(true)"><img src="resources/settings.png" alt="Settings"/>   Configure Start Page...</span></button>
     </div>
     
     <div id="mainpage" class="mainpage" style="flex-grow: 1; position: relative">
@@ -78,12 +76,13 @@
     <canvas id="texttilecanvas" style="display: none"></canvas>
     
     <div class="window cookiepopup" id="cookiepopup">
-        <div class="title-bar">
+        <div class="title-bar" id="cookiepopup-title-bar">
             <div class="title-bar-contents">
             <div class="title-bar-text">Cookies on Feren OS Start Page</div>
             <button titlebtn-type="Close" onclick="toggleChangeEnginePopup(false)"></button>
             </div>
         </div>
+        <script>dragElement(document.getElementById("cookiepopup"));</script>
         <div class="window-body view cookiescrollbox">
             Just to let you know, this website uses cookies to save your Start Page settings offline, such as the background and the bottom shortcuts. No other cookies are saved from using Feren OS Start Page.
             <p style="line-height: 10px">⠀</p>
@@ -94,26 +93,89 @@
     </div>
     
     <div class="window searchenginepopup" id="searchenginepopup">
-        <div class="title-bar">
+        <div class="title-bar" id="searchenginepopup-title-bar">
             <div class="title-bar-contents">
             <div class="title-bar-text">Choose a search engine</div>
             <button titlebtn-type="Close" onclick="toggleChangeEnginePopup(false)"></button>
             </div>
         </div>
-        <div class="window-body view">
+        <script>dragElement(document.getElementById("searchenginepopup"));</script>
+        <div class="window-body view scrollable">
             <p>Tip: You can press CTRL + Left or Right Arrow Keys to quickly cycle between search engines.</p>
             <p style="line-height: 10px">⠀</p>
             
-            <div class="searchenginesscrollbox">
-                <div class="searchenginescontainer" id="searchenginescontainer">
-                </div>
+            <div class="searchenginescontainer" id="searchenginescontainer">
             </div>
         </div>
+    </div>
+    
+    <div class="window settingspopup" id="settingspopup">
+        <div class="title-bar" id="settingspopup-title-bar">
+            <div class="title-bar-contents">
+            <div class="title-bar-text">Start Page Settings</div>
+            <button titlebtn-type="Close" onclick="toggleSettingsPopup(false)"></button>
+            </div>
+        </div>
+        <script>dragElement(document.getElementById("settingspopup"));</script>
+        <div class="window-body view scrollable"><div id="settingsarea">
+            <h1>Background</h1>
+            <p>Choose a background to be used in Start Page:</p>
+            <input type="radio" id="bgcolor" name="bgtype" value="bgcolor">
+            <label for="bgcolor">Use a solid colour:</label>
+            <p><input id="bgclrtextbox" class="textbox" type="text" placeholder="Use any HTML colour format, e.g.: rgb(0, 106, 255), #006AFF"/></p>
+            <input type="radio" id="bgimage" name="bgtype" value="bgimage">
+            <label for="bgimage">Use an image:</label>
+            <p><input id="bgurltextbox" class="textbox" type="text" placeholder="https://source.unsplash.com/collection/19065423"/></p>
+            
+            <br></br>
+            <h1>Clock</h1>
+            <input type="radio" id="24hrclock" name="clocktype" value="24hrclock">
+            <label for="24hrclock">Use a 24-hour clock</label><br>
+            <input type="radio" id="12hrclock" name="clocktype" value="12hrclock">
+            <label for="12hrclock">Use a 14-hour clock (AM/PM)</label><br>
+            
+            <br></br>
+            <h1>Shortcuts</h1>
+            <p>Manage your Start Page shortcuts:</p>
+            <p><button class="tiletext-btn" type="submit" onclick="minusTile()">Remove last shortcut</button> 
+            <button class="tiletext-btn" type="submit" onclick="plusTile()">Add a shortcut</button></p>
+            <div class="settingsshortcutscontainer" id="settingsshortcutscontainer">
+            </div>
+            
+            <br></br>
+            <h1>Credits:</h1>
+            <p>• The Zorin OS Team for some of the Start Page code</p>
+            <p>• The Feren OS Team for the Feren OS Start Page</p>
+            <p>• Vivaldi Technologies for the Vivaldi Browser and Vivaldi Community logos</p>
+            <p>• DuckDuckGo for the DuckDuckGo logo</p>
+            <p>• Ecosia for the Ecosia logo</p>
+            <p>• Google for the Google logo</p>
+            <p>• Microsoft for the Bing logos</p>
+            <p>• Startpage B.V. for the Startpage.com logo</p>
+            <p>• Google for the YouTube logo</p>
+            <p>• Qwant for the Qwant logo</p>
+            <p>• Yahoo for the Yahoo logo</p>
+            <p>• Baidu for the 百度搜索 logo</p>
+            <p>• ニコニコ動画 for the ニコニコ動画 logo</p>
+            <p>• Discord for the Discord logo</p>
+            <p>• Twitter for the Twitter logo</p>
+            <p>• Facebook for the Facebook logo</p>
+            <p>• Unsplash for the Unsplash logo</p>
+            <p>• Nohat for the Wikipedia Logo (concept by Paullusmagnus) <a onclick=" window.open('https://creativecommons.org/licenses/by-sa/3.0','_blank')">(CC BY-SA 3.0)</a></p>
+            <p>• <a onclick=" window.open('https://github.com/feren-OS/feren-os.github.io/pulls?utf8=✓&q=is%3Apr+is%3Amerged','_blank')">Everyone who has contributed improvements to this Start Page</a></p>
+            <p>• Everyone on <a onclick=" window.open('https://unsplash.com','_blank')">Unsplash</a> who have made <a onclick=" window.open('https://unsplash.com/collections/19065423','_blank')">backgrounds featured in this Start Page</a></p>
+        </div></div>
     </div>
 </body>
 
 
 <footer>
-    <script>loadTiles();</script>
+    <script>
+        window.addEventListener('load', function () {
+            loadTiles();
+            browserOptimisations();
+            loadSP();
+        }, true);
+    </script>
 </footer>
 </html>

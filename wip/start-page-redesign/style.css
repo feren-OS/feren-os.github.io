@@ -2,26 +2,6 @@
     color: white;
 }
 
-placeholder {
-	color: rgba(255, 255, 255, 0.5);
-}
-
-::-webkit-input-placeholder {
-	color: rgba(255,255,255,0.5);
-}
-
-:-moz-placeholder { /* Firefox 18- */
-	color: rgba(255,255,255,0.5);
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-	color: rgba(255,255,255,0.5);
-}
-
-:-ms-input-placeholder {
-	color: rgba(255, 255, 255, 0.5);
-}
-
 .shownscrollbar::-webkit-scrollbar { background: transparent; height: 10px; }
 .shownscrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
 .dialogscrollbar::-webkit-scrollbar { background: transparent; width: 10px; }
@@ -128,15 +108,9 @@ h1 {
 .searchenginepopup {
     max-height: 70%;
     max-width: 80%;
-    transform: translate(-50%, -50%);
+    height: 70%;
     z-index: 9000001;
     display: none;
-}
-
-.searchenginesscrollbox {
-    overflow: auto;
-    height: calc(100% - 36px);
-    width: 100%;
 }
 
 .overlay {
@@ -204,6 +178,18 @@ h1 {
     max-height: 70%;
     max-width: 80%;
     z-index: 9000002;
+    display: none;
+}
+
+
+/*  SETTINGS
+    ---------------------------------------------------- */
+.settingspopup {
+    width: 510px;
+    max-height: 70%;
+    height: 70%;
+    max-width: 80%;
+    z-index: 9000001;
     display: none;
 }
 
