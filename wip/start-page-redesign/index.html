@@ -16,14 +16,13 @@
     
     
 	<script src="scripts/tools.js" type="text/javascript"></script>
-    <script src="scripts/settings.js" type="text/javascript"></script>
-	<script src="scripts/scripts.js" type="text/javascript"></script>
+    <script src="scripts/scripts.js" type="text/javascript"></script>
 	<script src="engines/base.js" type="text/javascript"></script>
 </head>
 <body class="parallax" id="bgparallax">
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         browserRedirs();
-    </script>
+    </script>-->
     
     <div class="overlay" id="overlay"></div>
     
@@ -122,17 +121,17 @@
             <p>Choose a background to be used in Start Page:</p>
             <input type="radio" id="bgcolor" name="bgtype" value="bgcolor">
             <label for="bgcolor">Use a solid colour:</label>
-            <p><input id="bgclrtextbox" class="textbox" type="text" placeholder="Use any HTML colour format, e.g.: rgb(0, 106, 255), #006AFF"/></p>
+            <p><input id="bgclrtextbox" class="textbox" type="text" placeholder="Use any HTML colour format, e.g.: rgb(0, 106, 255), #006AFF" disabled="true"/></p>
             <input type="radio" id="bgimage" name="bgtype" value="bgimage">
             <label for="bgimage">Use an image:</label>
-            <p><input id="bgurltextbox" class="textbox" type="text" placeholder="https://source.unsplash.com/collection/19065423"/></p>
+            <p><input id="bgurltextbox" class="textbox" type="text" placeholder="https://source.unsplash.com/collection/19065423" disabled="true"/></p>
             
             <br></br>
             <h1>Clock</h1>
             <input type="radio" id="24hrclock" name="clocktype" value="24hrclock">
             <label for="24hrclock">Use a 24-hour clock</label><br>
             <input type="radio" id="12hrclock" name="clocktype" value="12hrclock">
-            <label for="12hrclock">Use a 14-hour clock (AM/PM)</label><br>
+            <label for="12hrclock">Use a 12-hour clock (AM/PM)</label><br>
             
             <br></br>
             <h1>Shortcuts</h1>
@@ -172,8 +171,8 @@
 <footer>
     <script>
         window.addEventListener('load', function () {
-            loadTiles();
             browserOptimisations();
+//             gettickboxesstates();
             loadSP();
         }, true);
     </script>
