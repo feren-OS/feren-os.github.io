@@ -1,7 +1,7 @@
 var UA=navigator.userAgent;
 
 function browserOptimisations() {
-    if ((/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) || (/^((?!chrome|android).)*safari/i.test(UA))) { /*Firefox, or Safari/Web*/
+    if (/rv:([^\)]+)\) Gecko\/\d{8}/.test(UA) && /Firefox\/(\S+)/.test(UA)) { /*Firefox*/
         //Use Basic theme since the browser doesn't support blur
         //TODO: Find out UAs of other non-Firefox browsers that also do not support blur effects
     } else {
