@@ -185,7 +185,7 @@ h1 {
 /*  SETTINGS
     ---------------------------------------------------- */
 .settingspopup {
-    width: 510px;
+    width: 670px;
     max-height: 70%;
     height: 70%;
     max-width: 80%;
@@ -193,6 +193,14 @@ h1 {
     display: none;
 }
 
+.tilesettingspopup {
+    width: 670px;
+    max-height: 70%;
+    height: 350px;
+    max-width: 80%;
+    z-index: 9000003;
+    display: none;
+}
 
 
 

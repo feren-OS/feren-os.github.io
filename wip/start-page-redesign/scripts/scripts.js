@@ -746,7 +746,7 @@ function openTileSettings(tile) {
         document.getElementById("currenttileimagetextbox").placeholder = "resources/sd_generic.png";
     }
     
-    $("#overlay").fadeIn(halffadeDur);
+    document.getElementById("overlay").style.zIndex = 9000002;
     $("#tilesettingspopup").fadeIn(halffadeDur);
 }
 
@@ -763,9 +763,9 @@ function plusTile() {
 }
 
 function closeTileSettings() {
-    loadTiles();
-    $("#overlay").fadeOut(halffadeDur);
+    loadTilesCall();
     $("#tilesettingspopup").fadeOut(halffadeDur);
+    document.getElementById("overlay").style.zIndex = 9000000;
 }
 
 function saveTileSettings() {
