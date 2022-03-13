@@ -220,27 +220,30 @@ function doSearch() {
 	
     const pwaMode = urlParams.get('pwa')
     
-    if (pwaMode != "true") {    
-        window.location.href = url;
-    } else {
-        window.open(url);
-    }
+//     if (pwaMode != "true") {    
+//         window.location.href = url;
+//     } else {
+//         window.open(url);
+//     }
+        
+    var davetheiframe = document.createElement("iframe");
+    davetheiframe.src = url;
+    davetheiframe.title = "Search";
+    davetheiframe.style.width = "100%";
+    davetheiframe.style.height = "100%";
+    davetheiframe.style.border = "none";
+    davetheiframe.setAttribute("referrerpolicy", "no-referrer");
+    davetheiframe.setAttribute("sandbox", "allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts");
+    davetheiframe.setAttribute("pointer-events", "initial");
+    
+        
+    document.getElementById("iframepage").innerHTML = "";
+    document.getElementById("iframepage").appendChild(davetheiframe);
+    
+    document.getElementById("mainpage").style.display="none";
+    document.getElementById("iframepage").style.display="block";
     
 	return false;
-        
-//     var davetheiframe = document.createElement("iframe");
-//     davetheiframe.src = url;
-//     davetheiframe.title = "Search";
-//     davetheiframe.style.width = "100%";
-//     davetheiframe.style.height = "100%";
-//     davetheiframe.style.border = "none";
-    
-        
-//     document.getElementById("iframepage").innerHTML = "";
-//     document.getElementById("iframepage").appendChild(davetheiframe);
-//     
-//     document.getElementById("mainpage").style.display="none";
-//     document.getElementById("iframepage").style.display="block";
 }
 
 function buildEngineslist() {
