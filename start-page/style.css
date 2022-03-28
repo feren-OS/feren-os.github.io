@@ -308,4 +308,35 @@ h1 {
     left: 25px;
     bottom: 25px;
     z-index: 1;
+    
+    display: flex;
+    align-items: center;
+    
+}
+
+.footerlabels {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 10px;
+}
+.footerlabels p {
+    margin: 2px 0;
+}
+
+#icehomebtn img {
+    max-width: 48px;
+    max-height: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    /*background: linear-gradient(to bottom, #ffffff4a, #ffffff3b) border-box !important;
+    border: 1px solid #ffffff85;*/
+}
+
+#iceid {
+}
+
+#returntip {
+    opacity: 0.7;
 }

@@ -73,9 +73,9 @@ function loadSPIce() {
     cookiesPopup();
     
     //Flavour text
-    const iceText = urlParams.get('ice-text')
-    
-    document.getElementById('iceid').innerHTML=iceText;
+    document.getElementById('iceid').innerHTML=urlParams.get('ice-text');
+    document.getElementById('icehomebtn').href=urlParams.get('home-url');
+    document.getElementById('icehomeicon').src=urlParams.get('home-icon');
 }
 
 
